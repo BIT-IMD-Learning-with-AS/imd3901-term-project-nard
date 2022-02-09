@@ -15,4 +15,4 @@ It was challanging to set the tasks evenly. Understanding the proposal assigning
 
 **Successes**
 
-We successfuly split the tasks evenly between the team members and assigned the proper tasks to the right teammate. 
+We successfuly split the tasks evenly between the team members and assigned the proper tasks to the right teammate. Also, decided on the final idea for our project without going outside of our scope.
