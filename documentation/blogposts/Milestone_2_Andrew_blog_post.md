@@ -1,6 +1,6 @@
 # Milestone Reflections - Andrew Holland #
 
-## Milestone 1 : "To Be or Not to Be" ##
+## Milestone 1 : "Project plan" ##
  - _Date: 2022-08-01_
  - _Number of Hours: 3_
 
