@@ -7,7 +7,7 @@ Number of Hours: 30 mins
 **Overview**
 
 In his milestone we decided on our goal and weekly tasks as a team. We split the group work evenly for the Proposal Document and the Alpha Presentation. 
-We created our Sprint 2 fpr this weel to set our weekly scope for the project. Also, updated our tasks on the Jira board
+We created our Sprint 2 for this week to set our weekly scope for the project. Also, updated our tasks on the Jira board
 
 **Challenges**
 
