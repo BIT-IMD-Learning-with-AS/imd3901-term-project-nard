@@ -11,7 +11,7 @@ We created our Sprint 2 fpr this weel to set our weekly scope for the project.
 
 **Challenges**
 
-It was challanging to set the tasks evenly. Understanding the proposal assigning the tasks with the right team members for the task was challenging. 
+It was challanging to set the tasks evenly. Understanding the proposal assigning the tasks with the right team members for the task was challenging. Furtermore, we had issues with finalizing the project idea and keeping it inside our scope
 
 **Successes**
 
