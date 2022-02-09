@@ -1,5 +1,7 @@
 Milestone 2 : "It's Research Time"
+
 Date: 2022-02-08
+
 Number of Hours: 30 mins
 
 **Overview**
