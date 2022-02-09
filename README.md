@@ -9,7 +9,7 @@ This readme will be an introduction for your project. Please note how to use [Ma
 This project will be a VR experience programmed using HTML/CSS and the A Frame framework from Node.js.
 
 ## How to Run This Project ##
-including instructions for running your project.
+No instructions yet
 
 ## Team Members and Roles ##
 - _Natalia_
