@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta name="description" content="NARD's Alpha Prototype!">
+      
+      <script src="/js/aframe.min.js"></script>
+      <script src="js/aframe-environment-component.min.js"></script>
+      <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+      <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
+      <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+      
+      <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+
+      <link rel="stylesheet" href="/css/user-gesture.css">
+
+      <script>
+
+      AFRAME.registerComponent('start-experience', {
+          init: function () {
+            //we can't play sound on some browsers until we have some user interaction
+            //this means we should only start playing ambient music after this button is clicked
+            console.log('scene loaded');
+            document.querySelector('#user-gesture-overlay2').style.display='none';
+            document.querySelector('#user-gesture-button2').style.display='none';
+
+            let canoe = document.querySelector('a-scene').querySelector('#canoe');
+            let cam = document.querySelector('a-scene').querySelector('#player');
+            canoe.setAttribute('animation', "property:position; to: 0 0.2 -30; dur: 30000; easing: linear;");
+            cam.setAttribute('animation', "property:position; to: 0 1.6 -30; dur: 30000; easing: linear;");
+          }
+        });
+
+        AFRAME.registerComponent('boat', {
+        init: function() {
+          var el = this.el;
+
+          el.addEventListener("collidestart", function (e) {
+            console.log("collided")
+            document.querySelector('#user-gesture-overlay2').style.display='block';
+            document.querySelector('#user-gesture-button2').style.display='block';
+            
+            //function called from user-gesture click
+            const artifactExperience = function() {
+              //hide user-gesture overlay
+              document.querySelector('#user-gesture-overlay2').style.display='none';
+              window.location.replace("http://localhost:8080/artifactEnvironment.html");
+            }
+              });
+
+        }
+      });
+
+      /*AFRAME.registerComponent("bruv", {
+          init: function() {
+            console.log("gang");
+            this.direction = 1;
+            this.position = new THREE.Vector3();
+            this.position.copy(this.el.object3D.position);
+            setTimeout(() => {
+              this.ready = true;
+            }, 1000);
+          },
+          tick: function() {
+            if (!this.ready) return;
+            var position = this.el.object3D.position.z;
+              this.direction = -1;
+            this.el.object3D.position.set(this.position.x, this.position.y, position + 0.01 * this.direction);
+          }
+      });*/
+
+    </script>
+
+    </head>
+    <body>
+
+      <div id="user-gesture-overlay2">
+        <div class="center">
+          <button id="user-gesture-button2" onclick="artifactExperience();">Explore Land</button>
+        </div>
+      </div>
+
+    <a-scene start-experience environment="preset: forest; shadow: true" physics="driver:ammo;">
+     
+      <a-assets>
+      </a-assets>
+
+      <a-plane height="100" width="100" position="0 1 0" rotation="-90 0 0" material="color:lightblue"></a-plane>
+      <a-plane height="100" width="20" position="-13 1.2 0" rotation="-90 0 0" material="color:green"></a-plane>
+      <a-plane height="100" width="20" position="13 1.2 0" rotation="-90 0 0" material="color:green"></a-plane>
+
+      <!--<a-entity sound="src:#bgMusic; autoplay:true; volume:0.5;"></a-entity>
+      <a-box bruv ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" position="0 0.2 0" scale="1 2 3" material="color:brown"> </a-box>
+          <a-box id="canoe" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" position="0 0.2 0" scale="1 2 3" material="color:brown"> </a-box>
+    -->
+
+    <a-box ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" scale="3 3 3" position="0 1 -10" visible="false"></a-box>
+
+      <a-box boat id="canoe" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box"  position="0 0.2 0" scale="1 2 3" material="color:brown"> </a-box>
+      
+      <a-entity camera id="player" look-controls position="0 1.6 0"></a-entity>
+      </a-entity>
+      
+
+    </a-scene>
+  </body>
+</html>
