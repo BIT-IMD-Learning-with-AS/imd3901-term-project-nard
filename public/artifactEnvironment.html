@@ -3,12 +3,14 @@
     <head>
       <meta name="description" content="NARD's Alpha Prototype!">
       
+      <!-- DO NOT TOUCH -->
       <script src="/js/aframe.min.js"></script>
       <script src="js/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
       <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+      <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/user-gesture.css">
 
@@ -62,7 +64,7 @@
       <!-- canoe -->
       <a-box boat id="canoe" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box"  position="0 0.2 0" scale="1 1 3" material="color:brown"> </a-box>
       
-      <!-- DO NOT TOUCH camera or cursor -->
+      <!-- DO NOT TOUCH camera -->
       <a-entity progressive-controls></a-entity>
       <a-camera >
         <a-entity cursor position="0 0 -1"
