@@ -26,6 +26,9 @@
  
  In the coming milestone, some of the team (Damla and Riya) will be designing assets, prioritizing the story objects first
  The other half of the team (Natalia and I) will be blocking out the scenes for the rest of the story. 
+
+ Below is a picture of the prototype and the experience flow for the story. 
  
+ ![Prototype](https://raw.githubusercontent.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/main/documentation/blogposts/Screenshot%20(91).png?token=GHSAT0AAAAAABRIKPPENC2YMZQAHAMPPLYKYQMKJPA)
  
  ![Prototype](https://raw.githubusercontent.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/main/documentation/blogposts/Screenshot%20(91).png?token=GHSAT0AAAAAABRIKPPENC2YMZQAHAMPPLYKYQMKJPA)
