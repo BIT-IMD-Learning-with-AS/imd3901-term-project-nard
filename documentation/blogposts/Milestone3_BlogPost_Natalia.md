@@ -19,3 +19,5 @@ We discussed and reviewed our planned schedule for every task we assigned to che
 **Media**
 
 ![NatsBlogPost3_Media](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/canoe.JPG?raw=true)
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/naruto.jpg?raw=true)
+
