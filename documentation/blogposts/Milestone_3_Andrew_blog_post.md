@@ -31,4 +31,4 @@
  
  ![Prototype](https://raw.githubusercontent.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/main/documentation/blogposts/Screenshot%20(91).png?token=GHSAT0AAAAAABRIKPPENC2YMZQAHAMPPLYKYQMKJPA)
  
- ![Prototype](https://raw.githubusercontent.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/main/documentation/blogposts/Screenshot%20(91).png?token=GHSAT0AAAAAABRIKPPENC2YMZQAHAMPPLYKYQMKJPA)
+ ![Experience flow](https://raw.githubusercontent.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/main/documentation/blogposts/unnamed.png?token=GHSAT0AAAAAABRIKPPF42Q6NVOF3ZUYBUTGYQMKLCQ)
