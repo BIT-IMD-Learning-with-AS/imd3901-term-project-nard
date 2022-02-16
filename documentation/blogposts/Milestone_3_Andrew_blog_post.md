@@ -28,4 +28,4 @@
  The other half of the team (Natalia and I) will be blocking out the scenes for the rest of the story. 
  
  
- ![Exprience Flow]()
+ ![Prototype](https://raw.githubusercontent.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/main/documentation/blogposts/Screenshot%20(91).png?token=GHSAT0AAAAAABRIKPPENC2YMZQAHAMPPLYKYQMKJPA)
