@@ -6,12 +6,14 @@ Number of Hours: 30 mins
 
 **Overview**
 
-My group and I got together for our weekly meeting to look over the proposal document. We split the work evenly between all of us in order to efficiently complete the project before the due date. We also finalized our project idea and storyline, along with a few functionalities we'd like to focus on in our interactive system. Our overall goal was to understand the scope of our project so we can plan our future weekly goals.
+My group and I got together for our weekly meeting to look over our project's current progress. We decided what our next steps will be for our project after completing the alpha presentatoin and propposal document, and what each members task for the week will be. Additionally, we updated our Jira board and created a new Milestone document.
 
 **Challenges**
 
-It was a challenge to understand the proposal documents requirments and to evenly split it between all members without being unfair or placing too much. It was also difficult finalizing an idea for our storyline since we're all very creative and opinionated. In addition, we kept going out of our scope due to getting too excited with ideas.
+We struggled with understanding what needs to be done for the project where we won't procrastinate until the Beta presentaion but we also won't set unfair expectations for the group's progress. On that note, we had difficulties deciding how much everyone should do for this week because sometimes we'd go overboard and other times we'd barley give someone any tasks.
 
 **Successes**
 
-For our proposal document, we split the tasks based on our strengths. Riya and Damla are responsible for the designing parts of the documents, while Andrew and I have more of the technecality aspects of our project. This allows each individual to efficiently work on their tasks in a quick and proper manner. We also empahsized our scope and placed limitations in our users actions, allowing our ideas to land within our goal scope. We used the images provided from the Algonquin students, in the discord, to help us strive for a certain storyline and expereince. It also helped having members say their opinion on certain ideas and where our capabilities land like "I'm the main programmer and I can't do that" or "I'm the modeller and that's too many things to model". This allowed us to create a sturdy base for our project storyline and our user functionalities.
+We discussed and reviewed our planned schedule for every task we assigned to check whether it's do-able throughout the week or not. We went through each members task so we can all have a gist of where our overall project's progress should be by the end of the week. Riya and Damla went over which models they would like to add for pre-contact since they're the modellers. Andrew and I went over what we need to complete for the pre-contact scene and the level of detail we're aiming for. We decided a simple, blocking design just to have an understanding and base for the pre-contact scene before moving to the next one.
+
+**Media**
