@@ -17,3 +17,5 @@ We struggled with understanding what needs to be done for the project where we w
 We discussed and reviewed our planned schedule for every task we assigned to check whether it's do-able throughout the week or not. We went through each members task so we can all have a gist of where our overall project's progress should be by the end of the week. Riya and Damla went over which models they would like to add for pre-contact since they're the modellers. Andrew and I went over what we need to complete for the pre-contact scene and the level of detail we're aiming for. We decided a simple, blocking design just to have an understanding and base for the pre-contact scene before moving to the next one.
 
 **Media**
+
+![NatsBlogPost3_Media](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
