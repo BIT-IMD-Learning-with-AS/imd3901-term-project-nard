@@ -29,6 +29,9 @@
 
  Below is a picture of the prototype and the experience flow for the story. 
  
- ![Prototype](https://raw.githubusercontent.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/main/documentation/blogposts/Screenshot%20(91).png?token=GHSAT0AAAAAABRIKPPENC2YMZQAHAMPPLYKYQMKJPA)
- 
- ![Experience flow](https://raw.githubusercontent.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/main/documentation/blogposts/unnamed.png?token=GHSAT0AAAAAABRIKPPF42Q6NVOF3ZUYBUTGYQMKLCQ)
+ ![unnamed](https://user-images.githubusercontent.com/48802350/154179405-50858d2e-83c4-4de3-99a8-3fe0b26124bf.png)
+
+![Screenshot (91)](https://user-images.githubusercontent.com/48802350/154179445-abccb619-df1e-44e4-87ad-f0e83e72760e.png)
+
+
+
