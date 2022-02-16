@@ -1,6 +1,6 @@
 # Milestone Reflections - Andrew Holland #
 
-## Milestone 1 : "Project plan" ##
+## Milestone 1 : "Story & Planning" ##
  - _Date: 2022-015-02_
  - _Number of Hours: 5-6_
 
