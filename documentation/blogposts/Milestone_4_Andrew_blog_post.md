@@ -1,6 +1,6 @@
 # Milestone Reflections - Andrew Holland #
 
-## Milestone 4 : "Story & Planning" ##
+## Milestone 4 : "Continuous improvement" ##
  - _Date: 2022-01-03_
  - _Number of Hours: 3-4_
 
