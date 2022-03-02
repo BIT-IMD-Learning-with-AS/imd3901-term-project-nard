@@ -19,4 +19,4 @@ We reviewed everyone's pre-planned tasks and future goals using our Jira board. 
 
 **Media**
 
-![NatsBlogPost3_Media](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/canoe.JPG?raw=true)
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/itemSelection.PNG?raw=true)
