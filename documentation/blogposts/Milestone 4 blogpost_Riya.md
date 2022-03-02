@@ -26,5 +26,5 @@ We successfuly added our tasks to jira and due to falling off track,
 we made a good plan that'll help us get back on track.
 
 
-![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/Weapon1Sketch.JPG?raw=true)
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/Weapon1Sketch.jpg?raw=true)
 
