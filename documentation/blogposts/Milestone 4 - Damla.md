@@ -20,3 +20,4 @@ For this week's taks, we were able to split our tasks evenly. We successfuly set
 
 
 **Image**
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/babyRattleSketch.PNG?raw=true)
