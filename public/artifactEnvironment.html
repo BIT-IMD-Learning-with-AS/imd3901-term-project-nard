@@ -7,14 +7,23 @@
       <script src="/js/aframe.min.js"></script>
       <script src="js/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-      <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
-      <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+      <head><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script></head>
+      
+
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/user-gesture.css">
 
       <script>
+
+document.addEventListener("dragover", function(e){
+e = e || window.event;
+var dragX = e.pageX, dragY = e.pageY;
+
+console.log("X: "+dragX+" Y: "+dragY);
+}, false);
+
+
         // Registering a-scene
         AFRAME.registerComponent('explore-experience', {
           init: function () {
@@ -25,22 +34,48 @@
         
         // BUTTON start experience
         const startExperience = function() {
-          document.querySelector('#item-overlay').style.display='none';
+          artifactFound = true;
+          window.location.replace("http://localhost:8080/preContact.html"); 
         }
         
         var artifactFound;
 
         // CLICK EVENTS
         const onClick = (event) => {
-          // Finding artifact
+          // Finding artifacts
           if(event.srcElement.id == "artifact"){
             console.log("ARTIFACT FOUND")
-            artifactFound = true;
+            var player = document.getElementById("player");
+            var point = document.getElementById("cameraDot");
+            player.setAttribute("look-controls", { enabled: false });     
+            player.setAttribute("wasd-controls", { enabled: false }); 
+            player.setAttribute("rotation", "-15 0 0"); 
+            point.setAttribute("material", "opacity:0");     
             event.srcElement.parentElement.removeChild(event.srcElement);
-            var element = document.getElementById('collectedItem');
-            element.style.opacity = "0.9";
-            element.style.filter  = 'alpha(opacity=90)';
-            window.location.replace("http://localhost:8080/preContact.html"); 
+
+            var posX = player.getAttribute('position').x;
+            var posZ = player.getAttribute('position').z;
+            var posY = player.getAttribute('position').y;
+
+            let scene = document.querySelector('a-scene');
+            scene.setAttribute('onmousedown', "onmouseDown(event)");
+
+            let artifact = document.createElement('a-entity');
+            artifact.setAttribute('gltf-model', '#totemModel');
+            artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
+            artifact.setAttribute('scale', "0.5 0.5 0.5");
+            artifact.setAttribute('id', "whore");
+            //artifact.setAttribute("orbit-controls", "target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 10; initialPosition: 0 5 15"); 
+            //artifact.setAttribute('drag-rotate-component', {});
+            scene.appendChild(artifact);
+            let description = document.createElement('a-entity');
+            description.setAttribute('text', 'value: Lorem ipsum dolor sit amet, consectetur bleha adipiscing elit, sed do eiusmod tempor incididunt');
+            description.setAttribute('position', posX +" "+(posY - 1)+" "+(posZ-1.5));
+            description.setAttribute('scale', "2 2 2");
+            description.setAttribute('rotation', "-15 0 0");
+            scene.appendChild(description);
+            //document.querySelector('#item-overlay').style.display='flex';
+
           }
         } 
         window.addEventListener('click', onClick);
@@ -49,46 +84,34 @@
     </head>
     <body>
 
-      <!-- BUTTON EXPERIENCE -->
-      <div id="collectedItem" style="position:absolute; bottom:0px; left:1vw; z-index:1000; opacity: 0;">
-        <img src="assets/box.png" width="150" height="150">
-      </div>
-
-      <div id="item-overlay">
-        <img id="item" src="assets/box.png">
-        <p id="itemInfo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt 
-          ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi 
-          ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum 
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia 
-          deserunt mollit anim id est laborum.
-        </p>
-        <div class="center">
-          <button id="item-button" onclick="startExperience();">okay</button>
-        </div>
+      <!-- item button -->
+      <div id="item-overlay" style="display:none; align-items: center; justify-content: center;">
+      <button id="item-button" style= "bottom:10%" onclick="startExperience();">okay</button>
       </div>
 
       <!-- A-SCENE -->
-      <a-scene explore-experience environment="preset: forest; shadow: true" physics="driver:ammo;">
+      <a-scene explore-experience environment="preset: forest; shadow: true">
      
+        <a-entity id="super" supercraft-loader="name: better-reaction" ></a-entity>
+
         <a-assets>
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/small_totem/scene.gltf"></a-asset-item>
         </a-assets>
 
-        <a-entity gltf-model= "#totemModel" id="artifact" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" position="0 0.5 -10" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity gltf-model= "#totemModel" id="artifact" position="0 0.5 -10" scale="0.5 0.5 0.5"></a-entity>
 
       <!-- river -->
       <a-plane height="100" width="200" position="0 0.3 50" rotation="-90 0 0" material="color:lightblue"></a-plane>
 
       <!-- canoe -->
-      <a-box boat id="canoe" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box"  position="0 0.2 0" scale="1 1 3" material="color:brown"> </a-box>
+      <a-box boat id="canoe" position="0 0.2 0" scale="1 1 3" material="color:brown"> </a-box>
       
-      <!-- DO NOT TOUCH camera -->
-      <a-entity progressive-controls></a-entity>
-      <a-camera >
-        <a-entity cursor position="0 0 -1"
+      <!-- DO NOT TOUCH camera-->
+      <a-entity camera id="player" position="0 2 0" wasd-controls look-controls="enabled:true">
+        <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>
-      </a-camera>
+      </a-entity>
 
     </a-scene>
   </body>
