@@ -7,8 +7,7 @@
       <script src="/js/aframe.min.js"></script>
       <script src="js/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-      <head><script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script></head>
-      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
       <!-- DO NOT TOUCH -->
 
@@ -16,13 +15,29 @@
 
       <script>
 
-document.addEventListener("dragover", function(e){
+        function mousedown() {
+          console.log("down");
+          let scene = document.querySelector('a-scene');
+          var x = event.clientX;
+          var y = event.clientY;
+          var coords = "X coords: " + x + ", Y coords: " + y;
+          console.log(coords);
+        }
+
+        let drag = false;
+
+        document.addEventListener('mousedown', () => 
+        console.log("drag boi")
+        /*document.addEventListener("dragover", function(e){
 e = e || window.event;
 var dragX = e.pageX, dragY = e.pageY;
 
 console.log("X: "+dragX+" Y: "+dragY);
 }, false);
-
+*/
+        );
+        document.addEventListener('mousemove', () => drag = true);
+        //document.addEventListener('mouseup', () => console.log(drag ? 'drag' : 'click'));
 
         // Registering a-scene
         AFRAME.registerComponent('explore-experience', {
