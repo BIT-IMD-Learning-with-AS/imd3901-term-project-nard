@@ -19,4 +19,4 @@ We created a priority list for both models and functionalities based off of our 
 
 **Media**
 
-![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/itemSelection.PNG?raw=true)
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/Capture.PNG?raw=true)
