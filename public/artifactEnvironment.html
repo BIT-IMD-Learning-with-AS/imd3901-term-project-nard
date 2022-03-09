@@ -15,29 +15,44 @@
 
       <script>
 
-        function mousedown() {
-          console.log("down");
-          let scene = document.querySelector('a-scene');
-          var x = event.clientX;
-          var y = event.clientY;
-          var coords = "X coords: " + x + ", Y coords: " + y;
-          console.log(coords);
+AFRAME.registerComponent('drag-rotate-component',{
+      schema : { speed : {default:1}},
+      init : function(){
+        this.ifMouseDown = false;
+        this.x_cord = 0;
+        this.y_cord = 0;
+        document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
+        document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
+        document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
+      },
+      OnDocumentMouseDown : function(event){
+        this.ifMouseDown = true;
+        this.x_cord = event.clientX;
+        this.y_cord = event.clientY;
+      },
+      OnDocumentMouseUp : function(){
+        this.ifMouseDown = false;
+      },
+      OnDocumentMouseMove : function(event)
+      {
+        if(this.ifMouseDown)
+        {
+          var temp_x = event.clientX-this.x_cord;
+          var temp_y = event.clientY-this.y_cord;
+          if(Math.abs(temp_y)<Math.abs(temp_x))
+          {
+            this.el.object3D.rotateY(temp_x*this.data.speed/1000);
+          }
+          else
+          {
+            this.el.object3D.rotateX(temp_y*this.data.speed/1000);
+          }
+          this.x_cord = event.clientX;
+          this.y_cord = event.clientY;
         }
+      }
+    });
 
-        let drag = false;
-
-        document.addEventListener('mousedown', () => 
-        console.log("drag boi")
-        /*document.addEventListener("dragover", function(e){
-e = e || window.event;
-var dragX = e.pageX, dragY = e.pageY;
-
-console.log("X: "+dragX+" Y: "+dragY);
-}, false);
-*/
-        );
-        document.addEventListener('mousemove', () => drag = true);
-        //document.addEventListener('mouseup', () => console.log(drag ? 'drag' : 'click'));
 
         // Registering a-scene
         AFRAME.registerComponent('explore-experience', {
@@ -73,7 +88,6 @@ console.log("X: "+dragX+" Y: "+dragY);
             var posY = player.getAttribute('position').y;
 
             let scene = document.querySelector('a-scene');
-            scene.setAttribute('onmousedown', "onmouseDown(event)");
 
             let artifact = document.createElement('a-entity');
             artifact.setAttribute('gltf-model', '#totemModel');
@@ -121,8 +135,10 @@ console.log("X: "+dragX+" Y: "+dragY);
       <!-- canoe -->
       <a-box boat id="canoe" position="0 0.2 0" scale="1 1 3" material="color:brown"> </a-box>
       
+      <a-entity drag-rotate-component gltf-model= "#totemModel" id="bruv" position="0 2 -2" scale="0.5 0.5 0.5"></a-entity>
+
       <!-- DO NOT TOUCH camera-->
-      <a-entity camera id="player" position="0 2 0" wasd-controls look-controls="enabled:true">
+      <a-entity camera id="player" position="0 2 0" wasd-controls look-controls="enabled:false; reverseMouseDrag: true" >
         <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>
