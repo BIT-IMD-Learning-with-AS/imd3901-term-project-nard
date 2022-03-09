@@ -1,5 +1,5 @@
 
-Milestone 5 : "Going Down Hill"
+Milestone 5 : "Going Downhill"
 
 Date: 2022-03-08
 
