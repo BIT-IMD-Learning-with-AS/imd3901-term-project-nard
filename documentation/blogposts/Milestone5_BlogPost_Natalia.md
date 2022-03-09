@@ -7,15 +7,15 @@ Number of Hours: 1 hour
 
 **Overview**
 
-My group and I got together for our weekly meeting to look over our project's current progress and to let every member present their task progress over the break. We not only updated each member, but we also provided feedback with what they can continuously work on and fix/change. After discussing the progress, we decided what our next steps will be for the upcoming work week, and what each members task for the week will be. Additionally, we updated our Jira board and created a new Milestone document.
+My group and I got together for our weekly meeting to look over everyone's current progress with their tasks and the overall progress of our project. We realized we have been really behind from our planned timeline and decided to set hard deadlines on tasks that must be completed by the beta presentation. To really balance out our progress and not get off-track, we decided to create a modelling and functionality priority list. Each priority was discussed and finalized by the group. We also updated our Jira board and created a new Milestone document.
 
 **Challenges**
 
-We struggled with our time management. A lot of us underestimated the break's length, along with our other assignments and midterms, and are falling behind on our planned tasks. This caused many of us to be confused on what everyone's next step will be and where our current project stands within the Jira timeline.
+We continue to struggle with our time management. Majority of us are behind on our tasks and are really confused on which models/functionalities we should focus. We don't know where to place our time and focus on so we can at least have an MVP product by the beta presentation. 
 
 **Successes**
 
-We reviewed everyone's pre-planned tasks and future goals using our Jira board. We then discussed and decided what everyone should be doing and what they must complete by next week. Andrew and I will continue to block out the needed scenes, however, my focus will shift more towards the functionalities belonging to player and items since we've all decided that's a higher priority. Damla and Riya will continue to work on their modelling tasks, but also create drawings of the models they're doing to build a better understanding for every team member. We updated our Jira board after finalizing everyone's current state and weekly goals.
+We created a priority list for both models and functionalities based off of our incompleted/behind tasks. We all left on our opinions and finalized our list as a group. This allowed us to really understand what we're aiming for by the beta presentation and what we have to complete. We managed to update our Jira board. We added more tasks to our sprints and edited our timeline.
 
 **Media**
 
