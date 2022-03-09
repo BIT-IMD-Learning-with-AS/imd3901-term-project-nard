@@ -26,3 +26,5 @@ For this week, we set our priorities for our tasks and focus on the important pa
 achieved to have a clear understanding of our goal for the week and made sure that every teammate knows what their tasks are. 
 
 **Image**
+
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/turtle_rattle.png?raw=true)
