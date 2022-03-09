@@ -41,11 +41,11 @@ AFRAME.registerComponent('drag-rotate-component',{
           var temp_y = event.clientY-this.y_cord;
           if(Math.abs(temp_y)<Math.abs(temp_x))
           {
-            this.el.object3D.rotateY(temp_x*this.data.speed/1000);
+            this.el.object3D.rotateY(temp_x*this.data.speed/400);
           }
           else
           {
-            this.el.object3D.rotateX(temp_y*this.data.speed/1000);
+            this.el.object3D.rotateX(temp_y*this.data.speed/400);
           }
           this.x_cord = event.clientX;
           this.y_cord = event.clientY;
@@ -77,8 +77,8 @@ AFRAME.registerComponent('drag-rotate-component',{
             console.log("ARTIFACT FOUND")
             var player = document.getElementById("player");
             var point = document.getElementById("cameraDot");
-            player.setAttribute("look-controls", { enabled: false });     
-            player.setAttribute("wasd-controls", { enabled: false, reverseMouseDrag: true, pointerLockEnabled: true}); 
+            player.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
+            player.setAttribute("wasd-controls", { enabled: false}); 
             player.setAttribute("rotation", "-15 0 0"); 
             point.setAttribute("material", "opacity:0");     
             event.srcElement.parentElement.removeChild(event.srcElement);
