@@ -7,14 +7,53 @@
       <script src="/js/aframe.min.js"></script>
       <script src="js/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-      <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
-      <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/user-gesture.css">
 
       <script>
+
+AFRAME.registerComponent('drag-rotate-component',{
+      schema : { speed : {default:1}},
+      init : function(){
+        this.ifMouseDown = false;
+        this.x_cord = 0;
+        this.y_cord = 0;
+        document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
+        document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
+        document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
+      },
+      OnDocumentMouseDown : function(event){
+        this.ifMouseDown = true;
+        this.x_cord = event.clientX;
+        this.y_cord = event.clientY;
+      },
+      OnDocumentMouseUp : function(){
+        this.ifMouseDown = false;
+      },
+      OnDocumentMouseMove : function(event)
+      {
+        if(this.ifMouseDown)
+        {
+          var temp_x = event.clientX-this.x_cord;
+          var temp_y = event.clientY-this.y_cord;
+          if(Math.abs(temp_y)<Math.abs(temp_x))
+          {
+            this.el.object3D.rotateY(temp_x*this.data.speed/400);
+          }
+          else
+          {
+            this.el.object3D.rotateX(temp_y*this.data.speed/400);
+          }
+          this.x_cord = event.clientX;
+          this.y_cord = event.clientY;
+        }
+      }
+    });
+
+
         // Registering a-scene
         AFRAME.registerComponent('explore-experience', {
           init: function () {
@@ -25,22 +64,48 @@
         
         // BUTTON start experience
         const startExperience = function() {
-          document.querySelector('#item-overlay').style.display='none';
+          artifactFound = true;
+          window.location.replace("http://localhost:8080/preContact.html"); 
         }
         
         var artifactFound;
 
         // CLICK EVENTS
         const onClick = (event) => {
-          // Finding artifact
+          // Finding artifacts
           if(event.srcElement.id == "artifact"){
             console.log("ARTIFACT FOUND")
-            artifactFound = true;
+            var player = document.getElementById("player");
+            var point = document.getElementById("cameraDot");
+            player.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
+            player.setAttribute("wasd-controls", { enabled: false}); 
+            player.setAttribute("rotation", "-15 0 0"); 
+            point.setAttribute("material", "opacity:0");     
             event.srcElement.parentElement.removeChild(event.srcElement);
-            var element = document.getElementById('collectedItem');
-            element.style.opacity = "0.9";
-            element.style.filter  = 'alpha(opacity=90)';
-            window.location.replace("http://localhost:8080/preContact.html"); 
+
+            var posX = player.getAttribute('position').x;
+            var posZ = player.getAttribute('position').z;
+            var posY = player.getAttribute('position').y;
+
+            let scene = document.querySelector('a-scene');
+
+            let artifact = document.createElement('a-entity');
+            artifact.setAttribute('gltf-model', '#totemModel');
+            artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
+            artifact.setAttribute('scale', "0.5 0.5 0.5");
+            artifact.setAttribute('id', "whore");
+            artifact.setAttribute('drag-rotate-component', {});
+            //artifact.setAttribute("orbit-controls", "target: 0 1.6 -0.5; minDistance: 0.5; maxDistance: 10; initialPosition: 0 5 15"); 
+            //artifact.setAttribute('drag-rotate-component', {});
+            scene.appendChild(artifact);
+            let description = document.createElement('a-entity');
+            description.setAttribute('text', 'value: Lorem ipsum dolor sit amet, consectetur bleha adipiscing elit, sed do eiusmod tempor incididunt');
+            description.setAttribute('position', posX +" "+(posY - 1)+" "+(posZ-1.5));
+            description.setAttribute('scale', "2 2 2");
+            description.setAttribute('rotation', "-15 0 0");
+            scene.appendChild(description);
+            document.querySelector('#item-overlay').style.display='flex';
+
           }
         } 
         window.addEventListener('click', onClick);
@@ -49,45 +114,35 @@
     </head>
     <body>
 
-      <!-- BUTTON EXPERIENCE -->
-      <div id="collectedItem" style="position:absolute; bottom:0px; left:1vw; z-index:1000; opacity: 0;">
-        <img src="assets/box.png" width="150" height="150">
-      </div>
-
-      <div id="item-overlay">
-        <img id="item" src="assets/box.png">
-        <p id="itemInfo">Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef 
-          Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef 
-          Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef Kill urslef
-        </p>
-        <div class="center">
-          <button id="item-button" onclick="startExperience();">die</button>
-        </div>
+      <!-- item button -->
+      <div id="item-overlay" style="display:none; align-items: center; justify-content: center;">
+      <button id="item-button" style= "bottom:10%" onclick="startExperience();">okay</button>
       </div>
 
       <!-- A-SCENE -->
-      <!-- environment="preset: japan; shadow: true" -->
-      <a-scene explore-experience environment="preset: threetowers; shadow: true" physics="driver:ammo;">
+
+      <a-scene explore-experience environment="preset: forest; shadow: true">
      
+        <a-entity id="super" supercraft-loader="name: better-reaction" ></a-entity>
+
         <a-assets>
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/small_totem/scene.gltf"></a-asset-item>
         </a-assets>
 
-        <a-entity gltf-model= "#totemModel" id="artifact" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" position="0 0.5 -10" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity gltf-model= "#totemModel" id="artifact" position="0 0.5 -10" scale="0.5 0.5 0.5"></a-entity>
 
       <!-- river -->
       <a-plane height="100" width="200" position="0 0.3 50" rotation="-90 0 0" material="color:lightblue"></a-plane>
 
       <!-- canoe -->
-      <a-box boat id="canoe" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box"  position="0 0.2 0" scale="1 1 3" material="color:brown"> </a-box>
+      <a-box boat id="canoe" position="0 0.2 0" scale="1 1 3" material="color:brown"> </a-box>
       
-      <!-- DO NOT TOUCH camera -->
-      <a-entity progressive-controls></a-entity>
-      <a-camera >
-        <a-entity cursor position="0 0 -1"
+      <!-- DO NOT TOUCH camera-->
+      <a-entity camera id="player" position="0 2 0" wasd-controls look-controls >
+        <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>
-      </a-camera>
+      </a-entity>
 
     </a-scene>
   </body>
