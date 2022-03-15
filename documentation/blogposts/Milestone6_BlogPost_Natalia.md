@@ -18,4 +18,4 @@ A few of us made great progress with our tasks. I ended up getting the water eff
 
 **Media**
 
-![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/Capture.PNG?raw=true)
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/Water.PNG?raw=true)
