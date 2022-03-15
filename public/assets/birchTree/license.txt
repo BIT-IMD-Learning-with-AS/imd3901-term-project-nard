@@ -1,0 +1,11 @@
+Model Information:
+* title:	Birch Tree (Low Poly)
+* source:	https://sketchfab.com/3d-models/birch-tree-low-poly-3ef00a7105c54d37b3a0e528e1466b0b
+* author:	Larolei Low Poly (https://sketchfab.com/strix567)
+
+Model License:
+* license type:	CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
+* requirements:	Author must be credited. No commercial use.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Birch Tree (Low Poly)" (https://sketchfab.com/3d-models/birch-tree-low-poly-3ef00a7105c54d37b3a0e528e1466b0b) by Larolei Low Poly (https://sketchfab.com/strix567) licensed under CC-BY-NC-4.0 (http://creativecommons.org/licenses/by-nc/4.0/)
