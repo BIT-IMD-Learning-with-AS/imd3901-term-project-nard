@@ -111,16 +111,3 @@
   #user-gesture-button3:hover {
     background-color: rgb(246, 194, 67);
   }
-
-
-  #item-button {
-    width: 5vw;
-    height: 3vw;
-    background-color: grey;
-    color: white;
-    border: 5px solid #ffffff;
-    border-radius: 20px;
-    position: fixed; 
-    z-index: 1;
-    cursor: pointer;
-  }
