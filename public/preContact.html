@@ -10,6 +10,8 @@
       <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
       <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+
+      <script src="/objInteraction.js"></script>
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/user-gesture.css">
@@ -28,7 +30,7 @@
             blocker.setAttribute('material', "shader:flat; color: white; opacity: 1.0; side: double");
             blocker.setAttribute('id', "artifact");
             blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
-            player.appendChild(blocker);
+            //player.appendChild(blocker);
 
             /* Timer
             setTimeout(function () {
@@ -50,7 +52,7 @@
             window.location.replace("http://localhost:8080/returnJourney.html");
             }
             else{
-              console.log("Bring me what I lost")
+              // console.log("Bring me what I lost")
             }
         } 
         window.addEventListener('click', onClick);
@@ -68,8 +70,13 @@
       <a-scene precontact-experience environment="preset: forest; shadow: true" physics="driver:ammo;">
      
       <a-assets>
+        <a-asset-item id="cornModel" response-type="arraybuffer"  src="/assets/birchTree/scene.gltf"></a-asset-item>
+        <a-image src="/assets/glow.png"></a-image>
       </a-assets>
 
+
+      
+      
       <!-- rightful place -->
       <a-box id="rightfulPlace" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" scale="0.5 5 0.5" position="0 0.5 -5" material="color:#654321"></a-box>
 
@@ -85,9 +92,17 @@
       <a-box id="drying-rack" position="-2.36162 1.63557 -11.58017" scale="5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>
 
       <!-- Corn crops -->
-      <a-box id="firePlace-3" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
-      <a-box id="firePlace-3" position="8.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
-      <a-box id="firePlace-3" position="9.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
+      <a-box id="dirt" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
+      <a-box id="dirt" position="8.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
+      <a-box id="dirt" position="9.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
+      
+      
+      <!-- <a-entity id="birchTree" gltf-model="#cornModel" blessing></a-entity> -->
+      <a-box position="1 1 1" blessing></a-box>
+      <!-- Set attribute below if above object is clicked -->
+      <!-- <a-sphere material="color: yellow; opacity: 0.2; dithering: false; shader: flat; blending: additive; src: assets/glow.png" scale="0.5 10 0.1" position="0 4 -14" ></a-sphere>
+       -->
+
 
       <!-- Corn Pestel -->
 
@@ -95,7 +110,7 @@
       <!-- DO NOT TOUCH camera 
       <a-entity progressive-controls></a-entity>
       <a-camera >
-        <a-entity cursor position="0 0 -1"
+        <a-entity cursor position="0 0 -1" 
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>
       </a-camera>-->
