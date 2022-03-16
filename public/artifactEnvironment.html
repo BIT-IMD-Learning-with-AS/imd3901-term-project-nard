@@ -18,6 +18,7 @@
 
         var artifactClick = false;
         
+        // Artifact rotation
         AFRAME.registerComponent('drag-rotate-component',{
             schema : { speed : {default:1}},
             init : function(){
@@ -57,70 +58,96 @@
           }
         });
         
-        // BUTTON start experience
+        // ON TO THE NEXT SCENE
         const contactExperience = function() {
           artifactFound = true;
-          window.location.replace("http://localhost:8080/preContact.html"); 
+
+          // Fade out
+          var player = document.getElementById("player");
+          let blocker = document.createElement('a-sphere');
+          blocker.setAttribute('radius', '0.05');
+          blocker.setAttribute('material', "shader:flat; color: white; opacity: 0.0; side: double");
+          blocker.setAttribute('id', "artifact");
+          blocker.setAttribute('animation', 'property: material.opacity; from: 0.0; to: 1.0 dur: 500; dir: alternate;');
+          player.appendChild(blocker);
+
+          let artifactText = document.querySelector('#artifact-info');
+          artifactText.remove();
+          let artifactBtn = document.querySelector('#item-overlay');
+          artifactBtn.remove();
+
+          // Timer before fade out
+          setTimeout(function () {
+            window.location.replace("http://localhost:8080/preContact.html");
+          }, 2000);
         }
         
         // CLICK EVENTS
         const onClick = (event) => {
-          // Finding artifacts
+          // Finding artifact
           if(event.srcElement.id == "artifact"){
-            console.log("ARTIFACT FOUND")
-            if(artifactClick == false){
-            var player = document.getElementById("player");
-            var point = document.getElementById("cameraDot");
-            player.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
-            player.setAttribute("wasd-controls", { enabled: false}); 
-            player.setAttribute("rotation", "-15 0 0"); 
-            point.setAttribute("material", "opacity:0");     
-            event.srcElement.parentElement.removeChild(event.srcElement);
+              console.log("ARTIFACT FOUND")
 
-            var posX = player.getAttribute('position').x;
-            var posZ = player.getAttribute('position').z;
-            var posY = player.getAttribute('position').y;
+              if(artifactClick == false){
+                var player = document.getElementById("player");
+                var indicator = document.getElementById("indicator");
+                var point = document.getElementById("cameraDot");
+                player.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
+                player.setAttribute("wasd-controls", { enabled: false}); 
+                player.setAttribute("rotation", "-15 0 0"); 
+                point.setAttribute("material", "opacity:0");     
+                event.srcElement.parentElement.removeChild(event.srcElement);
 
-            let scene = document.querySelector('a-scene');
+                var posX = player.getAttribute('position').x;
+                var posZ = player.getAttribute('position').z;
+                var posY = player.getAttribute('position').y;
 
-            let artifact = document.createElement('a-entity');
-            artifact.setAttribute('gltf-model', '#totemModel');
-            artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
-            artifact.setAttribute('scale', "0.5 0.5 0.5");
-            artifact.setAttribute('id', "artifact");
-            artifact.setAttribute('drag-rotate-component', {});
-            scene.appendChild(artifact);
-            document.querySelector('#item-overlay').style.display='flex';
-            scene.style.cursor = "pointer";
+                let scene = document.querySelector('a-scene');
 
-            let myElm = document.createElement("p");
-            var textNode = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."); 
-	          myElm.appendChild(textNode);
-            document.getElementById("artifact-info").appendChild(myElm);
+                let artifact = document.createElement('a-entity');
+                artifact.setAttribute('gltf-model', '#totemModel');
+                artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
+                artifact.setAttribute('scale', "0.5 0.5 0.5");
+                artifact.setAttribute('id', "artifact");
+                artifact.setAttribute('drag-rotate-component', {});
+                scene.appendChild(artifact);
+                document.querySelector('#item-overlay').style.display='flex';
+                scene.style.cursor = "pointer";
 
-            artifactClick = true;
+                let myElm = document.createElement("p");
+                var textNode = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."); 
+                myElm.appendChild(textNode);
+                document.getElementById("artifact-info").appendChild(myElm);
+
+                artifactClick = true;
             }
           }
         } 
         window.addEventListener('click', onClick);
+
+        // Eye Indicator looks at camera
+        AFRAME.registerComponent('look-at', {
+          schema: { type: 'selector' },
+          init: function () {},
+          tick: function () {
+            this.el.object3D.lookAt(this.data.object3D.position)
+          }
+        });
       </script>
 
     </head>
     <body>
       <!-- item button -->
       <div id="item-overlay" style="display:none; align-items: center; justify-content: center;">
-        <button id="item-button" style= "bottom:10%" onclick="contactExperience();">GO!</button>
+        <button id="item-button" style= "bottom:10%" onclick="contactExperience();">Collect</button>
       </div>
-
       <!-- item description -->
         <div class="center" id="artifact-info">
         </div>
 
       <!-- A-SCENE -->
-
       <a-scene explore-experience environment="preset: forest; shadow: true" physics>
 
-     
         <a-assets>
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/small_totem/scene.gltf"></a-asset-item>
         </a-assets>
@@ -129,7 +156,10 @@
         <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5"></a-ocean>
 
         <!-- artifact -->
-        <a-entity gltf-model= "#totemModel" id="artifact" position="0 0.5 -10" scale="0.5 0.5 0.5"></a-entity>
+        <a-entity gltf-model= "#totemModel" id="artifact" position="0 0.5 -10" scale="0.5 0.5 0.5">
+          <!-- indicator -->
+          <a-image look-at="#player" id="indicator" src="assets/eyeIndicator.png" position="0 2 0" scale="0.5 0.3 0.5"></a-image>
+        </a-entity>
 
         <!-- canoe -->
         <a-box boat id="canoe" position="0 0.4 -1" scale="1 1 3" material="color:brown"> </a-box>
