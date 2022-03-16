@@ -34,8 +34,8 @@
           // Camera & canoe animation
           let canoe = document.querySelector('a-scene').querySelector('#canoe');
           let cam = document.querySelector('a-scene').querySelector('#player');
-          canoe.setAttribute('animation', "property:position; to: 0 0.2 -30; dur: 30000; easing: linear;");
-          cam.setAttribute('animation', "property:position; to: 0 1.6 -30; dur: 30000; easing: linear;");
+          canoe.setAttribute('animation', "property:position; to: 0 1.127 -50; dur: 50000; easing: linear;");
+          cam.setAttribute('animation', "property:position; to: 0 2 -50; dur: 50000; easing: linear;");
         }
 
         // Boat colliding for the pre-contact timeline
@@ -78,7 +78,7 @@
      
       <a-assets>
           <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
-            <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/Canoe/Canoe.gltf"></a-asset-item>
+            <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/Canoe/Canoe.gltf"></a-asset-item>
         </a-assets>
 
         <!-- Land & river -->
@@ -89,12 +89,13 @@
 
 
         <!-- canoe DO NOT CHANGE it's tagname or id -->
-        <a-entity boat gltf-model= "#totemModel" id="canoe" position="0 0.2 0" scale="0 1 0" rotation="90 0 0" material="color:brown"> </a-entity>
+        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 4.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> </a-entity>
         
+        <a-entity camera id="player" look-controls position="0 2 0"></a-entity>
+
         <!-- DO NOT TOUCH -->
         <!-- collider & camera-->
         <a-box ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" scale="3 3 3" position="0 1 -10" visible="false"></a-box>
-        <a-entity camera id="player" look-controls position="0 1.6 0"></a-entity>
       </a-scene>
 
   </body>
