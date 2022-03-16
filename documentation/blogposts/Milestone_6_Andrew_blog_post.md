@@ -1,7 +1,7 @@
 # Milestone Reflections - Andrew Holland #
 
 ## Milestone 6 : "Lead up to beta" ##
- - _Date: 2022-01-03_
+ - _Date: 2022-015-03_
  - _Number of Hours: 4_
 
  ### Overview ###
