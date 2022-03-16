@@ -26,4 +26,4 @@ We sucessfully have the main objects modelled for this friday's presentation. Na
 Code a moving water effect which is super cool!
 
 
-![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/BabyMoccasinModel.png?raw=true)
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/Moccasin.PNG?raw=true)
