@@ -70,6 +70,7 @@
             console.log("ARTIFACT FOUND")
             if(artifactClick == false){
             var player = document.getElementById("player");
+            var indicator = document.getElementById("indicator");
             var point = document.getElementById("cameraDot");
             player.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
             player.setAttribute("wasd-controls", { enabled: false}); 
@@ -117,7 +118,7 @@
     <body>
       <!-- item button -->
       <div id="item-overlay" style="display:none; align-items: center; justify-content: center;">
-        <button id="item-button" style= "bottom:10%" onclick="contactExperience();">GO!</button>
+        <button id="item-button" style= "bottom:10%" onclick="contactExperience();">Collect</button>
       </div>
 
       <!-- item description -->
@@ -138,7 +139,7 @@
 
         <!-- artifact -->
         <a-entity gltf-model= "#totemModel" id="artifact" position="0 0.5 -10" scale="0.5 0.5 0.5">
-          <a-image look-at="#player" id="indicator" src="assets/eyeIndicator.png" position="0 2 0" scale="0.7 0.5 0.7"></a-image>
+          <a-image look-at="#player" id="indicator" src="assets/eyeIndicator.png" position="0 2 0" scale="0.5 0.3 0.5"></a-image>
         </a-entity>
 
         <!-- canoe -->
