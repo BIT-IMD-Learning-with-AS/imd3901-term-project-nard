@@ -22,4 +22,5 @@ scene. We decided on a plan to be prepared for the Beta presentation. We made ou
 
 
 **Media**
+
 ![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/turtle_rattle_3D.jpg?raw=true)
