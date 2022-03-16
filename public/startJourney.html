@@ -78,6 +78,7 @@
      
       <a-assets>
           <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
+            <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/Canoe/Canoe.gltf"></a-asset-item>
         </a-assets>
 
         <!-- Land & river -->
@@ -85,8 +86,10 @@
         <a-plane height="100" width="20" position="-13 1.2 0" rotation="-90 0 0" material="color:green"></a-plane>
         <a-plane height="100" width="20" position="13 1.2 0" rotation="-90 0 0" material="color:green"></a-plane>
 
+
+
         <!-- canoe DO NOT CHANGE it's tagname or id -->
-        <a-box boat id="canoe" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box"  position="0 0.2 0" scale="1 2 3" material="color:brown"> </a-box>
+        <a-entity boat gltf-model= "#totemModel" id="canoe" position="0 0.2 0" scale="0 1 0" rotation="90 0 0" material="color:brown"> </a-entity>
         
         <!-- DO NOT TOUCH -->
         <!-- collider & camera-->
