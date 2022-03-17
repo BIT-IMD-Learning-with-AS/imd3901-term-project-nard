@@ -19,22 +19,22 @@
         AFRAME.registerComponent('start-experience', {
             init: function () {
               console.log('scene loaded');
-              // black overlay
-              document.querySelector('#user-gesture-button').style.display='block';
-            }
-        });
-        
-        // BUTTON start experience
-        const startExperience = function() {
-          document.querySelector('#user-gesture-overlay').style.display='none';
+              // Fade in
+              var player = document.getElementById("player");
+              let blocker = document.createElement('a-sphere');
+              blocker.setAttribute('radius', '0.05');
+              blocker.setAttribute('material', "shader:flat; color: white; opacity: 1.0; side: double");
+              blocker.setAttribute('id', "artifact");
+              blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
+              player.appendChild(blocker);
 
-          // Camera & canoe animation
-          let canoe = document.querySelector('a-scene').querySelector('#canoe');
-          let cam = document.querySelector('a-scene').querySelector('#player');
-          canoe.setAttribute('animation', "property:position; to: 0 1.127 -40; dur: 50000; easing: linear;");
-          cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 46000; easing: linear;");
+              // Camera & canoe animation
+              let canoe = document.querySelector('a-scene').querySelector('#canoe');
+              let cam = document.querySelector('a-scene').querySelector('#player');
+              canoe.setAttribute('animation', "property:position; to: 0 1.127 -40; dur: 50000; easing: linear;");
+              cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 46000; easing: linear;");
 
-          setTimeout(function () {
+              setTimeout(function () {
                 // Fade out
                 var player = document.getElementById("player");
                 let blocker = document.createElement('a-sphere');
@@ -46,23 +46,17 @@
                 
                  // Timer before fade out
                 setTimeout(function () {
-                  window.location.replace("http://localhost:8080/turtleRattleEnvironment.html");
+                  window.location.replace("http://localhost:8080/sweetGrassEnvironment.html");
                 }, 1200);
 
               }, 10000);
-        }
-
+            }
+        });
+        
     </script>
 
     </head>
     <body>
-
-      <!-- BUTTONS -->
-      <div id="user-gesture-overlay">
-        <div class="center">
-          <button id="user-gesture-button" onclick="startExperience();">Start Journey</button>
-        </div>
-      </div>
 
       <!-- A-SCENE -->
       <a-scene start-experience environment="preset: forest; shadow: true">
