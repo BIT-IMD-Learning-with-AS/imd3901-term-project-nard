@@ -65,24 +65,23 @@
 
     </head>
     <body>
-
-      <!-- BUTTON EXPERIENCE -->
-      <div id="collectedItem" style="position:absolute; bottom:0px; left:1vw; z-index:1000; opacity: 1;">
-        <img src="assets/box.png" width="150" height="150">
-      </div>
-
       <!-- A-SCENE -->
       <a-scene precontact-experience environment="preset: forest; shadow: true" physics="driver:ammo;">
      
       <a-assets>
+        <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
+        <a-asset-item id="grassModel" response-type="arraybuffer" src="assets/Sweet_Grass/sweet_grass.gltf"></a-asset-item>
       </a-assets>
 
-      <!-- rightful place -->
-      <a-box id="rightfulPlace" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" scale="0.5 5 0.5" position="0 0.5 -5" material="color:#654321"></a-box>
+       <!-- rightful place -->
+       <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321">
+        <a-entity gltf-model= "#diamond" position="-0.1 0.7 0" scale="0.003 0.003 0.003"
+        animation="property:position.y; loop: true; dir:alternate; dur:1000; to:1; easing:easeInOutQuad;"></a-animation>
+        </a-entity>
+      </a-box>
 
       <a-box id="longHouse" position="-10 3 -5" scale="20 6 6" rotation="0 70 0" color="brown"></a-box>
       <a-cylinder position="-10 6 -5" scale="3 20 4" rotation="90 -20 0" color="brown"></a-cylinder>
-      
      
       <a-box id="firePlace" position="-2.98665 1 5" scale="2.5 0.1 0.1" rotation="30.0000701530499 -47.761761802105426 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="firePlace-2" position="-1.4765 1 5" scale="2.5 0.1 0.1" rotation="30.0000701530499 -48.814858229555874 -120.0002806121996" color="brown" material="" geometry=""></a-box>
@@ -97,6 +96,7 @@
         <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>
+        <a-entity gltf-model= "#grassModel" id="holdingArtifact" position="-0.2 -0.3 -0.1" rotation="-30 0 0" scale="0.01 0.01 0.01"></a-entity>
       </a-entity>
 
     </a-scene>

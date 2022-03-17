@@ -76,12 +76,6 @@
 
     </head>
     <body>
-
-      <!-- BUTTON EXPERIENCE -->
-      <div id="collectedItem" style="position:absolute; bottom:0px; left:1vw; z-index:1000; opacity: 1;">
-        <img src="assets/box.png" width="150" height="150">
-      </div>
-
       <!-- A-SCENE -->
       <a-scene precontact-experience environment="preset: forest; shadow: true" physics="driver:ammo;">
      
@@ -91,6 +85,7 @@
         <a-asset-item id="FirePitStand" response-type="arraybuffer" src="assets/FirePitStand/FirePitStand.glb"></a-asset-item>
         <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
         <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
+        <a-asset-item id="rattleModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf"></a-asset-item>
       </a-assets>
 
       <!-- rightful place -->
@@ -145,6 +140,7 @@
         <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>
+        <a-entity gltf-model= "#rattleModel" id="holdingArtifact" position="-0.5 -0.2 -0.5" rotation="-20 90 70" scale="0.2 0.2 0.2"></a-entity>
       </a-entity>
 
     </a-scene>
