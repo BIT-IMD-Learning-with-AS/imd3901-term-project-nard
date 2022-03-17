@@ -1,88 +1,90 @@
+<!-- CREATOR CREDITS -->
+<!-- -->
+
 <!DOCTYPE html>
 <html>
     <head>
       <meta name="description" content="NARD's Alpha Prototype!">
       
       <!-- DO NOT TOUCH -->
-      <script src="/js/aframe.min.js"></script>
-      <script src="js/aframe-environment-component.min.js"></script>
-      <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
-      <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
-      <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
-      <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.0.0/dist/aframe-extras.min.js"></script>
-      <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+      <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+      <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/user-gesture.css">
 
       <script>
-
         // Registering a-scene
         AFRAME.registerComponent('start-experience', {
-          init: function () {
-            console.log('scene loaded');
-            document.querySelector('#user-gesture-overlay2').style.display='none';
-            document.querySelector('#user-gesture-button2').style.display='none';
+            init: function () {
+              console.log('scene loaded');
+              // Fade in
+              var player = document.getElementById("player");
+              let blocker = document.createElement('a-sphere');
+              blocker.setAttribute('radius', '0.05');
+              blocker.setAttribute('material', "shader:flat; color: white; opacity: 1.0; side: double");
+              blocker.setAttribute('id', "artifact");
+              blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
+              player.appendChild(blocker);
 
-            // camera & canoe animation
-            let canoe = document.querySelector('a-scene').querySelector('#canoe');
-            let cam = document.querySelector('a-scene').querySelector('#player');
-            canoe.setAttribute('animation', "property:position; to: 0 0.2 -30; dur: 30000; easing: linear;");
-            cam.setAttribute('animation', "property:position; to: 0 1.6 -30; dur: 30000; easing: linear;");
-          }
+              // Camera & canoe animation
+              let canoe = document.querySelector('a-scene').querySelector('#canoe');
+              let cam = document.querySelector('a-scene').querySelector('#player');
+              canoe.setAttribute('animation', "property:position; to: 0 1.127 -40; dur: 50000; easing: linear;");
+              cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 46000; easing: linear;");
+
+              setTimeout(function () {
+                // Fade out
+                var player = document.getElementById("player");
+                let blocker = document.createElement('a-sphere');
+                blocker.setAttribute('radius', '0.05');
+                blocker.setAttribute('material', "shader:flat; color: white; opacity: 0.0; side: double");
+                blocker.setAttribute('id', "artifact");
+                blocker.setAttribute('animation', 'property: material.opacity; from: 0.0; to: 1.0 dur: 500; dir: alternate;');
+                player.appendChild(blocker);
+                
+                 // Timer before fade out
+                setTimeout(function () {
+                  window.location.replace("http://localhost:8080/artifactEnvironment.html");
+                }, 1200);
+
+              }, 10000);
+            }
         });
-
-        // Collider for artifact environment
-        AFRAME.registerComponent('boat', {
-          init: function() {
-            var el = this.el;
-            el.addEventListener("collidestart", function (e) {
-              console.log("collided")
-              document.querySelector('#user-gesture-overlay2').style.display='block';
-              document.querySelector('#user-gesture-button2').style.display='block';
-            });
-
-          }
-        });
-
-        // BUTTON artifact experience
-         const artifactExperience = function() {
-              //hide user-gesture overlay
-             document.querySelector('#user-gesture-overlay2').style.display='none';
-             window.location.replace("http://localhost:8080/artifactEnvironment.html");
-         }
-      </script>
+        
+    </script>
 
     </head>
     <body>
 
-      <!-- BUTTON -->
-      <div id="user-gesture-overlay2">
-        <div class="center">
-          <button id="user-gesture-button2" onclick="artifactExperience();">Explore Land</button>
-        </div>
-      </div>
-
       <!-- A-SCENE -->
-      <a-scene start-experience environment="preset: forest; shadow: true" physics="driver:ammo;">
-      
-        <a-assets>
+      <a-scene start-experience environment="preset: forest; shadow: true">
+     
+      <a-assets>
+          <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
+            <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
         </a-assets>
 
-        <!-- Land & river-->
-        <a-plane height="100" width="100" position="0 1 0" rotation="-90 0 0" material="color:lightblue"></a-plane>
-        <a-plane height="100" width="20" position="-13 1.2 0" rotation="-90 0 0" material="color:green"></a-plane>
-        <a-plane height="100" width="20" position="13 1.2 0" rotation="-90 0 0" material="color:green"></a-plane>
+        <!-- RIVER -->
+        <!-- depth = wave length, width = width, density = wave intensity -->
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 -30" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 -20" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 -10" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 3" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 13" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 23" ></a-ocean>
+
+        <!-- river floor -->
+        <a-plane height="100" width="25" position="0 0.2 0" rotation="-90 0 0" material="color:#2C4E55"></a-plane>
 
         <!-- canoe -->
-        <a-box boat id="canoe" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box"  position="0 0.2 0" scale="1 2 3" material="color:brown"> </a-box>
+        <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->
+        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 14.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> </a-entity>
         
-        <!-- DO NOT TOUCH -->
-        <!-- camera & collider -->
-        <a-entity camera id="player" look-controls position="0 1.6 0"></a-entity>
-        <a-box ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" scale="3 3 3" position="0 1 -10" visible="false"></a-box>
+        <a-entity camera id="player" look-controls position="0 2 10"></a-entity>
+
       </a-scene>
 
-    </body>
+  </body>
 </html>
