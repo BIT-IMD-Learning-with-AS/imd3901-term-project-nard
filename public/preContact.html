@@ -12,6 +12,7 @@
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
 
       <script src="/objInteraction.js"></script>
+      <script src="./js/fire.js"></script>
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/user-gesture.css">
@@ -77,6 +78,7 @@
       <a-assets>
         <a-asset-item id="cornModel" response-type="arraybuffer"  src="/assets/birchTree/scene.gltf"></a-asset-item>
         <a-image src="/assets/glow.png"></a-image>
+        <a-asset-item id="FirePitStand" response-type="arraybuffer" src="assets/FirePitStand/FirePitStand.glb"></a-asset-item>
       </a-assets>
 
       <!-- rightful place -->
@@ -93,13 +95,17 @@
       <a-box id="drying-rack" position="-3.02306 1 -10.1059" scale="2.5 0.1 0.1" rotation="30.0000701530499 129.5824267779675 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="drying-rack" position="-2.36162 1.63557 -11.58017" scale="5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>
 
-
-      <a-assets>
-        <a-asset-item id="FirePitStand" response-type="arraybuffer" src="assets/FirePitStand/FirePitStand.glb"></a-asset-item>
-      </a-assets>
+      <!-- FIRE -->
+      <a-entity position="0 0 4">
+        <!-- fire particles -->
+        <a-entity fire="particles: 500;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
+        <!-- fire light -->
+        <a-entity position="0 1.5 -4">
+            <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
+        </a-entity>
+      </a-entity>
 
       <a-entity boat gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
-        
 
       <!-- Corn crops -->
       <a-box id="dirt" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
