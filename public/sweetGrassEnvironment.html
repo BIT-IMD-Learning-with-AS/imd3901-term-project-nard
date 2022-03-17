@@ -173,7 +173,11 @@
         </a-entity>
 
         <!-- canoe -->
-        <a-box boat id="canoe" position="0 0.4 -1" scale="1 1 3" material="color:brown"> </a-box>
+        <a-assets>
+          <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
+        </a-assets>
+
+       <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
         
         <!-- DO NOT TOUCH camera-->
         <a-entity camera id="player" position="0 2 0" wasd-controls look-controls >
