@@ -16,6 +16,8 @@
         AFRAME.registerComponent('start-experience', {
             init: function () {
               console.log('scene loaded');
+
+              // black overlay
               document.querySelector('#user-gesture-button').style.display='block';
             }
         });
@@ -47,17 +49,6 @@
 
               }, 10000);
         }
-
-        // Boat colliding for the pre-contact timeline
-        AFRAME.registerComponent('boat', {
-          init: function() {
-            var el = this.el;
-            el.addEventListener("collidestart", function (e) {
-              console.log("collided")
-              document.querySelector('#user-gesture-button2').style.display='block';
-            });
-          }
-        });
 
     </script>
 
