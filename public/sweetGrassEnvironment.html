@@ -115,8 +115,8 @@
 
                 let artifact = document.createElement('a-entity');
                 artifact.setAttribute('gltf-model', '#totemModel');
-                artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
-                artifact.setAttribute('scale', "0.5 0.5 0.5");
+                artifact.setAttribute('position', posX +" "+(posY - 0.9)+" "+(posZ-2));
+                artifact.setAttribute('scale', "0.04 0.04 0.04");
                 artifact.setAttribute('id', "artifact");
                 artifact.setAttribute('drag-rotate-component', {});
                 scene.appendChild(artifact);
@@ -167,7 +167,7 @@
         <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5"></a-ocean>
 
         <!-- artifact -->
-        <a-entity gltf-model= "#totemModel" id="artifact" position="0 0.5 -10" scale="0.5 0.5 0.5">
+        <a-entity gltf-model= "#totemModel" id="artifact" position="0 0.5 -10" scale="0.1 0.1 0.1">
           <!-- indicator -->
           <a-image look-at="#player" id="indicator" src="assets/eyeIndicator.png" position="0 2 0" scale="0.5 0.3 0.5"></a-image>
         </a-entity>
