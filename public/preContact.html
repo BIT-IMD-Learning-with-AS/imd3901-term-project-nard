@@ -10,6 +10,7 @@
       <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
       <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+      <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
 
       <script src="/objInteraction.js"></script>
       <script src="./js/fire.js"></script>
@@ -62,6 +63,15 @@
           }
         } 
         window.addEventListener('click', onClick);
+
+        // Return Indicator looks at camera
+        AFRAME.registerComponent('look-at', {
+          schema: { type: 'selector' },
+          init: function () {},
+          tick: function () {
+            this.el.object3D.lookAt(this.data.object3D.position)
+          }
+        });
       </script>
 
     </head>
@@ -80,10 +90,15 @@
         <a-image src="/assets/glow.png"></a-image>
         <a-asset-item id="FirePitStand" response-type="arraybuffer" src="assets/FirePitStand/FirePitStand.glb"></a-asset-item>
         <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
+        <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
       </a-assets>
 
       <!-- rightful place -->
-      <a-box id="rightfulPlace" ammo-body="type:kinematic; emitCollisionEvents: true" ammo-shape="type:box" scale="0.5 5 0.5" position="0 0.5 -5" material="color:#654321"></a-box>
+      <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321">
+        <a-entity gltf-model= "#diamond" position="-0.1 0.7 0" scale="0.003 0.003 0.003"
+        animation="property:position.y; loop: true; dir:alternate; dur:1000; to:1; easing:easeInOutQuad;"></a-animation>
+        </a-entity>
+      </a-box>
 
       <!-- LongHouse -->
       <a-box id="longHouse" position="-10 3 -5" scale="20 6 4" rotation="0 70 0" color="brown"></a-box>
