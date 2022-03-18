@@ -71,6 +71,7 @@
       <a-assets>
         <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
         <a-asset-item id="grassModel" response-type="arraybuffer" src="assets/Sweet_Grass/sweet_grass.gltf"></a-asset-item>
+        <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
       </a-assets>
 
        <!-- rightful place -->
@@ -88,10 +89,28 @@
 
       <a-box id="firePlace-3" position="-1.67595 1 6.10107" scale="2.5 0.1 0.1" rotation="30.0000701530499 130.46191699349333 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="firePlace" position="-3.02306 1 6.1059" scale="2.5 0.1 0.1" rotation="30.0000701530499 129.5824267779675 -120.0002806121996" color="brown" material="" geometry=""></a-box>
-
+     
       <a-box id="firePlace" position="-2.36162 1.63557 5.58017" scale="2.5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>
 
-      <!-- camera -->
+    <!-- FIRE -->
+    <a-entity position="0 0 4">
+    
+    <!-- fire particles -->
+    <a-entity fire="particles: 500;" position="0.0 -0.6 -4" scale="1.2 1.2 1.2"></a-entity>
+    
+    <!-- fire light -->
+    <a-entity position="0 1.5 -4">
+        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
+  
+      </a-entity>
+  </a-entity>
+
+  <!-- Firepit Stand  -->
+  <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"  material="color:brown"> </a-entity>
+     
+  
+  
+  <!-- camera -->
       <a-entity camera id="player" position="0 2 0" wasd-controls look-controls >
         <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
