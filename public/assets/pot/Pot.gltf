@@ -1,0 +1,260 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 982740,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 982740,
+      "max": [
+        1.54434716701508,
+        2.86413884162903,
+        1.57515525817871
+      ],
+      "min": [
+        -1.50496971607208,
+        -0.0593655109405518,
+        -1.47277545928955
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 982740,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 982740,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 288,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 61,
+      "max": [
+        1.15630388259888,
+        2.26744842529297,
+        1.10053372383118
+      ],
+      "min": [
+        -1.01857125759125,
+        2.26744842529297,
+        -1.07434129714966
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 61,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 61,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Adobe Substance 3D Painter 7.4.2",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 3930960,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 11792880,
+      "byteOffset": 3930960,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 11792880,
+      "byteOffset": 15723840,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 7861920,
+      "byteOffset": 27516720,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1152,
+      "byteOffset": 35378640,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 732,
+      "byteOffset": 35379792,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 732,
+      "byteOffset": 35380524,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 488,
+      "byteOffset": 35381256,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 35381744,
+      "uri": "Pot.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "lambert1_baseColor.png"
+    },
+    {
+      "uri": "lambert1_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "lambert1_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "name": "lambert1",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "D_Model:Mesh",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "pDisc1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TEXCOORD_0": 7
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        2,
+        4
+      ],
+      "name": "group1"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "D_Model:Mesh"
+    },
+    {
+      "mesh": 0,
+      "name": "D_Model:Mesh"
+    },
+    {
+      "children": [
+        5
+      ],
+      "name": "pDisc1"
+    },
+    {
+      "mesh": 1,
+      "name": "pDisc1"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9985,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    }
+  ]
+}
