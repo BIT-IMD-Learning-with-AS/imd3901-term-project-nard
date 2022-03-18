@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/BIT-IMD-Learning-with-AS/IMD3901-term-project#readme",
   "dependencies": {
+    "aframe-watcher": "^1.4.0",
     "express": "^4.17.2"
-  },
-  "devDependencies": {}
+  }
 }

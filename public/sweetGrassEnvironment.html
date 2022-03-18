@@ -87,7 +87,7 @@
 
           // Timer before fade out
           setTimeout(function () {
-            window.location.replace("http://localhost:8080/preContact.html");
+            window.location.replace("http://localhost:8080/presentDay.html");
           }, 1500);
         }
         
@@ -124,7 +124,8 @@
                 scene.style.cursor = "pointer";
 
                 let myElm = document.createElement("p");
-                var textNode = document.createTextNode("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."); 
+                myElm.setAttribute('style', 'font-size: 130%;');
+                var textNode = document.createTextNode("This is a Wenserákon óhonte, also known as Sweetgrass. Sweetgrass is made from bunches of grass bradied together and it is prized for its pleasant aroma. It is used for medicine, weaving baskets, and also, a gift for those who are highly respected."); 
                 myElm.appendChild(textNode);
                 document.getElementById("artifact-info").appendChild(myElm);
 
