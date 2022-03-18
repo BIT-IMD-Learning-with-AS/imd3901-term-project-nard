@@ -76,8 +76,11 @@
     </head>
     <body>
       <!-- A-SCENE -->
-      <a-scene precontact-experience environment="preset: forest; shadow: true" physics="driver:ammo;">
-     
+    
+
+      <a-scene precontact-experience environment="preset: forest; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" physics="driver:ammo;">
+ <!-- 
+        groundColor: #000000; groundColor2: #000000; -->
         <a-assets>
           <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
           <img  id="artifactInventory" response-type="arraybuffer" src="assets/box.png"></img >
@@ -86,6 +89,10 @@
          <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
          <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item>
         </a-assets>
+
+
+
+        
 
       <!-- rightful place -->
       <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321">
