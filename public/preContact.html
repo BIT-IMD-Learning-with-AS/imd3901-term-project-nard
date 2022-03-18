@@ -89,6 +89,7 @@
         <a-asset-item id="rattleModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf"></a-asset-item>
         <a-asset-item id="pineModel" response-type="arraybuffer" src="assets/pine/scene.gltf"></a-asset-item>
         <a-asset-item id="longhouse" response-type="arraybuffer" src="assets/Longhouse_Model/Longhouse.gltf"></a-asset-item>
+        <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item>
       </a-assets>
 
       <!-- rightful place -->
@@ -136,23 +137,16 @@
 
       <a-entity boat gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
       <!-- Firepit Stand  -->
-      <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"  material="color:brown"> </a-entity>
+      <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
+      <a-entity boat gltf-model= "#pot" id="pot" position="-0.035 0.155 0.162" rotation="0 -72.573 -179.76" scale="-0.206 -0.206 -0.206"> </a-entity>
 
 
       <!-- Corn crops -->
-<<<<<<< Updated upstream
       <a-box id="dirt" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
       <a-box id="dirt" position="8.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
       <a-box id="dirt" position="9.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
       
       
-=======
-      <a-box id="dirt" position="13.94939 -0.00668 -7.47844" scale="4.21325 0.6372 0.36644" rotation="90.00021045914971 -59.20143713968744 0" color="brown" material="shader: standard; roughness: 1;" geometry="primitive: sphere"></a-box>
-      <a-entity gltf-model="#cornModel" position="12.377 -0.00668 -10.183"></a-entity>
-      <a-entity gltf-model="#cornModel" position="13.316 -0.05105 -8.775"></a-entity>
-      <a-entity gltf-model="#cornModel" position="14.088 -0.05105 -7.467"></a-entity>
-      <a-entity gltf-model="#cornModel" position="14.851 -0.05105 -6.223"></a-entity>
->>>>>>> Stashed changes
       <!-- <a-entity id="birchTree" gltf-model="#cornModel" blessing></a-entity> -->
       <!-- Set attribute below if above object is clicked -->
       <!-- <a-sphere material="color: yellow; opacity: 0.2; dithering: false; shader: flat; blending: additive; src: assets/glow.png" scale="0.5 10 0.1" position="0 4 -14" ></a-sphere>
