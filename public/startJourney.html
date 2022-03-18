@@ -23,6 +23,31 @@
               document.querySelector('#user-gesture-button').style.display='block';
             }
         });
+
+        var i = 0;
+        var part1 = "Today, we will be taking you through a canoe story that will journey through 3 different time periods within the Akwesasne timeline";
+        var part2 = "Your first stop takes place hundreds of years ago, when it was solely the Inigenous who roamed and cultivated the lands";
+        var part3 = "Let the river and sounds guide you, find the lost artifact and return it to its rightful place";
+        var speed = 50;
+        var part = 0;
+        var tagHolders = ["narrationPT1", "narrationPT2", "narrationPT3"];
+
+        var txts=[part1, part2, part3];
+
+        function typeWriter() {
+          if(part < 3){
+            if (i < txts[part].length) {
+              document.getElementById(tagHolders[part]).innerHTML += txts[part].charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+
+              if(i == txts[part].length){
+                i = 0;
+                part++;
+              }
+            }
+          }
+        }
         
         // BUTTON start experience
         const startExperience = function() {
@@ -32,7 +57,7 @@
           let canoe = document.querySelector('a-scene').querySelector('#canoe');
           let cam = document.querySelector('a-scene').querySelector('#player');
           canoe.setAttribute('animation', "property:position; to: 0 1.127 -40; dur: 50000; easing: linear;");
-          cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 46000; easing: linear;");
+          cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 46900; easing: linear;");
 
           setTimeout(function () {
                 // Fade out
@@ -47,9 +72,11 @@
                  // Timer before fade out
                 setTimeout(function () {
                   window.location.replace("http://localhost:8080/turtleRattleEnvironment.html");
-                }, 1200);
+                }, 1500);
 
-              }, 10000);
+              }, 20000);
+
+              typeWriter();
         }
 
     </script>
@@ -62,6 +89,13 @@
         <div class="center">
           <button id="user-gesture-button" onclick="startExperience();">Start Journey</button>
         </div>
+      </div>
+
+      <!-- item description -->
+      <div id="narration-info">
+        <p class="noselect" id="narrationPT1" style="font-size:110%;"></p>
+        <p class="noselect" id="narrationPT2" style="font-size:110%; top: 20%;"></p>
+        <p class="noselect" id="narrationPT3" style="font-size:130%; top: 30%;"></p>
       </div>
 
       <!-- A-SCENE -->
@@ -86,9 +120,9 @@
 
         <!-- canoe -->
         <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->
-        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 14.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> </a-entity>
+        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 24.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> </a-entity>
         
-        <a-entity camera id="player" look-controls position="0 2 10"></a-entity>
+        <a-entity camera id="player" look-controls position="0 2 20"></a-entity>
 
       </a-scene>
 

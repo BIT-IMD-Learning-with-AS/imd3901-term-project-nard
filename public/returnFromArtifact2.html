@@ -49,9 +49,36 @@
                   window.location.replace("http://localhost:8080/sweetGrassEnvironment.html");
                 }, 1200);
 
-              }, 10000);
+              }, 15000);
+
+              typeWriter();
             }
         });
+
+        var i = 0;
+        var part1 = "You have returned the artifact to it's rightful place and have brought peace upon it, niá:wen";
+        var part2 = "Your last stop takes place in the present, the life of the Akwesasne people in today's day and age";
+        var part3 = "Find the last artifact and return it to its rightful place";
+        var speed = 50;
+        var part = 0;
+        var tagHolders = ["narrationPT1", "narrationPT2", "narrationPT3"];
+
+        var txts=[part1, part2, part3];
+
+        function typeWriter() {
+          if(part < 3){
+            if (i < txts[part].length) {
+              document.getElementById(tagHolders[part]).innerHTML += txts[part].charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+
+              if(i == txts[part].length){
+                i = 0;
+                part++;
+              }
+            }
+          }
+        }
         
     </script>
 
@@ -60,6 +87,14 @@
 
       <!-- A-SCENE -->
       <a-scene start-experience environment="preset: forest; shadow: true">
+
+          <!-- narration -->
+      <div id="narration-info">
+        <p class="noselect" id="narrationPT1" style="font-size:110%;"></p>
+        <p class="noselect" id="narrationPT2" style="font-size:110%; top: 20%;"></p>
+        <p class="noselect" id="narrationPT3" style="font-size:130%; top: 30%;"></p>
+      </div>
+     
      
       <a-assets>
           <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->

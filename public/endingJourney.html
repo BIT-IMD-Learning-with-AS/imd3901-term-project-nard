@@ -32,9 +32,36 @@
               let canoe = document.querySelector('a-scene').querySelector('#canoe');
               let cam = document.querySelector('a-scene').querySelector('#player');
               canoe.setAttribute('animation', "property:position; to: 0 1.127 -40; dur: 50000; easing: linear;");
-              cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 46000; easing: linear;");
+              cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 47210; easing: linear;");
+
+              typeWriter();
             }
         });
+
+        var i = 0;
+        var part1 = "You have returned all lost artifacts back to its rightful place and brought them peace";
+        var part2 = "This is the ending of our story. You got to see the history of the Akwesasne people, the obstacles they overcame, and how they continue to appreciate their culture to this day";
+        var part3 = "We hope you enjoyed the Canoe Journey story, niá:wen";
+        var speed = 50;
+        var part = 0;
+        var tagHolders = ["narrationPT1", "narrationPT2", "narrationPT3"];
+
+        var txts=[part1, part2, part3];
+
+        function typeWriter() {
+          if(part < 3){
+            if (i < txts[part].length) {
+              document.getElementById(tagHolders[part]).innerHTML += txts[part].charAt(i);
+              i++;
+              setTimeout(typeWriter, speed);
+
+              if(i == txts[part].length){
+                i = 0;
+                part++;
+              }
+            }
+          }
+        }
         
     </script>
 
@@ -43,6 +70,13 @@
 
       <!-- A-SCENE -->
       <a-scene start-experience environment="preset: forest; shadow: true">
+
+          <!-- narration -->
+      <div id="narration-info">
+        <p class="noselect" id="narrationPT1" style="font-size:110%;"></p>
+        <p class="noselect" id="narrationPT2" style="font-size:110%; top: 20%;"></p>
+        <p class="noselect" id="narrationPT3" style="font-size:130%; top: 30%;"></p>
+      </div>
      
       <a-assets>
           <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
@@ -63,9 +97,9 @@
 
         <!-- canoe -->
         <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->
-        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 14.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> </a-entity>
+        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 34.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> </a-entity>
         
-        <a-entity camera id="player" look-controls position="0 2 10"></a-entity>
+        <a-entity camera id="player" look-controls position="0 2 30"></a-entity>
 
       </a-scene>
 
