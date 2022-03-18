@@ -1,0 +1,3 @@
+CREATOR CREDITS
+
+Fire animation (markusneuy) - https://github.com/markusneuy/campfire_vr
