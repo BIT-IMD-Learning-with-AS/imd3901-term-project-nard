@@ -42,7 +42,7 @@
               if(this.ifMouseDown)
               {
                 var temp_x = event.clientX-this.x_cord;
-                this.el.object3D.rotateY(temp_x*this.data.speed/300);
+                this.el.object3D.rotateY(temp_x*this.data.speed/200);
                 this.x_cord = event.clientX;
                 //var temp_y = event.clientY-this.y_cord;
                 //this.el.object3D.rotateX(temp_y*this.data.speed/400)
@@ -116,7 +116,8 @@
                 let artifact = document.createElement('a-entity');
                 artifact.setAttribute('gltf-model', '#totemModel');
                 artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
-                artifact.setAttribute('scale', "0.5 0.5 0.5");
+                artifact.setAttribute('scale', "1 1 1");
+                artifact.setAttribute('rotation', "0 30 0");
                 artifact.setAttribute('id', "artifact");
                 artifact.setAttribute('drag-rotate-component', {});
                 scene.appendChild(artifact);
@@ -167,9 +168,9 @@
         <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5"></a-ocean>
 
         <!-- artifact -->
-        <a-entity gltf-model= "#totemModel" id="artifact" position="0 0.5 -10" scale="0.5 0.5 0.5">
+        <a-entity gltf-model= "#totemModel" id="artifact" position="7 0.2 -9" scale="0.5 0.5 0.5">
           <!-- indicator -->
-         <a-image look-at="#player" id="indicator" src="assets/eyeIndicator.png" position="0 2 0" scale="0.5 0.3 0.5"></a-image>
+         <a-image look-at="#player" id="indicator" src="assets/eyeIndicator.png" position="0 1 0" scale="0.5 0.3 0.5"></a-image>
         </a-entity>
 
         <!-- canoe -->
