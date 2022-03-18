@@ -86,6 +86,7 @@
         <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
         <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
         <a-asset-item id="rattleModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf"></a-asset-item>
+        <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item>
       </a-assets>
 
       <!-- rightful place -->
@@ -109,16 +110,19 @@
       <!-- FIRE -->
       <a-entity position="0 0 4">
         <!-- fire particles -->
-        <a-entity fire="particles: 500;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
+        <a-entity fire="particles: 900;" position="0.0 -0.9 -4" scale="1 1 1.2"></a-entity>
         <!-- fire light -->
         <a-entity position="0 1.5 -4">
             <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
         </a-entity>
       </a-entity>
 
-      <a-entity boat gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
       <!-- Firepit Stand  -->
-      <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"  material="color:brown"> </a-entity>
+      <a-entity boat gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
+      <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
+
+      <!-- Fire pot  -->
+      <a-entity boat gltf-model= "#pot" id="pot" position="2.422 1.364 0.791" rotation="-20.704 74.165 68.420" scale="-0.206 -0.206 -0.206"> </a-entity>
 
 
       <!-- Corn crops -->
