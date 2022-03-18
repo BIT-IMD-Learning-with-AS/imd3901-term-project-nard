@@ -9,29 +9,63 @@
     {
       "bufferView": 1,
       "componentType": 5126,
-      "count": 167271,
+      "count": 982740,
       "max": [
-        1.14353716373444,
-        1.08223295211792,
-        14.2872152328491
+        1.54434716701508,
+        2.86413884162903,
+        1.57515525817871
       ],
       "min": [
-        -1.92473900318146,
-        -1.90601801872253,
-        11.3270683288574
+        -1.50496971607208,
+        -0.0593655109405518,
+        -1.47277545928955
       ],
       "type": "VEC3"
     },
     {
       "bufferView": 2,
       "componentType": 5126,
-      "count": 167271,
+      "count": 982740,
       "type": "VEC3"
     },
     {
       "bufferView": 3,
       "componentType": 5126,
-      "count": 167271,
+      "count": 982740,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 288,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 61,
+      "max": [
+        1.15630388259888,
+        2.26744842529297,
+        1.10053372383118
+      ],
+      "min": [
+        -1.01857125759125,
+        2.26744842529297,
+        -1.07434129714966
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 61,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 61,
       "type": "VEC2"
     }
   ],
@@ -47,44 +81,68 @@
     },
     {
       "buffer": 0,
-      "byteLength": 2007252,
+      "byteLength": 11792880,
       "byteOffset": 3930960,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 2007252,
-      "byteOffset": 5938212,
+      "byteLength": 11792880,
+      "byteOffset": 15723840,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 1338168,
-      "byteOffset": 7945464,
+      "byteLength": 7861920,
+      "byteOffset": 27516720,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 1152,
+      "byteOffset": 35378640,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 732,
+      "byteOffset": 35379792,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 732,
+      "byteOffset": 35380524,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 488,
+      "byteOffset": 35381256,
       "target": 34962
     }
   ],
   "buffers": [
     {
-      "byteLength": 9283632,
+      "byteLength": 35381744,
       "uri": "Pot.bin"
     }
   ],
   "images": [
     {
-      "uri": "3D_Model_baseColor.png"
+      "uri": "lambert1_baseColor.png"
     },
     {
-      "uri": "3D_Model_occlusionRoughnessMetallic.png"
+      "uri": "lambert1_occlusionRoughnessMetallic.png"
     },
     {
-      "uri": "3D_Model_normal.png"
+      "uri": "lambert1_normal.png"
     }
   ],
   "materials": [
     {
       "alphaMode": "OPAQUE",
-      "name": "3D_Model",
+      "name": "lambert1",
       "normalTexture": {
         "index": 2
       },
@@ -103,7 +161,7 @@
   ],
   "meshes": [
     {
-      "name": "defaultobject",
+      "name": "D_Model:Mesh",
       "primitives": [
         {
           "attributes": {
@@ -116,6 +174,21 @@
           "mode": 4
         }
       ]
+    },
+    {
+      "name": "pDisc1",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TEXCOORD_0": 7
+          },
+          "indices": 4,
+          "material": 0,
+          "mode": 4
+        }
+      ]
     }
   ],
   "nodes": [
@@ -123,17 +196,34 @@
       "children": [
         1
       ],
-      "name": "3D%20Model.obj"
+      "name": "RootNode"
     },
     {
       "children": [
-        2
+        2,
+        4
       ],
-      "name": "defaultobject"
+      "name": "group1"
+    },
+    {
+      "children": [
+        3
+      ],
+      "name": "D_Model:Mesh"
     },
     {
       "mesh": 0,
-      "name": "defaultobject"
+      "name": "D_Model:Mesh"
+    },
+    {
+      "children": [
+        5
+      ],
+      "name": "pDisc1"
+    },
+    {
+      "mesh": 1,
+      "name": "pDisc1"
     }
   ],
   "samplers": [
