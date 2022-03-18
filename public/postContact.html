@@ -80,6 +80,9 @@
           <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
           <img  id="artifactInventory" response-type="arraybuffer" src="assets/box.png"></img >
           <a-asset-item id="moccassinModel" response-type="arraybuffer" src="assets/oneMoc/oneMoc.glb"></a-asset-item>
+          <a-asset-item id="FireStandBroken" response-type="arraybuffer" src="assets/FirePitStandBroken/FirePitStandBroken.gltf"></a-asset-item>
+         <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
+         <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item>
         </a-assets>
 
       <!-- rightful place -->
@@ -99,6 +102,14 @@
       <a-box id="firePlace" position="-3.02306 1 6.1059" scale="2.5 0.1 0.1" rotation="30.0000701530499 129.5824267779675 -120.0002806121996" color="brown" material="" geometry=""></a-box>
 
       <a-box id="firePlace" position="-2.36162 1.63557 5.58017" scale="2.5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>
+
+   <!-- Firepit Stand Broken  -->
+   <a-entity boat gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
+   <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
+
+   <!-- Fire pot tipped over -->
+   <a-entity boat gltf-model= "#pot" id="pot" position="0.026 0.186 -0.787" rotation="-69.580 68.325 180" scale="-0.206 -0.206 -0.206"> </a-entity>
+
 
 
       <!-- camera -->
