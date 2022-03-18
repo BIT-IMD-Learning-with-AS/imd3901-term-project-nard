@@ -30,10 +30,12 @@ AFRAME.registerComponent('blessing', {
 
         
         this.el.addEventListener('click', this.bless);
+        this.el.addEventListener('release', thus.bless);
         
     },
     remove: function () {
         this.el.removeEventListener('click', this.bless)
+        this.el.removeEventListener('release', this.bless)
         sceme.removeChild(glow);
     }
             

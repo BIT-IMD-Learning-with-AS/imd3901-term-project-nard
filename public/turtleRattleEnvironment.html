@@ -10,6 +10,7 @@
       <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="objInteraction.js"></script>
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/artifactEvironmentCSS.css">
@@ -160,14 +161,14 @@
         <a-entity light="type: spot; angle: -45" position="0, 30, 51"></a-entity>
 
         <a-assets>
-          <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf"></a-asset-item>
+          <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf" ></a-asset-item>
         </a-assets>
 
         <!-- RIVER -->
         <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5"></a-ocean>
 
         <!-- artifact -->
-        <a-entity gltf-model= "#totemModel" id="artifact" position="-6 0.2 -12" scale="0.2 0.2 0.2">
+        <a-entity gltf-model= "#totemModel" id="artifact" position="-6 0.2 -12" scale="0.2 0.2 0.2" blessing value="Ohstá:wa">
           <!-- indicator -->
           <a-image look-at="#player" id="indicator" src="assets/eyeIndicator.png" position="0 2 0" scale="0.9 0.7 0.9"></a-image>
         </a-entity>

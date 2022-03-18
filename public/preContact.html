@@ -80,13 +80,15 @@
       <a-scene precontact-experience environment="preset: forest; shadow: true" physics="driver:ammo;">
      
       <a-assets>
-        <a-asset-item id="cornModel" response-type="arraybuffer"  src="/assets/birchTree/scene.gltf"></a-asset-item>
+        <a-asset-item id="cornModel" response-type="arraybuffer" src="/assets/corn/scene.gltf"></a-asset-item>
+        <a-asset-item id="birchModel" response-type="arraybuffer"  src="/assets/birchTree/scene.gltf"></a-asset-item>
         <a-image src="/assets/glow.png"></a-image>
         <a-asset-item id="FirePitStand" response-type="arraybuffer" src="assets/FirePitStand/FirePitStand.glb"></a-asset-item>
         <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
         <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
         <a-asset-item id="rattleModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf"></a-asset-item>
         <a-asset-item id="pineModel" response-type="arraybuffer" src="assets/pine/scene.gltf"></a-asset-item>
+        
       </a-assets>
 
       <!-- rightful place -->
@@ -133,7 +135,7 @@
       <a-box id="dirt" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
       <a-box id="dirt" position="8.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
       <a-box id="dirt" position="9.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
-      
+      <a-entity gltf-model="#cornModel" position="7.67522 -0.00668 2.29527"></a-entity>
       
       <!-- <a-entity id="birchTree" gltf-model="#cornModel" blessing></a-entity> -->
       <!-- Set attribute below if above object is clicked -->

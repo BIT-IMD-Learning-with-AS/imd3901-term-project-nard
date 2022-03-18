@@ -32,7 +32,7 @@
           let canoe = document.querySelector('a-scene').querySelector('#canoe');
           let cam = document.querySelector('a-scene').querySelector('#player');
           canoe.setAttribute('animation', "property:position; to: 0 1.127 -40; dur: 50000; easing: linear;");
-          cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 46000; easing: linear;");
+          cam.setAttribute('animation', "property:position; to: 0 2.2 -40; dur: 51500; easing: linear;");
 
           setTimeout(function () {
                 // Fade out
@@ -88,7 +88,7 @@
         <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 14.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> </a-entity>
         
-        <a-entity camera id="player" look-controls position="0 2 10"></a-entity>
+        <a-entity camera id="player" look-controls position="0 2 16"></a-entity>
 
       </a-scene>
 
