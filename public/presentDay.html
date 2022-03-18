@@ -13,6 +13,7 @@
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/user-gesture.css">
+      <script src="./js/fire.js"></script>
 
       <script>
         // Registering a-scene
@@ -95,16 +96,13 @@
 
     <!-- FIRE -->
     <a-entity position="0 0 4">
-    
-    <!-- fire particles -->
-    <a-entity fire="particles: 500;" position="0.0 -0.6 -4" scale="1.2 1.2 1.2"></a-entity>
-    
-    <!-- fire light -->
-    <a-entity position="0 1.5 -4">
-        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
-  
+      <!-- fire particles -->
+      <a-entity fire="particles: 500;" position="0.0 -0.6 -4" scale="1.2 1.2 1.2"></a-entity>
+      <!-- fire light -->
+      <a-entity position="0 1.5 -4">
+          <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
       </a-entity>
-  </a-entity>
+    </a-entity>
 
   <!-- Firepit Stand  -->
   <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"  material="color:brown"> </a-entity>
