@@ -90,6 +90,9 @@
          <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item> 
          <a-asset-item id="longhouse" response-type="arraybuffer" src="assets/Longhouse_Model/Longhouse.gltf"></a-asset-item>
          <a-asset-item id="pineModel" response-type="arraybuffer" src="assets/pine/scene.gltf"></a-asset-item>
+         <a-asset-item id="brokenDryingRack" response-type="arraybuffer" src="assets/brokenDryingRack/brokenDryingRack.glb"></a-asset-item>
+         <a-asset-item id="fallenAnimalSkin" response-type="arraybuffer" src="assets/fallenAnimalSkin/fallenAnimalSkin.glb"></a-asset-item>
+         <a-asset-item id="cornModel" response-type="arraybuffer" src="/assets/corn_corn_corn/scene.gltf"></a-asset-item>
         </a-assets>
 
       <!-- rightful place -->
@@ -118,14 +121,28 @@
       <!--Longhouse-->
       <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
       <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0" scale=""></a-entity>
-      
+      <!-- 
       <a-box id="firePlace" position="-2.98665 1 5" scale="2.5 0.1 0.1" rotation="30.0000701530499 -47.761761802105426 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="firePlace-2" position="-1.4765 1 5" scale="2.5 0.1 0.1" rotation="30.0000701530499 -48.814858229555874 -120.0002806121996" color="brown" material="" geometry=""></a-box>
 
       <a-box id="firePlace-3" position="-1.67595 1 6.10107" scale="2.5 0.1 0.1" rotation="30.0000701530499 130.46191699349333 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="firePlace" position="-3.02306 1 6.1059" scale="2.5 0.1 0.1" rotation="30.0000701530499 129.5824267779675 -120.0002806121996" color="brown" material="" geometry=""></a-box>
 
-      <a-box id="firePlace" position="-2.36162 1.63557 5.58017" scale="2.5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>
+      <a-box id="firePlace" position="-2.36162 1.63557 5.58017" scale="2.5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>-->
+ 
+  <!-- Corn crops -->
+ <a-box id="dirt" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
+ <a-box id="dirt" position="18.712 -0.007 2.295" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
+ <a-box id="dirt" position="9.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
+ 
+ 
+ <a-box id="dirt" position="13.94939 -0.00668 -7.47844" scale="4.21325 0.6372 0.36644" rotation="90.00021045914971 -59.20143713968744 0" color="#4C1408" material="shader: standard; roughness: 1;" geometry="primitive: sphere"></a-box>
+ <a-entity gltf-model="#cornModel" position="12.377 -0.00668 -10.183"></a-entity>
+ <a-entity gltf-model="#cornModel" position="13.316 -0.05105 -8.775"></a-entity>
+ <a-entity gltf-model="#cornModel" position="14.088 -0.05105 -7.467"></a-entity>
+ <a-entity gltf-model="#cornModel" position="14.851 -0.05105 -6.223"></a-entity>
+
+
 
    <!-- Firepit Stand Broken  -->
    <a-entity boat gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
@@ -164,6 +181,13 @@
     </a-entity>
   </a-entity>
 
+
+ 
+
+   <!-- DRYING RACK -->
+   <a-entity boat gltf-model= "#brokenDryingRack" id="brokenDryingRack" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
+
+   <a-entity boat gltf-model= "#fallenAnimalSkin" id="fallenAnimalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.500 0.500 0.340" > </a-entity>
 
       <!-- camera -->
       <a-entity camera id="player" position="3 2 20" wasd-controls look-controls>
