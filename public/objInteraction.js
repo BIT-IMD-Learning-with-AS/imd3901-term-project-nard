@@ -23,7 +23,7 @@ AFRAME.registerComponent('blessing', {
         scene.appendChild(glow);
 
         this.bless = function(e){
-            glow.setAttribute('animation', 'property: scale; to: 200 200 200; dur: 10000');
+            glow.setAttribute('animation', 'property: scale; to: 400 400 400; dur: 10000');
             glow.components.sound.playSound();
             
         }
