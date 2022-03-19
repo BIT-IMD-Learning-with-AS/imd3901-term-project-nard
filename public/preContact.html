@@ -97,6 +97,8 @@
         <a-asset-item id="pineModel" response-type="arraybuffer" src="assets/pine/scene.gltf"></a-asset-item>
         <a-asset-item id="longhouse" response-type="arraybuffer" src="assets/Longhouse_Model/Longhouse.gltf"></a-asset-item>
         <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item>
+        <a-asset-item id="dryingRack" response-type="arraybuffer" src="assets/dryingRack/dryingRack.glb"></a-asset-item>
+        <a-asset-item id="animalSkin" response-type="arraybuffer" src="assets/animalSkin/animalSkin.glb"></a-asset-item>
       </a-assets>
 
       <!-- rightful place -->
@@ -125,12 +127,12 @@
       <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
       <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0" scale=""></a-entity>
 
-      <!-- Drying rack  -->
+      <!-- Drying rack  
       <a-box id="drying-rack" position="-2.98665 1 -11" scale="2.5 0.1 0.1" rotation="30.0000701530499 -47.761761802105426 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="drying-rack" position="-1.4765 1 -11" scale="2.5 0.1 0.1" rotation="30.0000701530499 -48.814858229555874 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="drying-rack" position="-1.67595 1 -10.10107" scale="2.5 0.1 0.1" rotation="30.0000701530499 130.46191699349333 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="drying-rack" position="-3.02306 1 -10.1059" scale="2.5 0.1 0.1" rotation="30.0000701530499 129.5824267779675 -120.0002806121996" color="brown" material="" geometry=""></a-box>
-      <a-box id="drying-rack" position="-2.36162 1.63557 -11.58017" scale="5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>
+      <a-box id="drying-rack" position="-2.36162 1.63557 -11.58017" scale="5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>-->
 
       <!-- FIRE -->
       <a-entity position="0 0 4">
@@ -147,14 +149,20 @@
       <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
       <a-entity boat gltf-model= "#pot" id="pot" position="-0.035 0.155 0.162" rotation="0 -72.573 -179.76" scale="-0.206 -0.206 -0.206"> </a-entity>
 
+      <!-- DRYING RACK -->
+      <a-entity boat gltf-model= "#dryingRack" id="dryingRack" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
+
+     <!-- ANIMAL SKINDRYING RACK -->
+     <a-entity boat gltf-model= "#animalSkin" id="animalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
+
 
       <!-- Corn crops -->
-      <a-box id="dirt" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
-      <a-box id="dirt" position="8.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
-      <a-box id="dirt" position="9.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="brown" material="" geometry="primitive: sphere"></a-box>
+      <a-box id="dirt" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
+      <a-box id="dirt" position="18.712 -0.007 2.295" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
+      <a-box id="dirt" position="9.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
       
       
-      <a-box id="dirt" position="13.94939 -0.00668 -7.47844" scale="4.21325 0.6372 0.36644" rotation="90.00021045914971 -59.20143713968744 0" color="brown" material="shader: standard; roughness: 1;" geometry="primitive: sphere"></a-box>
+      <a-box id="dirt" position="13.94939 -0.00668 -7.47844" scale="4.21325 0.6372 0.36644" rotation="90.00021045914971 -59.20143713968744 0" color="#4C1408" material="shader: standard; roughness: 1;" geometry="primitive: sphere"></a-box>
       <a-entity gltf-model="#cornModel" position="12.377 -0.00668 -10.183"></a-entity>
       <a-entity gltf-model="#cornModel" position="13.316 -0.05105 -8.775"></a-entity>
       <a-entity gltf-model="#cornModel" position="14.088 -0.05105 -7.467"></a-entity>
