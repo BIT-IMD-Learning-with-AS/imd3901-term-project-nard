@@ -75,8 +75,13 @@
 
     </head>
     <body>
+
+      <!-- item description -->
+      <div id="timePeriod">
+        <p class="noselect" style="font-size:110%;">1700s</p>
+      </div>
+      
       <!-- A-SCENE -->
-    
 
       <a-scene precontact-experience environment="preset: forest;  groundTexture:walkernoise; groundColor:black; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" physics="driver:ammo;">
  <!-- 
@@ -166,7 +171,7 @@
 
 
       <!-- camera -->
-      <a-entity camera id="player" position="0 2 0" wasd-controls look-controls>
+      <a-entity camera id="player" position="3 2 20" wasd-controls look-controls>
         <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>

@@ -67,6 +67,12 @@
 
     </head>
     <body>
+
+      <!-- item description -->
+      <div id="timePeriod">
+        <p class="noselect" style="font-size:110%;">2020s</p>
+      </div>
+
       <!-- A-SCENE -->
       <a-scene precontact-experience environment="preset: forest; groundTexture:none; groundColor:#5E4C37; ground:flat; shadow: true" physics="driver:ammo;">
      
@@ -108,7 +114,7 @@
   <a-entity gltf-model= "#longhouse" position="-12 0 -5" rotation="0 90 0" scale="1 1 1"> </a-entity>
   
   <!-- camera -->
-      <a-entity camera id="player" position="0 2 0" wasd-controls look-controls >
+      <a-entity camera id="player" position="-4 2 8" wasd-controls look-controls >
         <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>
