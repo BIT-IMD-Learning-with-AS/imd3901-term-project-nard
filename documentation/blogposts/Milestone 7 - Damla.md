@@ -1,4 +1,5 @@
 Milestone 7 : "We did it!" 
+
 Damla Durhan
 
 **Date: 2022-03-22**
@@ -22,3 +23,5 @@ We successfully finished all the futures we want to add for our Beta Presentatio
 We decided on what other extra futures we want to add and assigned the tasks between group members accordingly. 
 
 **Media**
+
+https://www.youtube.com/watch?v=bqiVidPoEi8
