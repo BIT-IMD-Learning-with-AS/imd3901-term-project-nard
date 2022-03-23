@@ -25,4 +25,4 @@ We sucessfully finished our beta presentation and we are really happy about the 
 the rest 
 
 
-![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/milestone7R.PNG?raw=true)
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/milestone7R.png?raw=true)
