@@ -19,3 +19,6 @@ animal rigs online but there aren't a lot of free resources.
 
 Successes 
 We sucessfully have an idea on what to expect for the next few days and how what we hope to have done for the final. 
+
+
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/deerIdea.png?raw=true)
