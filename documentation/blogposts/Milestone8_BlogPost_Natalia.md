@@ -7,15 +7,15 @@ Number of Hours: 20 mins
 
 **Overview**
 
-My group and I got together for our weekly meeting to see what our next big due date is and what we want to aim for. We each decided to set our tasks in the Trello board and to start working to at least have something to show for the next meeting.
+My group and I got together for our weekly meeting to decide what we'd like to have for our final product and what every member should work on throughout the week before our next team meeting. We made a list that focused on what models, functionalities, and ambiance factors we need. We updated our Trello board.
 
 **Challenges**
 
-We have a lot of other assignment due dates coming up so a lot of our focuses were a little off today and not realizing we need to start the progress of this project as soon as possible.
+We're drowning in other assignments from other classes so a lot of us aren't in the right mindset getting started on this project so we're a little behind on our planned timeline schedule.
 
 **Successes**
 
-We had a great Beta presentation and we were all really happy with eachother in this meeting. We managed to all get an understanding of where we are in the project timeline and where we're headed. We each understood our current tasks. 
+We gave everyone a set of straight forward tasks that should be done or in the works by our next meeting. They're very specific allowing each member to clearly understand what they must do and figure out when to squeeze it inside their school schedule.
 
 **Media**
 
