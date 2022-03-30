@@ -22,3 +22,8 @@ We sucessfully have an idea on what to expect for the next few days and how what
 
 
 ![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/deerIdea.png?raw=true)
+
+
+
+Screenshot from sketchfab (Looking for models)
+https://sketchfab.com/3d-models/deer-stag-9490de67d7a141c8869d69256c298a58
