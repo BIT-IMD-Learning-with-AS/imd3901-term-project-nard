@@ -1,5 +1,5 @@
 
-Milestone 6 : "We did it!"
+Milestone 7 : "We did it!"
 
 Date: 2022-03-22
 
