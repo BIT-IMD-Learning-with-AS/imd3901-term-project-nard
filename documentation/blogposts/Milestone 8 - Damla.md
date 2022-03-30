@@ -22,3 +22,5 @@ We made a good task list on the Trello. We decided on prioritizing the important
 
 
 **Media**
+
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/Media.jpg?raw=true)
