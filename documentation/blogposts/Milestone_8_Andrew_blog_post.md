@@ -20,4 +20,4 @@
  
  Below is a screenshot of the character models I've added to the scene.
  
-
+![Screenshot (97)](https://user-images.githubusercontent.com/48802350/160735710-2b27defc-d1eb-4896-a669-b30327a11838.png)
