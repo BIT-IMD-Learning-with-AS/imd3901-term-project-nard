@@ -3,7 +3,7 @@ Milestone 6 : "Working on it"
 
 Date: 2022-03-22
 
-Number of Hours: 20 mins
+Number of Hours: 30 mins
 
 **Overview**
 
