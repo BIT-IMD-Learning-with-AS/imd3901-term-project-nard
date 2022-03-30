@@ -1,5 +1,5 @@
 
-Milestone 6 : "We did it!"
+Milestone 6 : "Working on it"
 
 Date: 2022-03-22
 
