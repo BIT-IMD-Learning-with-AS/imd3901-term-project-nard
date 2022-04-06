@@ -101,6 +101,8 @@
         <a-asset-item id="animalSkin" response-type="arraybuffer" src="assets/animalSkin/animalSkin.glb"></a-asset-item>
         <a-asset-item id="woman" response-type="arraybuffer" src="assets/nymph/Untitled.gltf"></a-asset-item>
         <a-asset-item id="woman2" response-type="arraybuffer" src="assets/nymph_2/Untitled.gltf"></a-asset-item>
+        <a-asset-item id="cornCrop" response-type="arraybuffer" src="assets/corn/scene.gltf"></a-asset-item>
+        <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
       </a-assets>
 
       <!-- rightful place -->
@@ -160,7 +162,7 @@
      <a-entity boat gltf-model= "#animalSkin" id="animalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
 
 
-      <!-- Corn crops -->
+      <!-- Corn crops 
       <a-box id="dirt" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
       <a-box id="dirt" position="18.712 -0.007 2.295" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
       <a-box id="dirt" position="9.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
@@ -170,14 +172,36 @@
       <a-entity gltf-model="#cornModel" position="12.377 -0.00668 -10.183"></a-entity>
       <a-entity gltf-model="#cornModel" position="13.316 -0.05105 -8.775"></a-entity>
       <a-entity gltf-model="#cornModel" position="14.088 -0.05105 -7.467"></a-entity>
-      <a-entity gltf-model="#cornModel" position="14.851 -0.05105 -6.223"></a-entity>
+      <a-entity gltf-model="#cornModel" position="14.851 -0.05105 -6.223"></a-entity>-->
       <!-- <a-entity id="birchTree" gltf-model="#cornModel" blessing></a-entity> -->
       <!-- Set attribute below if above object is clicked -->
       <!-- <a-sphere material="color: yellow; opacity: 0.2; dithering: false; shader: flat; blending: additive; src: assets/glow.png" scale="0.5 10 0.1" position="0 4 -14" ></a-sphere>
        -->
+      
+      
+       <!-- Corn crops dirt -->
+     
+      <a-entity boat gltf-model= "#dirt" id="dirt3" position="17.049 0.324 -1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity boat gltf-model= "#dirt" id="dirt4" position="17.049 0.324 1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      
+      
+      <a-entity boat gltf-model= "#cornCrop" id="corn4" position="15.887 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity boat gltf-model= "#cornCrop" id="corn5" position="15.887 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity boat gltf-model= "#cornCrop" id="corn6" position="15.887 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity boat gltf-model= "#cornCrop" id="corn7" position="15.887 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity boat gltf-model= "#cornCrop" id="corn8" position="15.887 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+
+      <a-entity boat gltf-model= "#cornCrop" id="corn9" position="18.493 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity boat gltf-model= "#cornCrop" id="corn10" position="18.493 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity boat gltf-model= "#cornCrop" id="corn11" position="18.493 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity boat gltf-model= "#cornCrop" id="corn12" position="18.493 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity boat gltf-model= "#cornCrop" id="corn13" position="18.493 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+     
+      
 
 
-      <!-- Corn Pestel -->
+
+
 
       <a-entity camera id="player" position="4 2 20" wasd-controls look-controls >
         <a-entity cursor id="cameraDot" position="0 0 -1"
