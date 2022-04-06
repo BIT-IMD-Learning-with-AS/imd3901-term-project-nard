@@ -1,0 +1,11 @@
+Model Information:
+* title:	realistic dirt 3d model
+* source:	https://sketchfab.com/3d-models/realistic-dirt-3d-model-ba6a64c923a5426494bd349ab4bd7a42
+* author:	adimantra123 (https://sketchfab.com/adimantra123)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "realistic dirt 3d model" (https://sketchfab.com/3d-models/realistic-dirt-3d-model-ba6a64c923a5426494bd349ab4bd7a42) by adimantra123 (https://sketchfab.com/adimantra123) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
