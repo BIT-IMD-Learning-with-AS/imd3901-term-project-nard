@@ -59,6 +59,12 @@
           canoe.setAttribute('animation', "property:position; to: 0 1.127 -40; dur: 50000; easing: linear;");
           cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 46900; easing: linear;");
 
+          //start all ambient music
+          const ambientSounds = document.querySelectorAll('.ambient-music');
+          ambientSounds.forEach(function(soundEntity) {
+            soundEntity.components.sound.playSound();
+          });
+
           setTimeout(function () {
                 // Fade out
                 var player = document.getElementById("player");
@@ -102,6 +108,8 @@
       <a-scene start-experience environment="preset: forest; groundTexture:walkernoise; shadow: true">
      
       <a-assets>
+           <audio id="river" src="assets/riverSound.mp3" preload="auto"></audio>
+
           <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
             <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
             <a-asset-item id="deer" response-type="arraybuffer" src="assets/deer_animal/scene.gltf"></a-asset-item>
@@ -124,7 +132,10 @@
 
         <!-- canoe -->
         <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->
-        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 24.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> </a-entity>
+        <a-entity class="ambient-music" sound="src:#river; autoplay:false;"></a-entity>
+        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 24.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> 
+            
+        </a-entity>
         <a-entity gltf-model= "#deer" position="-20 0 -20" rotation="0 180 0" scale=".5 .5 .5 "> </a-entity>
         <a-entity gltf-model="#bear" position="17.339 0 -22.144" rotation="0 0 0" scale="" animation-mixer="clip: Bear_Walk_0" animation="property: position; to: 17.339 0 25; dur: 50000; easing: linear; loop: true"></a-entity>
 

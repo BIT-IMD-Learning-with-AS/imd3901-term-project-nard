@@ -87,9 +87,13 @@
       <a-scene precontact-experience environment="preset: forest; groundTexture:none; groundColor:#5A5918; shadow: true" physics="driver:ammo;">
      
       <a-assets>
+        <audio id="river" src="assets/riverSound.wav" preload="auto"></audio>
+
         <a-asset-item id="cornModel" response-type="arraybuffer" src="/assets/corn_corn_corn/scene.gltf"></a-asset-item>
         <a-asset-item id="birchModel" response-type="arraybuffer"  src="/assets/birchTree/scene.gltf"></a-asset-item>
+        
         <a-image src="/assets/glow.png"></a-image>
+        
         <a-asset-item id="FirePitStand" response-type="arraybuffer" src="assets/FirePitStand/FirePitStand.glb"></a-asset-item>
         <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
         <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
@@ -127,6 +131,10 @@
       <a-entity gltf-model="#pineModel" position="10 0 -22" rotation="0 0 0" scale="3 4 3" value="Pine tree" object-info blessing></a-entity>
       <a-entity gltf-model="#pineModel" position="14 0 -35" rotation="0 0 0" scale="2 3 2" value="Pine tree" object-info blessing></a-entity>
       <a-entity gltf-model="#pineModel" position="-10 0 -40" rotation="0 0 0" scale="3 6 3" value="Pine tree" blessing></a-entity>
+
+      <a-entity sound="src: #river"></a-entity>
+
+
       <a-entity gltf-model="#woman2" position="-1 0.3 -2" rotation="0 45 0" scale="0.003 0.003 0.003"></a-entity>
       <a-entity gltf-model="#woman" position="0 0 -2" rotation="0 0 0" scale="0.003 0.003 0.003"></a-entity>
       <!-- LongHouse -->
