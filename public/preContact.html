@@ -109,6 +109,13 @@
         <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
       </a-assets>
 
+      <a-entity camera id="player" position="4 2 20" wasd-controls look-controls >
+        <a-entity cursor id="cameraDot" position="0 0 -1"
+                  geometry="primitive: sphere; radius:0.008"
+                  material="color:black; shader:flat; opacity:0.5"></a-entity>
+        <a-entity gltf-model= "#rattleModel" id="holdingArtifact" position="-0.5 -0.2 -0.5" rotation="-20 90 70" scale="0.2 0.2 0.2"></a-entity>
+      </a-entity>
+
       <!-- rightful place -->
       <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321" blessing>
         <a-entity gltf-model= "#diamond" position="-0.1 0.7 0" scale="0.003 0.003 0.003"
@@ -158,16 +165,16 @@
         </a-entity>
       </a-entity>
 
-      <a-entity boat gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
+      <a-entity  gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
       <!-- Firepit Stand  -->
-      <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
-      <a-entity boat gltf-model= "#pot" id="pot" position="-0.035 0.155 0.162" rotation="0 -72.573 -179.76" scale="-0.206 -0.206 -0.206"> </a-entity>
+      <a-entity gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
+      <a-entity gltf-model= "#pot" id="pot" position="-0.035 0.155 0.162" rotation="0 -72.573 -179.76" scale="-0.206 -0.206 -0.206"> </a-entity>
 
       <!-- DRYING RACK -->
-      <a-entity boat gltf-model= "#dryingRack" id="dryingRack" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
+      <a-entity gltf-model= "#dryingRack" id="dryingRack" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
 
      <!-- ANIMAL SKINDRYING RACK -->
-     <a-entity boat gltf-model= "#animalSkin" id="animalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
+     <a-entity gltf-model= "#animalSkin" id="animalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
 
 
       <!-- Corn crops 
@@ -188,72 +195,54 @@
       
       
        <!-- Corn crops dirt -->
-      <a-entity boat gltf-model= "#dirt" id="dirt1" position="17.049 0.324 -9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-      <a-entity boat gltf-model= "#dirt" id="dirt2" position="17.049 0.324 -5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity  gltf-model= "#dirt" id="dirt1" position="17.049 0.324 -9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity  gltf-model= "#dirt" id="dirt2" position="17.049 0.324 -5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
      
-      <a-entity boat gltf-model= "#dirt" id="dirt3" position="17.049 0.324 -1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-      <a-entity boat gltf-model= "#dirt" id="dirt4" position="17.049 0.324 1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-      <a-entity boat gltf-model= "#dirt" id="dirt5" position="17.049 0.324 5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-      <a-entity boat gltf-model= "#dirt" id="dirt6" position="17.049 0.324 9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity gltf-model= "#dirt" id="dirt3" position="17.049 0.324 -1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity gltf-model= "#dirt" id="dirt4" position="17.049 0.324 1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity gltf-model= "#dirt" id="dirt5" position="17.049 0.324 5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity gltf-model= "#dirt" id="dirt6" position="17.049 0.324 9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
       
        <!-- Corn crops -->
-      <a-entity boat gltf-model= "#cornCrop" id="corn1" position="15.887 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="corn2" position="15.887 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="corn3" position="15.887 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="corn4" position="15.887 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="corn5" position="15.887 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn1" position="15.887 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn2" position="15.887 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn3" position="15.887 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn4" position="15.887 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn5" position="15.887 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
 
-      <a-entity boat gltf-model= "#cornCrop" id="cornE5" position="15.887 0.375 -4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE6" position="15.887 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE7" position="15.887 0.375 -7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE8" position="15.887 0.375 -9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE9" position="15.887 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE10" position="15.887 0.375 -10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE5" position="15.887 0.375 -4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE6" position="15.887 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE7" position="15.887 0.375 -7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE8" position="15.887 0.375 -9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE9" position="15.887 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE10" position="15.887 0.375 -10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
       
-      <a-entity boat gltf-model= "#cornCrop" id="cornN5" position="15.887 0.375 4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN6" position="15.887 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN7" position="15.887 0.375 7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN8" position="15.887 0.375 9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN9" position="15.887 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN10" position="15.887 0.375 10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN5" position="15.887 0.375 4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN6" position="15.887 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN7" position="15.887 0.375 7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN8" position="15.887 0.375 9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN9" position="15.887 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN10" position="15.887 0.375 10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
 
+      <a-entity gltf-model= "#cornCrop" id="corn7" position="18.493 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn8" position="18.493 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn9" position="18.493 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn10" position="18.493 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn11" position="18.493 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
 
-
-
-
-      <a-entity boat gltf-model= "#cornCrop" id="corn7" position="18.493 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="corn8" position="18.493 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="corn9" position="18.493 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="corn10" position="18.493 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="corn11" position="18.493 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-
-      <a-entity boat gltf-model= "#cornCrop" id="cornE5" position="18.493 0.375 -4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE6" position="18.493 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE7" position="18.493 0.375 -7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE8" position="18.493 0.375 -9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE9" position="18.493 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornE10" position="18.493 0.375 -10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE5" position="18.493 0.375 -4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE6" position="18.493 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE7" position="18.493 0.375 -7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE8" position="18.493 0.375 -9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE9" position="18.493 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE10" position="18.493 0.375 -10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
       
-      <a-entity boat gltf-model= "#cornCrop" id="cornN5" position="18.493 0.375 4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN6" position="18.493 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN7" position="18.493 0.375 7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN8" position="18.493 0.375 9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN9" position="18.493 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity boat gltf-model= "#cornCrop" id="cornN10" position="18.493 0.375 10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-
-     
-      
-
-
-
-
-
-      <a-entity camera id="player" position="4 2 20" wasd-controls look-controls >
-        <a-entity cursor id="cameraDot" position="0 0 -1"
-                  geometry="primitive: sphere; radius:0.008"
-                  material="color:black; shader:flat; opacity:0.5"></a-entity>
-        <a-entity gltf-model= "#rattleModel" id="holdingArtifact" position="-0.5 -0.2 -0.5" rotation="-20 90 70" scale="0.2 0.2 0.2"></a-entity>
-      </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN5" position="18.493 0.375 4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN6" position="18.493 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN7" position="18.493 0.375 7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN8" position="18.493 0.375 9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN9" position="18.493 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN10" position="18.493 0.375 10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
 
     </a-scene>
   </body>
