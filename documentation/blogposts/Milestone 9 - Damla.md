@@ -29,3 +29,5 @@ in order to have a represantable product at the end.
 
 **Media**
 
+
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/bear.jpg?raw=true)
