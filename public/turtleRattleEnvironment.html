@@ -14,26 +14,33 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
-      <script src="objInteraction.js"></script>
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/artifactEvironmentCSS.css">
 
       <script>
+
         function myFunction(event) {
-          var x = event.touches[0].clientX;
-          document.getElementById("demo").innerHTML = x;
 
-          var item = document.getElementById("artifact");
+            var x = event.touches[0].clientX;
+                document.getElementById("demo").innerHTML = x;
+                var entityEl = document.querySelector('#artifact');
+              var rot = entityEl.getAttribute('rotation');
 
-          var temp_x = event.touches[0].clientX-item.x_cord;
-          item.el.object3D.rotateY(temp_x*item.data.speed/200);
-          item.x_cord = event.touches[0].clientX;
-        }
+                if(x< die){
+                  entityEl.setAttribute('rotation', '0 ' + (rot.y - 3) + ' 0');
+                  die = x;
+                }
+                else{
+                  entityEl.setAttribute('rotation', '0 '+ (rot.y + 3) + ' 0');
+                  die = x;
+                }    
+              }            
 
         var artifactClick = false;
+        var die = 200;
         
-        // Artifact rotation
+        /* Artifact rotation
         AFRAME.registerComponent('drag-rotate-component',{
             schema : { speed : {default:1}},
             init : function(){
@@ -65,7 +72,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
               }
             }
         });
-
+*/
         // Registering a-scene
         AFRAME.registerComponent('explore-experience', {
           init: function () {
@@ -76,7 +83,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
             let blocker = document.createElement('a-sphere');
             blocker.setAttribute('radius', '0.05');
             blocker.setAttribute('material', "shader:flat; color: white; opacity: 1.0; side: double");
-            blocker.setAttribute('id', "artifact");
+            blocker.setAttribute('id', "fade");
             blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
             camera.appendChild(blocker);
           }
@@ -91,7 +98,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
           let blocker = document.createElement('a-sphere');
           blocker.setAttribute('radius', '0.05');
           blocker.setAttribute('material', "shader:flat; color: white; opacity: 0.0; side: double");
-          blocker.setAttribute('id', "artifact");
+          blocker.setAttribute('id', "fade");
           blocker.setAttribute('animation', 'property: material.opacity; from: 0.0; to: 1.0 dur: 500; dir: alternate;');
           camera.appendChild(blocker);
 
@@ -132,6 +139,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
                 artifact.setAttribute('gltf-model', '#totemModel');
                 artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
                 artifact.setAttribute('scale', "0.6 0.6 0.6");
+                artifact.setAttribute('rotation', "0 0 0");
                 artifact.setAttribute('id', "artifact");
                 artifact.setAttribute('drag-rotate-component', {});
                 scene.appendChild(artifact);
