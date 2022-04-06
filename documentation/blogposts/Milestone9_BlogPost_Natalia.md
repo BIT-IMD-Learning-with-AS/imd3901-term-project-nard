@@ -18,4 +18,4 @@ We made a final list of necessities we need done before the due date. Completing
 
 **Media**
 
-https://www.youtube.com/watch?v=bqiVidPoEi8
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/mobile.PNG?raw=true)
