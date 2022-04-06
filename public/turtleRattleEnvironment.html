@@ -28,11 +28,11 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
               var rot = entityEl.getAttribute('rotation');
 
                 if(x< die){
-                  entityEl.setAttribute('rotation', '0 ' + (rot.y - 3) + ' 0');
+                  entityEl.setAttribute('rotation', '0 ' + (rot.y - 4) + ' 0');
                   die = x;
                 }
                 else{
-                  entityEl.setAttribute('rotation', '0 '+ (rot.y + 3) + ' 0');
+                  entityEl.setAttribute('rotation', '0 '+ (rot.y + 4) + ' 0');
                   die = x;
                 }    
               }            
@@ -40,7 +40,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         var artifactClick = false;
         var die = 200;
         
-        /* Artifact rotation
+        // Artifact rotation
         AFRAME.registerComponent('drag-rotate-component',{
             schema : { speed : {default:1}},
             init : function(){
@@ -72,7 +72,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
               }
             }
         });
-*/
+
         // Registering a-scene
         AFRAME.registerComponent('explore-experience', {
           init: function () {
