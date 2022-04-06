@@ -20,6 +20,16 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       <link rel="stylesheet" href="/css/artifactEvironmentCSS.css">
 
       <script>
+        function myFunction(event) {
+          var x = event.touches[0].clientX;
+          document.getElementById("demo").innerHTML = x;
+
+          var item = document.getElementById("artifact");
+
+          var temp_x = event.touches[0].clientX-item.x_cord;
+          item.el.object3D.rotateY(temp_x*item.data.speed/200);
+          item.x_cord = event.touches[0].clientX;
+        }
 
         var artifactClick = false;
         
@@ -160,6 +170,10 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         <div class="center" id="artifact-info">
         </div>
 
+        <div class="center" ontouchmove="myFunction(event)" id="artifact-area">
+          <p id="demo"></p>
+        </div>
+
       <!-- A-SCENE -->
       <a-scene explore-experience environment="preset: forest; groundTexture:walkernoise; shadow: true" physics joystick vr-mode-ui="enabled: false">
 
@@ -189,7 +203,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         <!-- DO NOT TOUCH camera-->
         <a-entity camera id="camera" position="0 2 0" wasd-controls look-controls>
           <a-entity cursor id="cameraDot" position="0 0 -1"
-                    geometry="primitive: sphere; radius:0.008"
+                    geometry="primitive: sphere; radius:0.01"
                     material="color:black; shader:flat; opacity:0.5"></a-entity>
         </a-entity>
 

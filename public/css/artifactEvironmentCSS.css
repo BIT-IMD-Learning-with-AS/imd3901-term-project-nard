@@ -23,3 +23,20 @@
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
+
+  #artifact-area {
+    z-index: 99999;
+    margin: auto;
+    width: 70%;
+    height: 20%;
+    color: white;
+    font-size: 1vw;
+    top:30%;
+    margin: 0;
+    position: absolute;
+    text-align: center;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
