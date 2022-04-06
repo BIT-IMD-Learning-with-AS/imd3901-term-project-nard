@@ -1,6 +1,6 @@
 Milestone Reflections - Riya Yallabandi
 
-Milestone 8 : "Working On It..."
+Milestone 8 : "We see the finish line!"
 
 Date: 2022-04-05
 
@@ -23,4 +23,4 @@ We sucessfully have gotten this far in the project and we are really proud of wh
 have for the final.
 
 
-![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/deerIdea.png?raw=true)
+![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/sound.png?raw=true)
