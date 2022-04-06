@@ -1,0 +1,11 @@
+Model Information:
+* title:	Wicker Basket Pack
+* source:	https://sketchfab.com/3d-models/wicker-basket-pack-0783e48c8c71463582f4e0a4535aef9a
+* author:	koss2712 (https://sketchfab.com/koss2712)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Wicker Basket Pack" (https://sketchfab.com/3d-models/wicker-basket-pack-0783e48c8c71463582f4e0a4535aef9a) by koss2712 (https://sketchfab.com/koss2712) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
