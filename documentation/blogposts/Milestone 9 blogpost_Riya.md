@@ -24,3 +24,6 @@ have for the final.
 
 
 ![](https://github.com/BIT-IMD-Learning-with-AS/imd3901-term-project-nard/blob/main/documentation/blogposts/sound.png?raw=true)
+
+
+^^ One of the sounds I came across for the canoe journey
