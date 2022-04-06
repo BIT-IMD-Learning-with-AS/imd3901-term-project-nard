@@ -152,6 +152,8 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
                 // mobile movement block
                 var blocker = document.querySelector('#mobileBlocker');
                 blocker.style.position = 'absolute';
+                var swipeSec = document.querySelector('#artifact-area');
+                swipeSec.style.top = '200px';
 
                 artifactClick = true;
             }
@@ -180,7 +182,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         </div>
 
         <!-- mobile -->
-        <div class="center" ontouchmove="myFunction(event)" id="artifact-area">
+        <div ontouchmove="myFunction(event)" id="artifact-area">
         </div>
         <div id="mobileBlocker">
         </div>
