@@ -20,33 +20,31 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
 
       <script>
 
+        // MOBILE artifact rotation
         function myFunction(event) {
-
-            var x = event.touches[0].clientX;
-                document.getElementById("demo").innerHTML = x;
-                var entityEl = document.querySelector('#artifact');
-              var rot = entityEl.getAttribute('rotation');
-
-                if(x< die){
-                  entityEl.setAttribute('rotation', '0 ' + (rot.y - 4) + ' 0');
-                  die = x;
-                }
-                else{
-                  entityEl.setAttribute('rotation', '0 '+ (rot.y + 4) + ' 0');
-                  die = x;
-                }    
-              }            
+          var x = event.touches[0].clientX;
+          var entityEl = document.querySelector('#artifact');
+          var rot = entityEl.getAttribute('rotation');
+          if(x < oldFingerPos){
+            entityEl.setAttribute('rotation', '0 ' + (rot.y - 4) + ' 0');
+            oldFingerPos = x;
+          }
+          else{
+            entityEl.setAttribute('rotation', '0 '+ (rot.y + 4) + ' 0');
+            oldFingerPos = x;
+          }    
+        }     
+        
+        var oldFingerPos = 200;
 
         var artifactClick = false;
-        var die = 200;
         
-        // Artifact rotation
+        // DESKTOP Artifact rotation
         AFRAME.registerComponent('drag-rotate-component',{
             schema : { speed : {default:1}},
             init : function(){
               this.ifMouseDown = false;
               this.x_cord = 0;
-              //this.y_cord = 0;
               document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
               document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
               document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
@@ -54,7 +52,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
             OnDocumentMouseDown : function(event){
               this.ifMouseDown = true;
               this.x_cord = event.clientX;
-              //this.y_cord = event.clientY;
             },
             OnDocumentMouseUp : function(){
               this.ifMouseDown = false;
@@ -66,9 +63,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
                 var temp_x = event.clientX-this.x_cord;
                 this.el.object3D.rotateY(temp_x*this.data.speed/200);
                 this.x_cord = event.clientX;
-                //var temp_y = event.clientY-this.y_cord;
-                //this.el.object3D.rotateX(temp_y*this.data.speed/400)
-                //this.y_cord = event.clientY;
               }
             }
         });
@@ -120,6 +114,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
               console.log("ARTIFACT FOUND")
 
               if(artifactClick == false){
+                // player walking block
                 var camera = document.getElementById("camera");
                 var indicator = document.getElementById("indicator");
                 var point = document.getElementById("cameraDot");
@@ -135,6 +130,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
 
                 let scene = document.querySelector('a-scene');
 
+                // artifact
                 let artifact = document.createElement('a-entity');
                 artifact.setAttribute('gltf-model', '#totemModel');
                 artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
@@ -146,11 +142,16 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
                 document.querySelector('#item-overlay').style.display='flex';
                 scene.style.cursor = "pointer";
 
+                // artifact info
                 let myElm = document.createElement("p");
                 myElm.setAttribute('style', 'font-size: 150%;');
                 var textNode = document.createTextNode("This is an A’nó:warako:wa Ohstá:wa, also known as a Turtle Rattle. This item is made from a snapping turtle's shell and is often used in ceremonies, along with singing."); 
                 myElm.appendChild(textNode);
                 document.getElementById("artifact-info").appendChild(myElm);
+
+                // mobile movement block
+                var blocker = document.querySelector('#mobileBlocker');
+                blocker.style.position = 'absolute';
 
                 artifactClick = true;
             }
@@ -178,8 +179,10 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         <div class="center" id="artifact-info">
         </div>
 
+        <!-- mobile -->
         <div class="center" ontouchmove="myFunction(event)" id="artifact-area">
-          <p id="demo"></p>
+        </div>
+        <div id="mobileBlocker">
         </div>
 
       <!-- A-SCENE -->
@@ -201,7 +204,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         </a-entity>
 
         <!-- canoe -->
-
         <a-assets>
             <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
         </a-assets>
