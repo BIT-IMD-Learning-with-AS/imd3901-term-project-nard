@@ -19,6 +19,7 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
       <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
       <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+      <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
       <script src="./js/fire.js"></script>
       <!-- DO NOT TOUCH -->
 
@@ -32,11 +33,11 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
             console.log('scene loaded');
             
             // Fade in
-            var player = document.getElementById("player");
+            var player = document.getElementById("camera");
             let blocker = document.createElement('a-sphere');
             blocker.setAttribute('radius', '0.05');
             blocker.setAttribute('material', "shader:flat; color: white; opacity: 1.0; side: double");
-            blocker.setAttribute('id', "artifact");
+            blocker.setAttribute('id', "fade");
             blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
             player.appendChild(blocker);
 
@@ -57,11 +58,11 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
             console.log("ARTIFACT RETURNED ");
             
             // Fade out
-            var player = document.getElementById("player");
+            var player = document.getElementById("camera");
             let blocker = document.createElement('a-sphere');
             blocker.setAttribute('radius', '0.05');
             blocker.setAttribute('material', "shader:flat; color: white; opacity: 0.0; side: double");
-            blocker.setAttribute('id', "artifact");
+            blocker.setAttribute('id', "fade");
             blocker.setAttribute('animation', 'property: material.opacity; from: 0.0; to: 1.0 dur: 500; dir: alternate;');
             player.appendChild(blocker);
 
@@ -83,7 +84,7 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
       </div>
 
       <!-- A-SCENE -->
-      <a-scene precontact-experience environment="preset: forest; groundTexture:none; groundColor:#5E4C37; ground:flat; shadow: true" physics="driver:ammo;">
+      <a-scene precontact-experience environment="preset: forest; groundTexture:none; groundColor:#5E4C37; ground:flat; shadow: true" physics="driver:ammo;" joystick vr-mode-ui="enabled: false">
      
       <a-assets>
         <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
@@ -94,7 +95,7 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
       </a-assets>
    
       <!-- camera -->
-      <a-entity camera id="player" position="-4 2 8" wasd-controls look-controls >
+      <a-entity camera id="camera" position="-4 2 8" wasd-controls look-controls >
         <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>
@@ -108,7 +109,6 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
         animation="property:position.y; loop: true; dir:alternate; dur:1000; to:1; easing:easeInOutQuad;"></a-animation>
         </a-entity>
       </a-entity>
-
 
     <!-- FIRE -->
     <a-entity position="0 0 4">

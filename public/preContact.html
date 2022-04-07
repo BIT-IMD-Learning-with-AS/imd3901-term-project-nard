@@ -11,6 +11,7 @@
       <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
       <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
+      <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
 
       <script src="/objInteraction.js"></script>
       <script src="./js/fire.js"></script>
@@ -25,11 +26,11 @@
             console.log('scene loaded');
 
             // Fade in
-            var player = document.getElementById("player");
+            var player = document.getElementById("camera");
             let blocker = document.createElement('a-sphere');
             blocker.setAttribute('radius', '0.05');
             blocker.setAttribute('material', "shader:flat; color: white; opacity: 1.0; side: double");
-            blocker.setAttribute('id', "artifact");
+            blocker.setAttribute('id', "fade");
             blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
             player.appendChild(blocker);
 
@@ -48,11 +49,11 @@
             console.log("ARTIFACT RETURNED ");
 
             // Fade out
-            var player = document.getElementById("player");
+            var player = document.getElementById("camera");
             let blocker = document.createElement('a-sphere');
             blocker.setAttribute('radius', '0.05');
             blocker.setAttribute('material', "shader:flat; color: white; opacity: 0.0; side: double");
-            blocker.setAttribute('id', "artifact");
+            blocker.setAttribute('id', "fade");
             blocker.setAttribute('animation', 'property: material.opacity; from: 0.0; to: 1.0 dur: 500; dir: alternate;');
             player.appendChild(blocker);
 
@@ -84,7 +85,7 @@
       </div>
 
       <!-- A-SCENE -->
-      <a-scene precontact-experience environment="preset: forest; groundTexture:none; groundColor:#5A5918; shadow: true" physics="driver:ammo;">
+      <a-scene precontact-experience environment="preset: forest; groundTexture:none; groundColor:#5A5918; shadow: true" physics="driver:ammo;" joystick vr-mode-ui="enabled: false">
      
       <a-assets>
         <audio id="river" src="assets/riverSound.wav" preload="auto"></audio>
@@ -110,7 +111,7 @@
         <a-asset-item id="table" response-type="arraybuffer" src="assets/table/scene.gltf"></a-asset-item>
       </a-assets>
 
-      <a-entity camera id="player" position="4 2 20" wasd-controls look-controls >
+      <a-entity camera id="camera" position="4 2 20" wasd-controls look-controls >
         <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>

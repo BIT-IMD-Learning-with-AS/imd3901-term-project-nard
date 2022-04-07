@@ -10,11 +10,29 @@
       <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/artifactEvironmentCSS.css">
 
       <script>
+
+        // MOBILE artifact rotation
+        function myFunction(event) {
+          var x = event.touches[0].clientX;
+          var entityEl = document.querySelector('#artifact');
+          var rot = entityEl.getAttribute('rotation');
+          if(x < oldFingerPos){
+            entityEl.setAttribute('rotation', '0 ' + (rot.y - 6) + ' 0');
+            oldFingerPos = x;
+          }
+          else{
+            entityEl.setAttribute('rotation', '0 '+ (rot.y + 6) + ' 0');
+            oldFingerPos = x;
+          }    
+        }     
+        
+        var oldFingerPos = 200;
 
         var artifactClick = false;
         
@@ -57,13 +75,13 @@
             console.log('scene loaded');
 
             // Fade in
-            var player = document.getElementById("player");
+            var camera = document.getElementById("camera");
             let blocker = document.createElement('a-sphere');
             blocker.setAttribute('radius', '0.05');
             blocker.setAttribute('material', "shader:flat; color: white; opacity: 1.0; side: double");
-            blocker.setAttribute('id', "artifact");
+            blocker.setAttribute('id', "fade");
             blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
-            player.appendChild(blocker);
+            camera.appendChild(blocker);
           }
         });
         
@@ -72,13 +90,13 @@
           artifactFound = true;
 
           // Fade out
-          var player = document.getElementById("player");
+          var camera = document.getElementById("camera");
           let blocker = document.createElement('a-sphere');
           blocker.setAttribute('radius', '0.05');
           blocker.setAttribute('material', "shader:flat; color: white; opacity: 0.0; side: double");
-          blocker.setAttribute('id', "artifact");
+          blocker.setAttribute('id', "fade");
           blocker.setAttribute('animation', 'property: material.opacity; from: 0.0; to: 1.0 dur: 500; dir: alternate;');
-          player.appendChild(blocker);
+          camera.appendChild(blocker);
 
           let artifactText = document.querySelector('#artifact-info');
           artifactText.remove();
@@ -98,18 +116,18 @@
               console.log("ARTIFACT FOUND")
 
               if(artifactClick == false){
-                var player = document.getElementById("player");
+                var camera = document.getElementById("camera");
                 var indicator = document.getElementById("indicator");
                 var point = document.getElementById("cameraDot");
-                player.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
-                player.setAttribute("wasd-controls", { enabled: false}); 
-                player.setAttribute("rotation", "-15 0 0"); 
+                camera.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
+                camera.setAttribute("wasd-controls", { enabled: false}); 
+                camera.setAttribute("rotation", "-15 0 0"); 
                 point.setAttribute("material", "opacity:0");     
                 event.srcElement.parentElement.removeChild(event.srcElement);
 
-                var posX = player.getAttribute('position').x;
-                var posZ = player.getAttribute('position').z;
-                var posY = player.getAttribute('position').y;
+                var posX = camera.getAttribute('position').x;
+                var posZ = camera.getAttribute('position').z;
+                var posY = camera.getAttribute('position').y;
 
                 let scene = document.querySelector('a-scene');
 
@@ -128,6 +146,12 @@
                 var textNode = document.createTextNode("This is a Wenserákon óhonte, also known as Sweetgrass. Sweetgrass is made from bunches of grass bradied together and it is prized for its pleasant aroma. It is used for medicine, weaving baskets, and also, a gift for those who are highly respected."); 
                 myElm.appendChild(textNode);
                 document.getElementById("artifact-info").appendChild(myElm);
+
+                // mobile movement block
+                var blocker = document.querySelector('#mobileBlocker');
+                blocker.style.position = 'absolute';
+                var swipeSec = document.querySelector('#artifact-area');
+                swipeSec.style.top = '200px';
 
                 artifactClick = true;
             }
@@ -155,8 +179,14 @@
         <div class="center" id="artifact-info">
         </div>
 
+        <!-- mobile -->
+        <div ontouchmove="myFunction(event)" id="artifact-area">
+        </div>
+        <div id="mobileBlocker">
+        </div>
+
       <!-- A-SCENE -->
-      <a-scene explore-experience environment="preset:forest; groundTexture:walkernoise; shadow: true" physics>
+      <a-scene explore-experience environment="preset:forest; groundTexture:walkernoise; shadow: true" physics joystick vr-mode-ui="enabled: false">
 
         <a-entity light="type: spot; angle: -45" position="0, 30, 51"></a-entity>
 
@@ -170,7 +200,7 @@
         <!-- artifact -->
         <a-entity gltf-model= "#totemModel" id="artifact" position="-2 0.2 -15" rotation="0 0 90" scale="0.04 0.04 0.04">
           <!-- indicator -->
-          <a-image look-at="#player" id="indicator" src="assets/eyeIndicator.png" position="15 20 0" scale="6 5.8 6"></a-image>
+          <a-image look-at="#camera" id="indicator" src="assets/eyeIndicator.png" position="15 20 0" scale="6 5.8 6"></a-image>
         </a-entity>
 
         <!-- canoe -->
@@ -182,7 +212,7 @@
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
         
         <!-- DO NOT TOUCH camera-->
-        <a-entity camera id="player" position="0 2 0" wasd-controls look-controls >
+        <a-entity camera id="camera" position="0 2 0" wasd-controls look-controls >
           <a-entity cursor id="cameraDot" position="0 0 -1"
                     geometry="primitive: sphere; radius:0.008"
                     material="color:black; shader:flat; opacity:0.5"></a-entity>
