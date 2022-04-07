@@ -1,4 +1,9 @@
-<!-- CREATOR CREDITS -->
+<!-- CREATOR CREDITS
+birds: https://sketchfab.com/3d-models/birds-3a9bb97be78944f9bffc23fb25c2154e
+bird: https://sketchfab.com/3d-models/low-poly-bird-animated-82ada91f0ac64ab595fbc3dc994a3590
+
+-->
+
 <!-- -->
 
 <!DOCTYPE html>
@@ -114,6 +119,7 @@
             <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
             <a-asset-item id="deer" response-type="arraybuffer" src="assets/deer_animal/scene.gltf"></a-asset-item>
             <a-asset-item id="bear" response-type="arraybuffer" src="assets/bear_walk_animation/scene.gltf"></a-asset-item>
+            <a-asset-item id="bird" response-type="arraybuffer" src="assets/birds/scene.gltf"></a-asset-item>
 
 
         </a-assets>
@@ -138,6 +144,9 @@
         </a-entity>
         <a-entity gltf-model= "#deer" position="-20 0 -20" rotation="0 180 0" scale=".5 .5 .5 "> </a-entity>
         <a-entity gltf-model="#bear" position="17.339 0 -22.144" rotation="0 0 0" scale="" animation-mixer="clip: Bear_Walk_0" animation="property: position; to: 17.339 0 25; dur: 50000; easing: linear; loop: true"></a-entity>
+        <a-entity gltf-model="#bird" position="0 10 20" rotation="0 0 0" scale="" animation-mixer="clip: Scene " animation="property: position; to: 0 10 -100; dur: 30000; easing: linear; loop: true"></a-entity>
+        <a-entity gltf-model="#bird" position="10 5 20" rotation="0 0 0" scale="" animation-mixer="clip: Scene " animation="property: position; to: 10 10 -100; dur: 30000; easing: linear; loop: true"></a-entity>
+        <a-entity gltf-model="#bird" position="-10 5 20" rotation="0 0 0" scale="" animation-mixer="clip: Scene " animation="property: position; to: -10 10 -100; dur: 30000; easing: linear; loop: true"></a-entity>
 
         <a-entity camera id="player" look-controls position="0 2 20"></a-entity>
 
