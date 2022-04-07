@@ -35,6 +35,15 @@
               cam.setAttribute('animation', "property:position; to: 0 2 -40; dur: 58300; easing: linear;");
 
               typeWriter();
+
+              // Timer before fade out
+              setTimeout(function () {
+                canoe.setAttribute('animation', "property:position; to: 0 1.127 -40; dur: 90000; easing: linear;");
+                cam.removeAttribute("animation");
+                let txt = document.querySelector('#narration-info');
+                txt.style.opacity= 0;
+              }, 20000);
+          
             }
         });
 
