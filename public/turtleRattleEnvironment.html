@@ -199,6 +199,9 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
       <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
 
       <a-asset-item id="oneBird" response-type="arraybuffer" src="assets/oneBird/scene.gltf"></a-asset-item>
+      <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+
+
 
       
       <a-scene explore-experience environment="preset: forest; groundTexture:walkernoise; shadow: true" physics joystick vr-mode-ui="enabled: false">
@@ -227,7 +230,8 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
 
         <a-entity gltf-model="#oneBird" position="-18.971 5.773 -13.687" rotation="0 90 0" scale="0.2 0.2 0.2" animation-mixer="clip: Take 001 " animation="property: position; to: 50 5.773 -13.687; dur: 9000; easing: linear; loop: true"></a-entity>
-        
+        <a-entity gltf-model="#lowDeer" position="4.612 0.299 -28.464" rotation="0 90 0" scale="" animation-mixer="clip: Armature|Eat " animation="property: position; to: 4.612 0.299 -28.464; dur: 9000; easing: linear; loop: true"></a-entity>
+
         <!-- DO NOT TOUCH camera-->
         <a-entity camera id="camera" position="0 2 0" wasd-controls look-controls>
           <a-entity cursor id="cameraDot" position="0 0 -1"
