@@ -156,6 +156,8 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
                 swipeSec.style.top = '200px';
 
                 artifactClick = true;
+
+                
             }
           }
         } 
@@ -167,6 +169,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
           init: function () {},
           tick: function () {
             this.el.object3D.lookAt(this.data.object3D.position)
+            
           }
         });
       </script>
@@ -188,6 +191,8 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         </div>
 
       <!-- A-SCENE -->
+      <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
+      
       <a-scene explore-experience environment="preset: forest; groundTexture:walkernoise; shadow: true" physics joystick vr-mode-ui="enabled: false">
 
         <a-entity light="type: spot; angle: -45" position="0, 30, 51"></a-entity>
