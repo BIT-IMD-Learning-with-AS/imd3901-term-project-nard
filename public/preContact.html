@@ -12,6 +12,7 @@
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
       <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
       <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
 
       <script src="/objInteraction.js"></script>
       <script src="./js/fire.js"></script>
@@ -109,6 +110,9 @@
         <a-asset-item id="cornCrop" response-type="arraybuffer" src="assets/corn/scene.gltf"></a-asset-item>
         <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
         <a-asset-item id="table" response-type="arraybuffer" src="assets/table/scene.gltf"></a-asset-item>
+        <a-asset-item id="basket" response-type="arraybuffer" src="assets/wicker_basket_pack/scene.gltf"></a-asset-item>
+        <a-asset-item id="bird" response-type="arraybuffer" src="assets/birds/scene.gltf"></a-asset-item>
+        <a-asset-item id="deer" response-type="arraybuffer" src="assets/deer._or_horse_if_you_are_hong_kong_police/scene.gltf"></a-asset-item>
       </a-assets>
 
       <a-entity camera id="camera" position="4 2 20" wasd-controls look-controls >
@@ -141,6 +145,11 @@
       <a-entity gltf-model="#pineModel" position="10 0 -22" rotation="0 0 0" scale="3 4 3" value="Pine tree" object-info blessing></a-entity>
       <a-entity gltf-model="#pineModel" position="14 0 -35" rotation="0 0 0" scale="2 3 2" value="Pine tree" object-info blessing></a-entity>
       <a-entity gltf-model="#pineModel" position="-10 0 -40" rotation="0 0 0" scale="3 6 3" value="Pine tree" blessing></a-entity>
+
+      <a-entity gltf-model="#basket" id="basket" position="6.827 0.139 -5.584" rotation="0 0 0" scale="1 1 1"></a-entity>
+      <a-entity gltf-model="#bird" id="bird" position="19.023 10.139 -5.584" rotation="0 0 0" scale="1 1 1"></a-entity>
+      <a-entity gltf-model="#bird" id="bird1" position="21.652 10.139 -4.639" rotation="0 0 0" scale="1 1 1"></a-entity>
+      <a-entity gltf-model="#deer" id="deer" position="17.662 0.139 -17.108" rotation="0 -34.410 0" scale=".02 .02 .02" animation-mixer="clip: Static Pose"></a-entity>
 
       <a-entity sound="src: #river"></a-entity>
 
