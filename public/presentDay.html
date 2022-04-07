@@ -94,14 +94,6 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
         <a-asset-item id="longhouse" response-type="arraybuffer" src="assets/Modern_Longhouse/scene.gltf"></a-asset-item>
       </a-assets>
    
-      <!-- camera -->
-      <a-entity camera id="camera" position="-4 2 8" wasd-controls look-controls >
-        <a-entity cursor id="cameraDot" position="0 0 -1"
-                  geometry="primitive: sphere; radius:0.008"
-                  material="color:black; shader:flat; opacity:0.5"></a-entity>
-        <a-entity gltf-model= "#grassModel" id="holdingArtifact" position="-0.2 -0.3 -0.1" rotation="-30 0 0" scale="0.01 0.01 0.01"></a-entity>
-      </a-entity>
-
   <!-- rightful place -->
      <!--  <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321" blessing>-->
       <a-entity gltf-model= "assets/table/scene.gltf" id="rightfulPlace" position="0 1.235 -5" rotation="0 90 0" scale="0.360 0.410 0.310" blessing> 
@@ -137,6 +129,15 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
     <a-box position="33.790 9.447 -80.092" rotation="0 45 0" scale="10 20 10" color="gray"></a-box>
     <a-box position="-1 16.790 -99.092" rotation="0 45 0" scale="10 40 10" color="gray"></a-box>
     <a-box position="-30.856 9.447 -67.453" rotation="0 45 0" scale="10 20 10" color="gray"></a-box>
+
+     <!-- camera -->
+     <a-entity camera id="camera" position="-4 2 8" wasd-controls look-controls >
+      <a-entity cursor id="cameraDot" position="0 0 -1"
+                geometry="primitive: sphere; radius:0.008"
+                material="color:black; shader:flat; opacity:0.5"></a-entity>
+      <a-entity gltf-model= "#grassModel" id="holdingArtifact" position="-0.2 -0.3 -0.1" rotation="-30 0 0" scale="0.01 0.01 0.01"></a-entity>
+    </a-entity>
+
   
     </a-scene>
   </body>

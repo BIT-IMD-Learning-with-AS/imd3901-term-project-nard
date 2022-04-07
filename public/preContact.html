@@ -115,11 +115,16 @@
         <a-asset-item id="deer" response-type="arraybuffer" src="assets/deer._or_horse_if_you_are_hong_kong_police/scene.gltf"></a-asset-item>
       </a-assets>
 
-      <a-entity camera id="camera" position="4 2 20" wasd-controls look-controls >
-        <a-entity cursor id="cameraDot" position="0 0 -1"
-                  geometry="primitive: sphere; radius:0.008"
-                  material="color:black; shader:flat; opacity:0.5"></a-entity>
-        <a-entity gltf-model= "#rattleModel" id="holdingArtifact" position="-0.5 -0.2 -0.5" rotation="-20 90 70" scale="0.2 0.2 0.2"></a-entity>
+  
+
+      <!-- FIRE -->
+      <a-entity position="0 0 4">
+        <!-- fire particles -->
+        <a-entity fire="particles: 500;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
+        <!-- fire light -->
+        <a-entity position="0 1.5 -4">
+            <a-entity light="type: point; color: #FFA2 0; intensity: 1.5; distance: 10.0;"></a-entity>
+        </a-entity>
       </a-entity>
 
      <!-- rightful place -->
@@ -167,20 +172,17 @@
       <a-box id="drying-rack" position="-3.02306 1 -10.1059" scale="2.5 0.1 0.1" rotation="30.0000701530499 129.5824267779675 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="drying-rack" position="-2.36162 1.63557 -11.58017" scale="5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>-->
 
-      <!-- FIRE -->
-      <a-entity position="0 0 4">
-        <!-- fire particles -->
-        <a-entity fire="particles: 500;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
-        <!-- fire light -->
-        <a-entity position="0 1.5 -4">
-            <a-entity light="type: point; color: #FFA2 0; intensity: 1.5; distance: 10.0;"></a-entity>
-        </a-entity>
-      </a-entity>
-
       <a-entity  gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
       <!-- Firepit Stand  -->
       <a-entity gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
       <a-entity gltf-model= "#pot" id="pot" position="-0.035 0.155 0.162" rotation="0 -72.573 -179.76" scale="-0.206 -0.206 -0.206"> </a-entity>
+
+      <a-entity camera id="camera" position="4 2 20" wasd-controls look-controls >
+        <a-entity cursor id="cameraDot" position="0 0 -1"
+                  geometry="primitive: sphere; radius:0.008"
+                  material="color:black; shader:flat; opacity:0.5"></a-entity>
+        <a-entity gltf-model= "#rattleModel" id="holdingArtifact" position="-0.5 -0.2 -0.5" rotation="-20 90 70" scale="0.2 0.2 0.2"></a-entity>
+      </a-entity>
 
       <!-- DRYING RACK -->
       <a-entity gltf-model= "#dryingRack" id="dryingRack" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
@@ -214,6 +216,7 @@
       <a-entity gltf-model= "#dirt" id="dirt4" position="17.049 0.324 1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
       <a-entity gltf-model= "#dirt" id="dirt5" position="17.049 0.324 5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
       <a-entity gltf-model= "#dirt" id="dirt6" position="17.049 0.324 9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      
       
        <!-- Corn crops -->
       <a-entity gltf-model= "#cornCrop" id="corn1" position="15.887 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>

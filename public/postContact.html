@@ -108,15 +108,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
          <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
         </a-assets>
 
-      <!-- camera -->
-      <a-entity camera id="camera" position="3 2 20" wasd-controls look-controls>
-        <a-entity cursor id="cameraDot" position="0 0 -1"
-                  geometry="primitive: sphere; radius:0.008"
-                  material="color:black; shader:flat; opacity:0.5"></a-entity>
-        <!--<a-image src="#artifactInventory" position="-0.8 -0.35 -0.5" scale="0.1 0.1 0.1"></a-image>-->
-        <a-entity gltf-model= "#moccassinModel" id="holdingArtifact" position="-0.5 -0.25 -0.5" rotation="-80 180 0" scale="0.4 0.4 0.4"></a-entity>
-      </a-entity>
-
      <!-- rightful place -->
      <!--  <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321" blessing>-->
       <a-entity gltf-model= "assets/table/scene.gltf" id="rightfulPlace" position="0 1.235 -5" rotation="0 90 0" scale="0.360 0.410 0.310" blessing> 
@@ -152,7 +143,60 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       <a-box id="firePlace" position="-3.02306 1 6.1059" scale="2.5 0.1 0.1" rotation="30.0000701530499 129.5824267779675 -120.0002806121996" color="brown" material="" geometry=""></a-box>
 
       <a-box id="firePlace" position="-2.36162 1.63557 5.58017" scale="2.5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>-->
- 
+
+   <!-- Firepit Stand Broken  -->
+   <a-entity boat gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
+   <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
+
+   <!-- Fire pot tipped over -->
+   <a-entity boat gltf-model= "#pot" id="pot" position="0.026 0.186 -0.787" rotation="-69.580 68.325 180" scale="-0.206 -0.206 -0.206"> </a-entity>
+
+   <!-- FIRE ON LONGHOUSE 1-->
+   <a-entity position="-8 8 15" scale="6 6 6">
+    <!-- fire particles -->
+    <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
+    <!-- fire light -->
+    <a-entity position="0 1.5 -4">
+        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
+    </a-entity>
+  </a-entity>
+  
+
+  <!-- FIRE ON LONGHOUSE 2 -->
+  <a-entity position="-6.875 0.080 24.305" scale="6 6 6">
+    <!-- fire particles -->
+    <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
+    <!-- fire light -->
+    <a-entity position="0 1.5 -4">
+        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
+    </a-entity>
+  </a-entity>
+
+  <!-- FIRE ON LONGHOUSE 3 -->
+  <a-entity position="-6.885 -0.422 41.930" scale="6 6 6">
+    <!-- fire particles -->
+    <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
+    <!-- fire light -->
+    <a-entity position="0 1.5 -4">
+        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
+    </a-entity>
+  </a-entity>
+
+   <!-- DRYING RACK -->
+   <a-entity boat gltf-model= "#brokenDryingRack" id="brokenDryingRack" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
+
+   <a-entity boat gltf-model= "#fallenAnimalSkin" id="fallenAnimalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.500 0.500 0.340" > </a-entity>
+
+   <!-- camera -->
+   <a-entity camera id="camera" position="3 2 20" wasd-controls look-controls>
+    <a-entity cursor id="cameraDot" position="0 0 -1"
+              geometry="primitive: sphere; radius:0.008"
+              material="color:black; shader:flat; opacity:0.5"></a-entity>
+    <!--<a-image src="#artifactInventory" position="-0.8 -0.35 -0.5" scale="0.1 0.1 0.1"></a-image>-->
+    <a-entity gltf-model= "#moccassinModel" id="holdingArtifact" position="-0.5 -0.25 -0.5" rotation="-80 180 0" scale="0.4 0.4 0.4"></a-entity>
+  </a-entity>
+
+       
   <!-- Corn crops -->
  <!-- Corn crops dirt -->
  <a-entity  gltf-model= "#dirt" id="dirt1" position="17.049 0.324 -9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
@@ -203,51 +247,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
  <a-entity gltf-model= "#cornCrop" id="cornN8" position="18.493 0.375 9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
  <a-entity gltf-model= "#cornCrop" id="cornN9" position="18.493 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
  <a-entity gltf-model= "#cornCrop" id="cornN10" position="18.493 0.375 10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-
-
-
-   <!-- Firepit Stand Broken  -->
-   <a-entity boat gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
-   <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
-
-   <!-- Fire pot tipped over -->
-   <a-entity boat gltf-model= "#pot" id="pot" position="0.026 0.186 -0.787" rotation="-69.580 68.325 180" scale="-0.206 -0.206 -0.206"> </a-entity>
-
-   <!-- FIRE ON LONGHOUSE 1-->
-   <a-entity position="-8 8 15" scale="6 6 6">
-    <!-- fire particles -->
-    <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
-    <!-- fire light -->
-    <a-entity position="0 1.5 -4">
-        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
-    </a-entity>
-  </a-entity>
-
-  <!-- FIRE ON LONGHOUSE 2 -->
-  <a-entity position="-6.875 0.080 24.305" scale="6 6 6">
-    <!-- fire particles -->
-    <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
-    <!-- fire light -->
-    <a-entity position="0 1.5 -4">
-        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
-    </a-entity>
-  </a-entity>
-
-  <!-- FIRE ON LONGHOUSE 3 -->
-  <a-entity position="-6.885 -0.422 41.930" scale="6 6 6">
-    <!-- fire particles -->
-    <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
-    <!-- fire light -->
-    <a-entity position="0 1.5 -4">
-        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
-    </a-entity>
-  </a-entity>
-
-   <!-- DRYING RACK -->
-   <a-entity boat gltf-model= "#brokenDryingRack" id="brokenDryingRack" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
-
-   <a-entity boat gltf-model= "#fallenAnimalSkin" id="fallenAnimalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.500 0.500 0.340" > </a-entity>
-
+ 
     </a-scene>
   </body>
 </html>
