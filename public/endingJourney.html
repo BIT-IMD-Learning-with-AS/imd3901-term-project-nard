@@ -42,6 +42,8 @@
                 cam.removeAttribute("animation");
                 let txt = document.querySelector('#narration-info');
                 txt.style.opacity= 0;
+                let cred = document.querySelector('#credits');
+                cred.style.animationPlayState="running";
               }, 20000);
           
             }
@@ -50,7 +52,7 @@
         var i = 0;
         var part1 = "You have returned all lost artifacts back to its rightful place and brought them peace";
         var part2 = "This is the ending of our story. You got to see the history of the Akwesasne people, the obstacles they overcame, and how they continue to appreciate their culture to this day";
-        var part3 = "We hope you enjoyed the Canoe Journey story, niá:wen";
+        var part3 = "We hope you enjoyed the Canoe Journey story, niá:wen!";
         var speed = 50;
         var part = 0;
         var tagHolders = ["narrationPT1", "narrationPT2", "narrationPT3"];
@@ -77,15 +79,19 @@
     </head>
     <body>
 
-      <!-- A-SCENE -->
-      <a-scene start-experience environment="preset: forest; groundTexture:walkernoise; shadow: true">
+         <!-- narration -->
+         <div id="narration-info">
+          <p class="noselect" id="narrationPT1" style="font-size:110%;"></p>
+          <p class="noselect" id="narrationPT2" style="font-size:110%; top: 20%;"></p>
+          <p class="noselect" id="narrationPT3" style="font-size:130%; top: 30%;"></p>
+        </div>
 
-          <!-- narration -->
-      <div id="narration-info">
-        <p class="noselect" id="narrationPT1" style="font-size:110%;"></p>
-        <p class="noselect" id="narrationPT2" style="font-size:110%; top: 20%;"></p>
-        <p class="noselect" id="narrationPT3" style="font-size:130%; top: 30%;"></p>
-      </div>
+        <div id="credits">
+          <p style="font-size:110%;">Credits<br><br><br>Creators:<br><br>Natalia Ocampo<br>Damla Durhan<br>Riya Yallabandi<br>Andrew Holland<br><br>Authors:<br><br>Algonquin kiddies</p>
+        </div>
+
+      <!-- A-SCENE -->
+      <a-scene start-experience environment="preset: forest; groundTexture:walkernoise; shadow: true" fog="type: linear;">
      
       <a-assets>
           <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
@@ -108,7 +114,7 @@
         <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 1.127 31.8" rotation="0 90 0" scale="0.160 0.160 0.140"  material="color:brown"> </a-entity>
         
-        <a-entity camera id="player" look-controls position="0 2 30"></a-entity>
+        <a-entity camera id="player" look-controls position="0 2 30">        </a-entity>
 
       </a-scene>
 
