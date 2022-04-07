@@ -107,6 +107,7 @@
         <a-asset-item id="woman2" response-type="arraybuffer" src="assets/nymph_2/Untitled.gltf"></a-asset-item>
         <a-asset-item id="cornCrop" response-type="arraybuffer" src="assets/corn/scene.gltf"></a-asset-item>
         <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
+        <a-asset-item id="table" response-type="arraybuffer" src="assets/table/scene.gltf"></a-asset-item>
       </a-assets>
 
       <a-entity camera id="player" position="4 2 20" wasd-controls look-controls >
@@ -116,12 +117,13 @@
         <a-entity gltf-model= "#rattleModel" id="holdingArtifact" position="-0.5 -0.2 -0.5" rotation="-20 90 70" scale="0.2 0.2 0.2"></a-entity>
       </a-entity>
 
-      <!-- rightful place -->
-      <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321" blessing>
+     <!-- rightful place -->
+     <!--  <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321" blessing>-->
+      <a-entity gltf-model= "assets/table/scene.gltf" id="rightfulPlace" position="0 1.235 -5" rotation="0 90 0" scale="0.360 0.410 0.310" blessing> 
         <a-entity gltf-model= "#diamond" position="-0.1 0.7 0" scale="0.003 0.003 0.003"
         animation="property:position.y; loop: true; dir:alternate; dur:1000; to:1; easing:easeInOutQuad;"></a-animation>
         </a-entity>
-      </a-box>
+      </a-entity>
       
       <!-- Pine trees -->
       <a-entity gltf-model="#pineModel" position="1 0 -27" rotation="0 0 0" scale="" value="Pine tree" object-info blessing></a-entity>
