@@ -1,5 +1,7 @@
 <!-- CREATOR CREDITS 
 Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30 
+bird: https://sketchfab.com/3d-models/low-poly-bird-animated-82ada91f0ac64ab595fbc3dc994a3590
+deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d755171337e143
 -->
 <!DOCTYPE html>
 <html>
@@ -195,6 +197,9 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
 
       <!-- A-SCENE -->
       <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
+
+      <a-asset-item id="oneBird" response-type="arraybuffer" src="assets/oneBird/scene.gltf"></a-asset-item>
+
       
       <a-scene explore-experience environment="preset: forest; groundTexture:walkernoise; shadow: true" physics joystick vr-mode-ui="enabled: false">
 
@@ -219,6 +224,9 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         </a-assets>
 
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
+
+
+        <a-entity gltf-model="#oneBird" position="-18.971 5.773 -13.687" rotation="0 90 0" scale="0.2 0.2 0.2" animation-mixer="clip: Take 001 " animation="property: position; to: 50 5.773 -13.687; dur: 9000; easing: linear; loop: true"></a-entity>
         
         <!-- DO NOT TOUCH camera-->
         <a-entity camera id="camera" position="0 2 0" wasd-controls look-controls>
