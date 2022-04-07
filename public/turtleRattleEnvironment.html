@@ -154,6 +154,9 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
                 myElm.appendChild(textNode);
                 document.getElementById("artifact-info").appendChild(myElm);
 
+                //let soundBtn = document.createElement("img");
+                //soundBtn.setAttribute('style', 'font-size: 150%;');
+
                 // mobile movement block
                 var blocker = document.querySelector('#mobileBlocker');
                 blocker.style.position = 'absolute';
@@ -162,8 +165,11 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
                 artifactClick = true;
 
-                
             }
+          }
+
+          if(event.srcElement.id == "soundBtn"){
+            console.log("gangaz");
           }
         } 
         window.addEventListener('click', onClick);
@@ -195,15 +201,11 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
         <div id="mobileBlocker">
         </div>
 
+        <div id="sound" >
+        <img id="soundBtn" src="assets/sound.png" width="50" height="50"></div>
+
       <!-- A-SCENE -->
       <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
-
-      <a-asset-item id="oneBird" response-type="arraybuffer" src="assets/oneBird/scene.gltf"></a-asset-item>
-      <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
-      <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
-
-
-
       
       <a-scene explore-experience environment="preset: forest; groundTexture:walkernoise; fog:0; shadow: true" physics joystick vr-mode-ui="enabled: false">
 
@@ -211,6 +213,10 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
         <a-assets>
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf" ></a-asset-item>
+          <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
+          <a-asset-item id="oneBird" response-type="arraybuffer" src="assets/oneBird/scene.gltf"></a-asset-item>
+          <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+          <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
         </a-assets>
 
         <!-- RIVER -->
@@ -253,15 +259,6 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
        <a-entity gltf-model= "#pineTree" id="pineTree13" position="-41.903 -0.201  6.436" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
        <a-entity gltf-model= "#pineTree" id="pineTree14" position="54.903 -0.201  7.939" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>
 
-       
-
-
-
-        <!-- canoe -->
-        <a-assets>
-            <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
-        </a-assets>
-
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
 
 
@@ -276,5 +273,6 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
         </a-entity>
 
     </a-scene>
+
   </body>
 </html>
