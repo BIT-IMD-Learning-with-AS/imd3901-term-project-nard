@@ -1,6 +1,6 @@
 #item-button {
-    width: 5vw;
-    height: 3vw;
+    width: 130px;
+    height: 80px;
     background-color: grey;
     color: white;
     border: 5px solid #ffffff;
@@ -8,6 +8,9 @@
     position: fixed; 
     z-index: 99999;
     cursor: pointer;
+    left: 16%;
+    bottom: 10%;
+    font-size: 1vw;
   }
   .center {
     z-index: 99999;
@@ -27,15 +30,14 @@
   #artifact-area {
     z-index: 99999;
     margin: auto;
-    width: 90%;
+    width: 30%;
     height: 50%;
     color: white;
-    font-size: 1vw;
-    top:-500px;
+    font-size: 2vw;
+    top:300px;
     margin: 0;
     position: absolute;
-    text-align: center;
-    left: 50%;
+    left: 15%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     cursor: pointer;
@@ -57,15 +59,27 @@
     cursor: pointer;
   }
 
-  #sound{
+  #bg{
     z-index: 99999;
     margin: auto;
-    width: 60%;
-    top:70%;
+    width: 40%;
+    height: 100%;
+    background-color: black;
     margin: 0;
     position: absolute;
-    text-align: center;
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    left: 0%;
+    top:0%;
+    opacity: 0.7;
+  }
+
+  #title{
+    z-index: 99999;
+    margin: auto;
+    width: 100%;
+    top:5%;
+    margin: 0;
+    position: absolute;
+    left: 3%;
+    font-size: 2.5vw;
+    color: white;
   }

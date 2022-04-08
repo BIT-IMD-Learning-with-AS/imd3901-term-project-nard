@@ -46,14 +46,14 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
             schema : { speed : {default:1}},
             init : function(){
               this.ifMouseDown = false;
-              this.x_cord = 0;
+              this.y_cord = 0;
               document.addEventListener('mousedown',this.OnDocumentMouseDown.bind(this));
               document.addEventListener('mouseup',this.OnDocumentMouseUp.bind(this));
               document.addEventListener('mousemove',this.OnDocumentMouseMove.bind(this));
             },
             OnDocumentMouseDown : function(event){
               this.ifMouseDown = true;
-              this.x_cord = event.clientX;
+              this.y_cord = event.clientX;
             },
             OnDocumentMouseUp : function(){
               this.ifMouseDown = false;
@@ -62,9 +62,9 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
             {
               if(this.ifMouseDown)
               {
-                var temp_x = event.clientX-this.x_cord;
-                this.el.object3D.rotateY(temp_x*this.data.speed/200);
-                this.x_cord = event.clientX;
+                var temp_y = event.clientX-this.y_cord;
+                this.el.object3D.rotateX(temp_y*this.data.speed/200);
+                this.y_cord = event.clientX;
               }
             }
         });
@@ -82,8 +82,6 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
             blocker.setAttribute('id', "fade");
             blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
             camera.appendChild(blocker);
-            
-         
           }
         });
         
@@ -100,10 +98,11 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
           blocker.setAttribute('animation', 'property: material.opacity; from: 0.0; to: 1.0 dur: 500; dir: alternate;');
           camera.appendChild(blocker);
 
-          let artifactText = document.querySelector('#artifact-info');
-          artifactText.remove();
-          let artifactBtn = document.querySelector('#item-overlay');
-          artifactBtn.remove();
+          // artifact info remove
+          var infoBG = document.getElementById('bg');
+          infoBG.remove();
+          var info = document.getElementById("title");
+          info.remove();
 
           // Timer before fade out
           setTimeout(function () {
@@ -122,40 +121,56 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
                 // player walking block
                 var camera = document.getElementById("camera");
                 var indicator = document.getElementById("indicator");
+                indicator.remove();
                 var point = document.getElementById("cameraDot");
                 camera.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
                 camera.setAttribute("wasd-controls", { enabled: false}); 
                 camera.setAttribute("rotation", "-15 0 0"); 
                 point.setAttribute("material", "opacity:0");     
-                event.srcElement.parentElement.removeChild(event.srcElement);
+                //event.srcElement.parentElement.removeChild(event.srcElement);
+
+                let scene = document.querySelector('a-scene');
 
                 var posX = camera.getAttribute('position').x;
                 var posZ = camera.getAttribute('position').z;
                 var posY = camera.getAttribute('position').y;
 
-                let scene = document.querySelector('a-scene');
-
-                // artifact
-                let artifact = document.createElement('a-entity');
-                artifact.setAttribute('gltf-model', '#totemModel');
-                artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
-                artifact.setAttribute('scale', "0.6 0.6 0.6");
-                artifact.setAttribute('rotation', "0 0 0");
-                artifact.setAttribute('id', "artifact");
-                artifact.setAttribute('drag-rotate-component', {});
-                scene.appendChild(artifact);
-                document.querySelector('#item-overlay').style.display='flex';
+                // ARTIFACT ANIMATION
+                event.srcElement.setAttribute('animation', "property: position; to: "+(posX+1.3)+" "+(posY - 0.4)+" "+(posZ-2)+"; dur: 1000; easing: linear;");
+                event.srcElement.setAttribute('animation__2', "property: scale; to: 0.65 0.7 0.6; dur: 1000; easing: linear;");
+                event.srcElement.setAttribute('animation__3', "property: rotation; to: 0 90 60; dur: 1000; easing: linear;");
+                event.srcElement.setAttribute('drag-rotate-component', {});
                 scene.style.cursor = "pointer";
+               
+                // ARTIFACT INFO
+                let bgTXT = document.createElement("div");
+                bgTXT.setAttribute('id', 'bg');
+                document.body.appendChild(bgTXT);
+                
+                let title = document.createElement("div");
+                title.setAttribute('id', 'title');
+                title.innerHTML += '<b>Turtle Rattle<br>A’nó:warako:wa Ohstá:wa</b>       ';
+                document.body.appendChild(title);
+                
+                let soundImg = document.createElement("img");
+                soundImg.setAttribute('id', 'soundBtn');
+                soundImg.setAttribute('src', 'assets/sound.png');
+                soundImg.setAttribute('width', '30');
+                soundImg.setAttribute('height', '30');
+                document.getElementById("title").appendChild(soundImg);
+                soundImg.style.cursor = "pointer";
 
-                // artifact info
                 let myElm = document.createElement("p");
-                myElm.setAttribute('style', 'font-size: 150%;');
-                var textNode = document.createTextNode("This is an A’nó:warako:wa Ohstá:wa, also known as a Turtle Rattle. This item is made from a snapping turtle's shell and is often used in ceremonies, along with singing."); 
-                myElm.appendChild(textNode);
-                document.getElementById("artifact-info").appendChild(myElm);
-
-                //let soundBtn = document.createElement("img");
-                //soundBtn.setAttribute('style', 'font-size: 150%;');
+                myElm.setAttribute('id', 'artifact-area');
+                myElm.innerHTML +=("This is an <i>A’nó:warako:wa Ohstá:wa</i>, also known as a Turtle Rattle.<br><br>This item is made from a snapping turtle's shell and is often used in ceremonies, along with singing and dancing."); 
+                document.getElementById("title").appendChild(myElm);
+                
+                // ARTIFACT BTN
+                let collectBtn = document.createElement("button");
+                collectBtn.setAttribute('id', 'item-button');
+                collectBtn.setAttribute('onclick', 'contactExperience();');
+                collectBtn.innerHTML += 'COLLECT';
+                document.getElementById("title").appendChild(collectBtn);
 
                 // mobile movement block
                 var blocker = document.querySelector('#mobileBlocker');
@@ -169,7 +184,8 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
           }
 
           if(event.srcElement.id == "soundBtn"){
-            console.log("gangaz");
+            var audio = new Audio('assets/audio/sweetgrass_audio.mp3');
+            audio.play();
           }
         } 
         window.addEventListener('click', onClick);
@@ -187,22 +203,12 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
     </head>
     <body>
-      <!-- item button -->
-      <div id="item-overlay" style="display:none; align-items: center; justify-content: center;">
-        <button id="item-button" style= "bottom:10%" onclick="contactExperience();">Collect</button>
-      </div>
-      <!-- item description -->
-        <div class="center" id="artifact-info">
-        </div>
 
         <!-- mobile -->
         <div ontouchmove="myFunction(event)" id="artifact-area">
         </div>
         <div id="mobileBlocker">
         </div>
-
-        <div id="sound" >
-        <img id="soundBtn" src="assets/sound.png" width="50" height="50"></div>
 
       <!-- A-SCENE -->
       <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
@@ -213,6 +219,7 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
         <a-assets>
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf" ></a-asset-item>
+          <a-asset-item id="totemModelBottom" response-type="arraybuffer" src="assets/Turtle_Rattle_Bottom/Untitled.gltf" ></a-asset-item>
           <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
           <a-asset-item id="oneBird" response-type="arraybuffer" src="assets/oneBird/scene.gltf"></a-asset-item>
           <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
@@ -223,7 +230,8 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
         <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5"></a-ocean>
 
         <!-- artifact -->
-        <a-entity gltf-model= "#totemModel" id="artifact" position="-6 0.2 -12" scale="0.2 0.2 0.2" blessing value="Ohstá:wa">
+        <a-entity gltf-model= "#totemModel" id="artifact" rotation="0 0 0" position="-6 0.2 -12" scale="0.2 0.2 0.2">
+          <a-entity gltf-model= "#totemModelBottom" scale="1 0.2 1" position="0 0.085 0"></a-entity>
           <!-- indicator -->
           <a-image look-at="#camera" id="indicator" src="assets/eyeIndicator.png" position="0 2 0" scale="0.9 0.7 0.9"></a-image>
         </a-entity>
