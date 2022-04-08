@@ -147,13 +147,13 @@
                 let soundImg = document.createElement("img");
                 soundImg.setAttribute('id', 'soundBtn');
                 soundImg.setAttribute('src', 'assets/sound.png');
-                soundImg.setAttribute('width', '30');
-                soundImg.setAttribute('height', '30');
+                soundImg.setAttribute('width', '2%');
+                soundImg.setAttribute('height', '2%');
                 document.getElementById("title").appendChild(soundImg);
                 soundImg.style.cursor = "pointer";
 
                 let myElm = document.createElement("p");
-                myElm.setAttribute('id', 'artifact-area');
+                myElm.setAttribute('id', 'info-area');
                 myElm.innerHTML +=("This is a <i>Wenserákon óhonte</i>, also known as Sweetgrass.<br><br>Sweetgrass is made from bunches of grass bradied together and it is prized for its pleasant aroma. It is used for medicine, weaving baskets, and also, a gift for those who are highly respected."); 
                 document.getElementById("title").appendChild(myElm);
                 
@@ -192,7 +192,9 @@
 
     </head>
     <body>
-
+      
+      <div id="info-area"></div>
+      
         <!-- mobile -->
         <div ontouchmove="myFunction(event)" id="artifact-area">
         </div>

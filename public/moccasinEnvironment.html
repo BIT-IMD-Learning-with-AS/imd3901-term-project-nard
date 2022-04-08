@@ -147,13 +147,13 @@
                 let soundImg = document.createElement("img");
                 soundImg.setAttribute('id', 'soundBtn');
                 soundImg.setAttribute('src', 'assets/sound.png');
-                soundImg.setAttribute('width', '30');
-                soundImg.setAttribute('height', '30');
+                soundImg.setAttribute('width', '2%');
+                soundImg.setAttribute('height', '2%');
                 document.getElementById("title").appendChild(soundImg);
                 soundImg.style.cursor = "pointer";
 
                 let myElm = document.createElement("p");
-                myElm.setAttribute('id', 'artifact-area');
+                myElm.setAttribute('id', 'info-area');
                 myElm.innerHTML +=("This is a baby's <i>Áhta’</i>, also known as a baby's shoe.<br><br>A shoe is usually made from deer, elk, moose or buffalo leather and sewn with sinew. This item is important as it protects their feet from getting injured by sharp objects on the floor and keeps them warm during the winter."); 
                 document.getElementById("title").appendChild(myElm);
                 
@@ -192,6 +192,8 @@
 
     </head>
     <body>
+
+      <div id="info-area"></div>
 
         <!-- mobile -->
         <div ontouchmove="myFunction(event)" id="artifact-area">
