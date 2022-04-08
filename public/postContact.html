@@ -89,7 +89,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
 
       <!-- A-SCENE -->
       <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
-      <a-scene precontact-experience environment="preset: forest;  groundTexture:walkernoise; groundColor:black; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" physics="driver:ammo;" joystick vr-mode-ui="enabled: false">
+      <a-scene precontact-experience environment="preset: forest;  groundTexture:walkernoise; groundColor:black; fog:0; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" physics="driver:ammo;" joystick vr-mode-ui="enabled: false">
  <!-- 
         groundColor: #000000; groundColor2: #000000; -->
         <a-assets>
@@ -106,6 +106,8 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
          <a-asset-item id="cornModel" response-type="arraybuffer" src="/assets/corn_corn_corn/scene.gltf"></a-asset-item>
          <a-asset-item id="cornCrop" response-type="arraybuffer" src="assets/corn/scene.gltf"></a-asset-item>
          <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
+         <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
+         <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
         </a-assets>
 
      <!-- rightful place -->
@@ -182,11 +184,37 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
     </a-entity>
   </a-entity>
 
+  
+ <!--Animation-->
+
+ <a-entity gltf-model="#deer" id="deer" position="9.824 0.451 0.288" rotation="-0.007 -32.104 91.104" scale="1 1 1"></a-entity>
+
    <!-- DRYING RACK -->
    <a-entity boat gltf-model= "#brokenDryingRack" id="brokenDryingRack" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
 
    <a-entity boat gltf-model= "#fallenAnimalSkin" id="fallenAnimalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.500 0.500 0.340" > </a-entity>
 
+   <!-- Pine trees-->
+   <a-entity gltf-model="#pineTree" id="tree1" position="-22.593 0 -27.000" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree2" position="-30.701 0 -44.793" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree3" position="17.302 0 -46.699" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree4" position="29.629 0 0.458" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree5" position="-27.559 0 14.010" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree6" position="-42.990 0 -1.378" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree7" position="-4.195 0 -33.376" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree8" position="-23.297 0 -5.000" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree9" position="36.003 0 -18.497" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree10" position="39.298 0 -42.436" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree11" position="25.778 0 -63.953" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree12" position="12.164 0 -22.000" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+  
+   <!-- <a-entity gltf-model="#pineTree" id="tree15" position="1.583 0 24.329" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree16" position="16.015 0 29.154" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree17" position="33.976 0 23.968" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity> -->
+
+  
+ 
+       
    <!-- camera -->
    <a-entity camera id="camera" position="3 2 20" wasd-controls look-controls>
     <a-entity cursor id="cameraDot" position="0 0 -1"
@@ -196,7 +224,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
     <a-entity gltf-model= "#moccassinModel" id="holdingArtifact" position="-0.5 -0.25 -0.5" rotation="-80 180 0" scale="0.4 0.4 0.4"></a-entity>
   </a-entity>
 
-       
   <!-- Corn crops -->
  <!-- Corn crops dirt -->
  <a-entity  gltf-model= "#dirt" id="dirt1" position="17.049 0.324 -9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
