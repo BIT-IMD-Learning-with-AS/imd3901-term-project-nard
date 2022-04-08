@@ -98,10 +98,11 @@
           blocker.setAttribute('animation', 'property: material.opacity; from: 0.0; to: 1.0 dur: 500; dir: alternate;');
           camera.appendChild(blocker);
 
-          let artifactText = document.querySelector('#artifact-info');
-          artifactText.remove();
-          let artifactBtn = document.querySelector('#item-overlay');
-          artifactBtn.remove();
+          // artifact info remove
+          var infoBG = document.getElementById('bg');
+          infoBG.remove();
+          var info = document.getElementById("title");
+          info.remove();
 
           // Timer before fade out
           setTimeout(function () {
@@ -118,35 +119,56 @@
               if(artifactClick == false){
                 var camera = document.getElementById("camera");
                 var indicator = document.getElementById("indicator");
+                indicator.remove();
                 var point = document.getElementById("cameraDot");
                 camera.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
                 camera.setAttribute("wasd-controls", { enabled: false}); 
                 camera.setAttribute("rotation", "-15 0 0"); 
                 point.setAttribute("material", "opacity:0");     
-                event.srcElement.parentElement.removeChild(event.srcElement);
+                //event.srcElement.parentElement.removeChild(event.srcElement);
+
+                let scene = document.querySelector('a-scene');
 
                 var posX = camera.getAttribute('position').x;
                 var posZ = camera.getAttribute('position').z;
                 var posY = camera.getAttribute('position').y;
 
-                let scene = document.querySelector('a-scene');
-
-                let artifact = document.createElement('a-entity');
-                artifact.setAttribute('gltf-model', '#totemModel');
-                artifact.setAttribute('position', posX +" "+(posY - 0.2)+" "+(posZ-2));
-                artifact.setAttribute('scale', "1 1 1");
-                artifact.setAttribute('rotation', "0 30 0");
-                artifact.setAttribute('id', "artifact");
-                artifact.setAttribute('drag-rotate-component', {});
-                scene.appendChild(artifact);
-                document.querySelector('#item-overlay').style.display='flex';
+                // ARTIFACT ANIMATION
+                event.srcElement.setAttribute('animation', "property: position; to: "+(posX+1.3) +" "+(posY - 0.3)+" "+(posZ-2)+"; dur: 1000; easing: linear;");
+                event.srcElement.setAttribute('animation__2', "property: scale; to: 1.3 1.7 1.3; dur: 1000; easing: linear;");
+                event.srcElement.setAttribute('animation__3', "property: rotation; to: 0 30 0; dur: 1000; easing: linear;");
+                event.srcElement.setAttribute('drag-rotate-component', {});
                 scene.style.cursor = "pointer";
+               
+                // ARTIFACT INFO
+                let bgTXT = document.createElement("div");
+                bgTXT.setAttribute('id', 'bg');
+                document.body.appendChild(bgTXT);
+                
+                let title = document.createElement("div");
+                title.setAttribute('id', 'title');
+                title.innerHTML += '<b>Shoe<br>Áhta’</b>       ';
+                document.body.appendChild(title);
+                
+                let soundImg = document.createElement("img");
+                soundImg.setAttribute('id', 'soundBtn');
+                soundImg.setAttribute('src', 'assets/sound.png');
+                soundImg.setAttribute('width', '30');
+                soundImg.setAttribute('height', '30');
+                document.getElementById("title").appendChild(soundImg);
+                soundImg.style.cursor = "pointer";
 
                 let myElm = document.createElement("p");
-                myElm.setAttribute('style', 'font-size: 130%;');
-                var textNode = document.createTextNode("This is a baby's Áhta’, also known as a baby's shoe. A shoe is usually made from deer, elk, moose or buffalo leather and sewn with sinew. This item is important as it protects their feet from getting injured by sharp objects on the floor and keeps them warm during the winter."); 
-                myElm.appendChild(textNode);
-                document.getElementById("artifact-info").appendChild(myElm);
+                myElm.setAttribute('id', 'artifact-area');
+                myElm.innerHTML +=("This is a baby's <i>Áhta’</i>, also known as a baby's shoe.<br><br>A shoe is usually made from deer, elk, moose or buffalo leather and sewn with sinew. This item is important as it protects their feet from getting injured by sharp objects on the floor and keeps them warm during the winter."); 
+                document.getElementById("title").appendChild(myElm);
+                
+                // ARTIFACT BTN
+                let collectBtn = document.createElement("button");
+                collectBtn.setAttribute('id', 'item-button');
+                collectBtn.setAttribute('onclick', 'contactExperience();');
+                collectBtn.innerHTML += 'COLLECT';
+                document.getElementById("title").appendChild(collectBtn);
 
                 // mobile movement block
                 var blocker = document.querySelector('#mobileBlocker');
@@ -156,6 +178,10 @@
 
                 artifactClick = true;
             }
+          }
+          if(event.srcElement.id == "soundBtn"){
+            var audio = new Audio('assets/audio/shoe_audio.mp3');
+            audio.play();
           }
         } 
         window.addEventListener('click', onClick);
@@ -172,13 +198,6 @@
 
     </head>
     <body>
-      <!-- item button -->
-      <div id="item-overlay" style="display:none; align-items: center; justify-content: center;">
-        <button id="item-button" style= "bottom:10%" onclick="contactExperience();">Collect</button>
-      </div>
-      <!-- item description -->
-        <div class="center" id="artifact-info">
-        </div>
 
         <!-- mobile -->
         <div ontouchmove="myFunction(event)" id="artifact-area">
@@ -198,7 +217,7 @@
 
         <!-- Pine Trees-->
        <a-entity gltf-model= "#pineTree" id="pineTree" position="-14.575 -0.201 -25.590" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
-       <a-entity gltf-model= "#pineTree" id="pineTree2" position="12.185 -0.201 -7.939" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+       <a-entity gltf-model= "#pineTree" id="pineTree2" position="15 -0.201 -7.939" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
        <a-entity gltf-model= "#pineTree" id="pineTree3" position="-15.977 -0.201 -6.528" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
        <a-entity gltf-model= "#pineTree" id="pineTree4" position="31.553 -0.201 -3.440" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>
        <a-entity gltf-model= "#pineTree" id="pineTree5" position="-1.486 -0.201 -26.316" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        

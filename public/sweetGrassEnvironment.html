@@ -98,10 +98,11 @@
           blocker.setAttribute('animation', 'property: material.opacity; from: 0.0; to: 1.0 dur: 500; dir: alternate;');
           camera.appendChild(blocker);
 
-          let artifactText = document.querySelector('#artifact-info');
-          artifactText.remove();
-          let artifactBtn = document.querySelector('#item-overlay');
-          artifactBtn.remove();
+          // artifact info remove
+          var infoBG = document.getElementById('bg');
+          infoBG.remove();
+          var info = document.getElementById("title");
+          info.remove();
 
           // Timer before fade out
           setTimeout(function () {
@@ -118,34 +119,56 @@
               if(artifactClick == false){
                 var camera = document.getElementById("camera");
                 var indicator = document.getElementById("indicator");
+                indicator.remove();
                 var point = document.getElementById("cameraDot");
                 camera.setAttribute("look-controls", { enabled: false, reverseMouseDrag: true });     
                 camera.setAttribute("wasd-controls", { enabled: false}); 
                 camera.setAttribute("rotation", "-15 0 0"); 
                 point.setAttribute("material", "opacity:0");     
-                event.srcElement.parentElement.removeChild(event.srcElement);
+                //event.srcElement.parentElement.removeChild(event.srcElement);
+
+                let scene = document.querySelector('a-scene');
 
                 var posX = camera.getAttribute('position').x;
                 var posZ = camera.getAttribute('position').z;
                 var posY = camera.getAttribute('position').y;
 
-                let scene = document.querySelector('a-scene');
-
-                let artifact = document.createElement('a-entity');
-                artifact.setAttribute('gltf-model', '#totemModel');
-                artifact.setAttribute('position', posX +" "+(posY - 0.9)+" "+(posZ-2));
-                artifact.setAttribute('scale', "0.04 0.04 0.04");
-                artifact.setAttribute('id', "artifact");
-                artifact.setAttribute('drag-rotate-component', {});
-                scene.appendChild(artifact);
-                document.querySelector('#item-overlay').style.display='flex';
+                // ARTIFACT ANIMATION
+                event.srcElement.setAttribute('animation', "property: position; to: "+(posX+1.2)+" "+(posY - 2.2)+" "+(posZ-2)+"; dur: 1000; easing: linear;");
+                event.srcElement.setAttribute('animation__2', "property: scale; to: 0.08 0.07 0.08; dur: 1000; easing: linear;");
+                event.srcElement.setAttribute('animation__3', "property: rotation; to: -2 0 -10; dur: 1000; easing: linear;");
+                event.srcElement.setAttribute('drag-rotate-component', {});
                 scene.style.cursor = "pointer";
+               
+                // ARTIFACT INFO
+                let bgTXT = document.createElement("div");
+                bgTXT.setAttribute('id', 'bg');
+                document.body.appendChild(bgTXT);
+                
+                let title = document.createElement("div");
+                title.setAttribute('id', 'title');
+                title.innerHTML += '<b>Sweetgrass<br>Wenserákon óhonte</b>       ';
+                document.body.appendChild(title);
+                
+                let soundImg = document.createElement("img");
+                soundImg.setAttribute('id', 'soundBtn');
+                soundImg.setAttribute('src', 'assets/sound.png');
+                soundImg.setAttribute('width', '30');
+                soundImg.setAttribute('height', '30');
+                document.getElementById("title").appendChild(soundImg);
+                soundImg.style.cursor = "pointer";
 
                 let myElm = document.createElement("p");
-                myElm.setAttribute('style', 'font-size: 130%;');
-                var textNode = document.createTextNode("This is a Wenserákon óhonte, also known as Sweetgrass. Sweetgrass is made from bunches of grass bradied together and it is prized for its pleasant aroma. It is used for medicine, weaving baskets, and also, a gift for those who are highly respected."); 
-                myElm.appendChild(textNode);
-                document.getElementById("artifact-info").appendChild(myElm);
+                myElm.setAttribute('id', 'artifact-area');
+                myElm.innerHTML +=("This is a <i>Wenserákon óhonte</i>, also known as Sweetgrass.<br><br>Sweetgrass is made from bunches of grass bradied together and it is prized for its pleasant aroma. It is used for medicine, weaving baskets, and also, a gift for those who are highly respected."); 
+                document.getElementById("title").appendChild(myElm);
+                
+                // ARTIFACT BTN
+                let collectBtn = document.createElement("button");
+                collectBtn.setAttribute('id', 'item-button');
+                collectBtn.setAttribute('onclick', 'contactExperience();');
+                collectBtn.innerHTML += 'COLLECT';
+                document.getElementById("title").appendChild(collectBtn);
 
                 // mobile movement block
                 var blocker = document.querySelector('#mobileBlocker');
@@ -155,6 +178,10 @@
 
                 artifactClick = true;
             }
+          }
+          if(event.srcElement.id == "soundBtn"){
+            var audio = new Audio('assets/audio/sweetgrass_audio.mp3');
+            audio.play();
           }
         } 
         window.addEventListener('click', onClick);
@@ -171,13 +198,6 @@
 
     </head>
     <body>
-      <!-- item button -->
-      <div id="item-overlay" style="display:none; align-items: center; justify-content: center;">
-        <button id="item-button" style= "bottom:10%" onclick="contactExperience();">Collect</button>
-      </div>
-      <!-- item description -->
-        <div class="center" id="artifact-info">
-        </div>
 
         <!-- mobile -->
         <div ontouchmove="myFunction(event)" id="artifact-area">
@@ -232,7 +252,7 @@
         <!-- artifact -->
         <a-entity gltf-model= "#totemModel" id="artifact" position="-2 0.2 -15" rotation="0 0 90" scale="0.04 0.04 0.04">
           <!-- indicator -->
-          <a-image look-at="#camera" id="indicator" src="assets/eyeIndicator.png" position="15 20 0" scale="6 5.8 6"></a-image>
+          <a-image look-at="#camera" id="indicator" src="assets/eyeIndicator.png" position="15 20 0" scale="6 5.6 6"></a-image>
         </a-entity>
 
         <!-- canoe -->
