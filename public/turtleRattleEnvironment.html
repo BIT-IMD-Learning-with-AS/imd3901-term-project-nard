@@ -28,11 +28,11 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
           var entityEl = document.querySelector('#artifact');
           var rot = entityEl.getAttribute('rotation');
           if(x < oldFingerPos){
-            entityEl.setAttribute('rotation', '0 ' + (rot.y - 4) + ' 0');
+            entityEl.setAttribute('rotation', '0 '+ (rot.y - 4) + ' 80');
             oldFingerPos = x;
           }
           else{
-            entityEl.setAttribute('rotation', '0 '+ (rot.y + 4) + ' 0');
+            entityEl.setAttribute('rotation', '0 '+(rot.y + 4) + ' 80');
             oldFingerPos = x;
           }    
         }     
@@ -127,7 +127,6 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
                 camera.setAttribute("wasd-controls", { enabled: false}); 
                 camera.setAttribute("rotation", "-15 0 0"); 
                 point.setAttribute("material", "opacity:0");     
-                //event.srcElement.parentElement.removeChild(event.srcElement);
 
                 let scene = document.querySelector('a-scene');
 
@@ -155,13 +154,13 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
                 let soundImg = document.createElement("img");
                 soundImg.setAttribute('id', 'soundBtn');
                 soundImg.setAttribute('src', 'assets/sound.png');
-                soundImg.setAttribute('width', '30');
-                soundImg.setAttribute('height', '30');
+                soundImg.setAttribute('width', '2%');
+                soundImg.setAttribute('height', '2%');
                 document.getElementById("title").appendChild(soundImg);
                 soundImg.style.cursor = "pointer";
 
                 let myElm = document.createElement("p");
-                myElm.setAttribute('id', 'artifact-area');
+                myElm.setAttribute('id', 'info-area');
                 myElm.innerHTML +=("This is an <i>A’nó:warako:wa Ohstá:wa</i>, also known as a Turtle Rattle.<br><br>This item is made from a snapping turtle's shell and is often used in ceremonies, along with singing and dancing."); 
                 document.getElementById("title").appendChild(myElm);
                 
@@ -176,7 +175,7 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
                 var blocker = document.querySelector('#mobileBlocker');
                 blocker.style.position = 'absolute';
                 var swipeSec = document.querySelector('#artifact-area');
-                swipeSec.style.top = '200px';
+                swipeSec.style.top = '0px';
 
                 artifactClick = true;
 
@@ -203,6 +202,8 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
     </head>
     <body>
+
+      <div id="info-area"></div>
 
         <!-- mobile -->
         <div ontouchmove="myFunction(event)" id="artifact-area">
@@ -269,8 +270,8 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
 
-
-        <a-entity gltf-model="#oneBird" position="-18.971 5.773 -13.687" rotation="0 90 0" scale="0.2 0.2 0.2" animation-mixer="clip: Take 001 " animation="property: position; to: 50 5.773 -13.687; dur: 9000; easing: linear; loop: true"></a-entity>
+        <a-entity gltf-model="#oneBird" position="-35 5.773 -13.687" rotation="0 90 0" scale="0.2 0.2 0.2" animation-mixer="clip: Take 001 " animation="property: position; to: 50 5.773 -13.687; dur: 8000; easing: linear; loop: false"></a-entity>
+        <a-entity gltf-model="#oneBird" position="90 5.773 -30" rotation="0 -90 0" scale="0.2 0.2 0.2" animation-mixer="clip: Take 001 " animation="property: position; to: -70 5.773 -13.687; dur: 16000; easing: linear; loop: false"></a-entity>
         <a-entity gltf-model="#lowDeer" position="4.612 0.299 -28.464" rotation="0 90 0" scale="" animation-mixer="clip: Armature|Eat " animation="property: position; to: 4.612 0.299 -28.464; dur: 9000; easing: linear; loop: true"></a-entity>
 
         <!-- DO NOT TOUCH camera-->
