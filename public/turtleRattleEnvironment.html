@@ -16,6 +16,7 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
+      <script src="/objInteraction.js"></script>
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/artifactEvironmentCSS.css">
@@ -237,6 +238,7 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
           <a-asset-item id="oneBird" response-type="arraybuffer" src="assets/oneBird/scene.gltf"></a-asset-item>
           <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
           <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
+          <a-asset-item id="sage" response-type="arraybuffer" src="assets/sage_low-poly/scene.gltf"></a-asset-item>
         </a-assets>
 
         <!-- RIVER -->
@@ -281,11 +283,17 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
        <a-entity gltf-model= "#pineTree" id="pineTree13" position="-41.903 -0.201  6.436" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
        <a-entity gltf-model= "#pineTree" id="pineTree14" position="54.903 -0.201  7.939" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>
 
+
+       <a-entity gltf-model= "#sage" position="-10 0 -7" scale="0.06 0.06 0.05" value="Sage bush" object-info blessing></a-entity>
+       <a-entity gltf-model= "#sage" position="-7 0 -19" scale="0.1 0.1 0.09" value="Sage bush" object-info blessing></a-entity>
+       <a-entity gltf-model= "#sage" position="-9 0 -17" scale="0.08 0.08 0.08" value="Sage bush" object-info blessing></a-entity>
+       <a-entity gltf-model= "#sage" position="8 0 -13" scale="0.06 0.06 0.05" value="Sage bush" object-info blessing></a-entity>
+
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
 
         <a-entity gltf-model="#oneBird" position="-35 5.773 -13.687" rotation="0 90 0" scale="0.2 0.2 0.2" animation-mixer="clip: Take 001 " animation="property: position; to: 50 5.773 -13.687; dur: 8000; easing: linear; loop: false"></a-entity>
         <a-entity gltf-model="#oneBird" position="90 5.773 -30" rotation="0 -90 0" scale="0.2 0.2 0.2" animation-mixer="clip: Take 001 " animation="property: position; to: -70 5.773 -13.687; dur: 16000; easing: linear; loop: false"></a-entity>
-        <a-entity gltf-model="#lowDeer" position="4.612 0.299 -28.464" rotation="0 90 0" scale="" animation-mixer="clip: Armature|Eat " animation="property: position; to: 4.612 0.299 -28.464; dur: 9000; easing: linear; loop: true"></a-entity>
+        <a-entity gltf-model="#lowDeer" position="4.612 0.299 -17" rotation="0 90 0" scale="" animation-mixer="clip: Armature|Eat "></a-entity>
 
         <!-- DO NOT TOUCH camera-->
         <a-entity camera id="camera" position="0 2 0" wasd-controls look-controls>
