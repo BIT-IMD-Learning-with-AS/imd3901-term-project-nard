@@ -15,7 +15,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
       <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
-      <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
       <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
 
       <script src="./js/fire.js"></script>
@@ -82,15 +81,14 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       </div>
 
       <!-- A-SCENE -->
-      <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
-      <a-scene precontact-experience environment="preset: forest;  groundTexture:walkernoise; groundColor:black; fog:0; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" physics="driver:ammo;" joystick vr-mode-ui="enabled: false">
+      <a-scene precontact-experience loading-screen="enabled: false" environment="preset: forest;  groundTexture:walkernoise; groundColor:black; fog:0; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" physics="driver:ammo;" joystick vr-mode-ui="enabled: false">
  <!-- 
         groundColor: #000000; groundColor2: #000000; -->
         <a-assets>
-          <audio id="ambience" src="assets/" preload="auto"></audio>
+         <audio id="ambience" src="assets/Fire.mp3"></audio>
 
           <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
-          <img  id="artifactInventory" response-type="arraybuffer" src="assets/box.png"></img >
+          <img id="artifactInventory" response-type="arraybuffer" src="assets/box.png"></img >
           <a-asset-item id="moccassinModel" response-type="arraybuffer" src="assets/oneMoc/oneMoc.glb"></a-asset-item>
           <a-asset-item id="FireStandBroken" response-type="arraybuffer" src="assets/FirePitStandBroken/FirePitStandBroken.gltf"></a-asset-item>
          <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
@@ -99,34 +97,35 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
          <a-asset-item id="pineModel" response-type="arraybuffer" src="assets/pine/scene.gltf"></a-asset-item>
          <a-asset-item id="brokenDryingRack" response-type="arraybuffer" src="assets/brokenDryingRack/brokenDryingRack.glb"></a-asset-item>
          <a-asset-item id="fallenAnimalSkin" response-type="arraybuffer" src="assets/fallenAnimalSkin/fallenAnimalSkin.glb"></a-asset-item>
-         <a-asset-item id="cornModel" response-type="arraybuffer" src="/assets/corn_corn_corn/scene.gltf"></a-asset-item>
+         <a-asset-item id="cornModel" response-type="arraybuffer" src="assets/corn_corn_corn/scene.gltf"></a-asset-item>
          <a-asset-item id="cornCrop" response-type="arraybuffer" src="assets/corn/scene.gltf"></a-asset-item>
          <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
          <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
          <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+         <a-asset-item id="table" response-type="arraybuffer" src="assets/table/scene.gltf"></a-asset-item>
         </a-assets>
 
      <!-- rightful place -->
      <!--  <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321" blessing>-->
-      <a-entity gltf-model= "assets/table/scene.gltf" id="rightfulPlace" position="0 1.235 -5" rotation="0 90 0" scale="0.360 0.410 0.310" blessing> 
+      <a-entity gltf-model= "#table" id="rightfulPlace" position="0 1.235 -5" rotation="0 90 0" scale="0.360 0.410 0.310" blessing> 
         <a-entity gltf-model= "#diamond" position="-0.1 0.7 0" scale="0.003 0.003 0.003"
         animation="property:position.y; loop: true; dir:alternate; dur:1000; to:1; easing:easeInOutQuad;"></a-animation>
         </a-entity>
       </a-entity>
 
       <!--Longhouse-->
-      <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
-      <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0" scale=""></a-entity>
+      <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0"></a-entity>
       
 
-      <a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>
+      <!--<a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>-->
 
    <!-- Firepit Stand Broken  -->
-   <a-entity boat gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
-   <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
+   <a-entity  gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
+   <a-entity  gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
 
    <!-- Fire pot tipped over -->
-   <a-entity boat gltf-model= "#pot" id="pot" position="0.026 0.186 -0.787" rotation="-69.580 68.325 180" scale="-0.206 -0.206 -0.206"> </a-entity>
+   <a-entity  gltf-model= "#pot" id="pot" position="0.026 0.186 -0.787" rotation="-69.580 68.325 180" scale="-0.206 -0.206 -0.206"> </a-entity>
 
    <!-- FIRE ON LONGHOUSE 1-->
    <a-entity position="-8 8 15" scale="6 6 6">
@@ -170,8 +169,8 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
     <a-entity gltf-model="#deer" id="deer" position="9.824 0.451 0.288" rotation="-0.007 -32.104 91.104" scale="1 1 1"></a-entity>
 
     <!-- DRYING RACK -->
-    <a-entity boat gltf-model= "#brokenDryingRack" id="brokenDryingRack" position="-3 0.238 12" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
-    <a-entity boat gltf-model= "#fallenAnimalSkin" id="fallenAnimalSkin" position="-3 0.238 12" rotation="0 -56.778 0" scale="0.500 0.500 0.340" > </a-entity>
+    <a-entity  gltf-model= "#brokenDryingRack" id="brokenDryingRack" position="-3 0.238 12" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
+    <a-entity  gltf-model= "#fallenAnimalSkin" id="fallenAnimalSkin" position="-3 0.238 12" rotation="0 -56.778 0" scale="0.500 0.500 0.340" > </a-entity>
   
       <!--Longhouse-->
       <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
