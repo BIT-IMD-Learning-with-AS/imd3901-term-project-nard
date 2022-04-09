@@ -110,6 +110,9 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
           var info = document.getElementById("title");
           info.remove();
 
+          var audio = new Audio('assets/audio/returnArtifact_audio.mp3');
+          audio.play();
+
           // Timer before fade out
           setTimeout(function () {
             window.location.replace("http://localhost:8080/preContact.html");
@@ -124,6 +127,7 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
               console.log("ARTIFACT FOUND")
 
               if(artifactClick == false){
+
                 // player walking block
                 var camera = document.getElementById("camera");
                 var indicator = document.getElementById("indicator");
@@ -226,7 +230,6 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
         <a-assets>
           <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
-          <audio id="rattle" src="assets/Rattle_01.mp3" preload="auto"></audio>
 
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf" ></a-asset-item>
           <a-asset-item id="totemModelBottom" response-type="arraybuffer" src="assets/Turtle_Rattle_Bottom/Untitled.gltf" ></a-asset-item>

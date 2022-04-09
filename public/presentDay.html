@@ -49,6 +49,9 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
           // Returning artifact
           if(event.srcElement.id == "rightfulPlace"){
             console.log("ARTIFACT RETURNED ");
+
+            var audio = new Audio('assets/audio/returnArtifact_audio.mp3');
+            audio.play();
             
             // Fade out
             var player = document.getElementById("camera");

@@ -51,6 +51,9 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
           if(event.srcElement.id == "rightfulPlace"){
             console.log("ARTIFACT RETURNED ");
 
+            var audio = new Audio('assets/audio/returnArtifact_audio.mp3');
+            audio.play();
+
             // Fade out
             var player = document.getElementById("camera");
             let blocker = document.createElement('a-sphere');

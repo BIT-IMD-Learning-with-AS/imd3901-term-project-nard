@@ -44,6 +44,9 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
           if(event.srcElement.id == "rightfulPlace"){
             console.log("ARTIFACT RETURNED ");
 
+            var audio = new Audio('assets/audio/returnArtifact_audio.mp3');
+            audio.play();
+
             // Fade out
             var player = document.getElementById("camera");
             let blocker = document.createElement('a-sphere');

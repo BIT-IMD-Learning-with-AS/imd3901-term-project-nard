@@ -99,6 +99,9 @@
           var info = document.getElementById("title");
           info.remove();
 
+          var audio = new Audio('assets/audio/returnArtifact_audio.mp3');
+          audio.play();
+
           // Timer before fade out
           setTimeout(function () {
             window.location.replace("http://localhost:8080/presentDay.html");
@@ -112,6 +115,7 @@
               console.log("ARTIFACT FOUND")
 
               if(artifactClick == false){
+
                 var camera = document.getElementById("camera");
                 var indicator = document.getElementById("indicator");
                 indicator.remove();
