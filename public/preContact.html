@@ -123,8 +123,6 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
         <a-asset-item id="wood" response-type="arraybuffer" src="assets/wood/scene.gltf"></a-asset-item>
       </a-assets>
 
-  
-
       <!-- FIRE -->
       <a-entity position="0 0 4">
         <!-- fire particles -->
@@ -134,44 +132,6 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
             <a-entity light="type: point; color: #FFA2 0; intensity: 1.5; distance: 10.0;"></a-entity>
         </a-entity>
       </a-entity>
-
-     <!-- rightful place -->
-     <!--  <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321" blessing>-->
-      <a-entity gltf-model= "assets/table/scene.gltf" id="rightfulPlace" position="0 1.235 -5" rotation="0 90 0" scale="0.360 0.410 0.310" blessing> 
-        <a-entity gltf-model= "#diamond" position="-0.1 0.7 0" scale="0.003 0.003 0.003"
-        animation="property:position.y; loop: true; dir:alternate; dur:1000; to:1; easing:easeInOutQuad;"></a-animation>
-        </a-entity>
-      </a-entity>
-      
-      
-
-      <a-entity gltf-model="#basket" id="basket" position="6.827 0.139 -5.584" rotation="0 0 0" scale="1 1 1"></a-entity>
-      <!--<a-entity gltf-model="#bird" id="bird" position="19.023 10.139 -5.584" rotation="0 0 0" scale="1 1 1"></a-entity>
-      <a-entity gltf-model="#bird" id="bird1" position="21.652 10.139 -4.639" rotation="0 0 0" scale="1 1 1" animation-mixer="clip: Scene"></a-entity>-->
-      <a-entity gltf-model="#deer" id="deer" position="13.996 0.139 -15.361" rotation="0 -34.410 0" scale="1 1 1" animation-mixer="clip: Armature|Eat"></a-entity>
-
-      
-
-
-      <a-entity gltf-model="#woman2" position="-1 0.3 -2" rotation="0 45 0" scale="0.003 0.003 0.003"></a-entity>
-      <a-entity gltf-model="#woman" position="0 0 -2" rotation="0 0 0" scale="0.003 0.003 0.003"></a-entity>
-      <!-- LongHouse -->
-      <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
-      <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0" scale=""></a-entity>   
-
-      <!-- Drying rack  
-      <a-box id="drying-rack" position="-2.98665 1 -11" scale="2.5 0.1 0.1" rotation="30.0000701530499 -47.761761802105426 -120.0002806121996" color="brown" material="" geometry=""></a-box>
-      <a-box id="drying-rack" position="-1.4765 1 -11" scale="2.5 0.1 0.1" rotation="30.0000701530499 -48.814858229555874 -120.0002806121996" color="brown" material="" geometry=""></a-box>
-      <a-box id="drying-rack" position="-1.67595 1 -10.10107" scale="2.5 0.1 0.1" rotation="30.0000701530499 130.46191699349333 -120.0002806121996" color="brown" material="" geometry=""></a-box>
-      <a-box id="drying-rack" position="-3.02306 1 -10.1059" scale="2.5 0.1 0.1" rotation="30.0000701530499 129.5824267779675 -120.0002806121996" color="brown" material="" geometry=""></a-box>
-      <a-box id="drying-rack" position="-2.36162 1.63557 -11.58017" scale="5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>-->
-
-      <a-entity  gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
-      <!-- Firepit Stand  -->
-      <a-entity gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
-      <a-entity gltf-model= "#pot" id="pot" position="-0.035 0.155 0.162" rotation="0 -72.573 -179.76" scale="-0.206 -0.206 -0.206"> </a-entity>
-
-
 
       <!-- Pine trees-->
       <a-entity gltf-model="#pineTree" id="tree1" position="-22.593 0 -27.000" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
@@ -189,16 +149,34 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
       <a-entity gltf-model="#pineTree" id="tree13" position="3.766 0 -65.615" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
       <a-entity gltf-model="#pineTree" id="tree14" position="-10.000 0 -55.642" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
 
-      <a-entity gltf-model="#pineTree" id="tree15" position="1.583 0 24.329" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree16" position="16.015 0 29.154" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree17" position="33.976 0 23.968" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-
       <a-entity camera id="camera" position="4 2 20" wasd-controls look-controls >
         <a-entity cursor id="cameraDot" position="0 0 -1"
                   geometry="primitive: sphere; radius:0.008"
                   material="color:black; shader:flat; opacity:0.5"></a-entity>
         <a-entity gltf-model= "#rattleModel" id="holdingArtifact" position="-0.5 -0.2 -0.5" rotation="-20 90 70" scale="0.2 0.2 0.2"></a-entity>
       </a-entity>
+
+      
+     <!-- rightful place -->
+     <a-entity gltf-model= "assets/table/scene.gltf" id="rightfulPlace" position="0 1.235 -5" rotation="0 90 0" scale="0.360 0.410 0.310" blessing> 
+      <a-entity gltf-model= "#diamond" position="-0.1 0.7 0" scale="0.003 0.003 0.003"
+      animation="property:position.y; loop: true; dir:alternate; dur:1000; to:1; easing:easeInOutQuad;"></a-animation>
+      </a-entity>
+    </a-entity>
+
+    <a-entity gltf-model="#basket" id="basket" position="6.827 0.139 -5.584" rotation="0 0 0" scale="1 1 1"></a-entity>
+    <a-entity gltf-model="#deer" id="deer" position="13.996 0.139 -15.361" rotation="0 -34.410 0" scale="1 1 1" animation-mixer="clip: Armature|Eat"></a-entity>
+
+    <a-entity gltf-model="#woman2" position="-1 0.3 -2" rotation="0 45 0" scale="0.003 0.003 0.003"></a-entity>
+    <a-entity gltf-model="#woman" position="0 0 -2" rotation="0 0 0" scale="0.003 0.003 0.003"></a-entity>
+    <!-- LongHouse -->
+    <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
+    <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0" scale=""></a-entity>   
+
+    <a-entity  gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
+    <!-- Firepit Stand  -->
+    <a-entity gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
+    <a-entity gltf-model= "#pot" id="pot" position="-0.035 0.155 0.162" rotation="0 -72.573 -179.76" scale="-0.206 -0.206 -0.206"> </a-entity>
 
       <!--Wood-->
       <a-entity gltf-model= "#wood" id="wood" position="-4.605 -0.019 1.978" rotation="0 -27.332 180" scale="0.378 -0.203 0.270"> </a-entity>
@@ -208,46 +186,6 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
 
      <!-- ANIMAL SKINDRYING RACK -->
      <a-entity gltf-model= "#animalSkin" id="animalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
-
-
-      <!-- Corn crops 
-      <a-box id="dirt" position="7.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
-      <a-box id="dirt" position="18.712 -0.007 2.295" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
-      <a-box id="dirt" position="9.67522 -0.00668 2.29527" scale="5.21325 0.6372 0.36644" rotation="90 92.14502 -178.3680641599717" color="#4C1408" material="" geometry="primitive: sphere"></a-box>
-      
-      
-      <a-box id="dirt" position="13.94939 -0.00668 -7.47844" scale="4.21325 0.6372 0.36644" rotation="90.00021045914971 -59.20143713968744 0" color="#4C1408" material="shader: standard; roughness: 1;" geometry="primitive: sphere"></a-box>
-      <a-entity gltf-model="#cornModel" position="12.377 -0.00668 -10.183"></a-entity>
-      <a-entity gltf-model="#cornModel" position="13.316 -0.05105 -8.775"></a-entity>
-      <a-entity gltf-model="#cornModel" position="14.088 -0.05105 -7.467"></a-entity>
-      <a-entity gltf-model="#cornModel" position="14.851 -0.05105 -6.223"></a-entity>-->
-      <!-- <a-entity id="birchTree" gltf-model="#cornModel" blessing></a-entity> -->
-      <!-- Set attribute below if above object is clicked -->
-      <!-- <a-sphere material="color: yellow; opacity: 0.2; dithering: false; shader: flat; blending: additive; src: assets/glow.png" scale="0.5 10 0.1" position="0 4 -14" ></a-sphere>
-       -->
-      
-       <!-- Pine trees
-      <a-entity gltf-model="#pineTree" id="tree1" position="-22.593 0 -27.000" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree2" position="-30.701 0 -44.793" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree3" position="17.302 0 -46.699" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree4" position="29.629 0 0.458" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree5" position="-27.559 0 14.010" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree6" position="-42.990 0 -1.378" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree7" position="-4.195 0 -33.376" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree8" position="-23.297 0 -5.000" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree9" position="36.003 0 -18.497" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing=""></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree10" position="39.298 0 -42.436" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing=""></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree11" position="25.778 0 -63.953" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing=""></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree12" position="12.164 0 -22.000" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree13" position="3.766 0 -65.615" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree14" position="-10.000 0 -55.642" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-
-      <a-entity gltf-model="#pineTree" id="tree15" position="1.583 0 24.329" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing=""></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree16" position="16.015 0 29.154" rotation="" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing=""></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree17" position="33.976 0 23.968" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree18" position="54.291 0 0" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
-      <a-entity gltf-model="#pineTree" id="tree19" position="-29.293 0 35.479" rotation="0 0 0" scale="0.120 0.210 0.120" value="Pine tree" object-info blessing></a-entity>
- -->
       
        <!-- Corn crops dirt -->
       <a-entity  gltf-model= "#dirt" id="dirt1" position="17.049 0.324 -9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
