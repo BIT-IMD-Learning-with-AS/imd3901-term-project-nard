@@ -13,8 +13,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       <script src="js/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
-      <script src="https://mixedreality.mozilla.org/ammo.js/builds/ammo.wasm.js"></script>
-      <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
       <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
 
       <script src="./js/fire.js"></script>
@@ -81,11 +79,10 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       </div>
 
       <!-- A-SCENE -->
-      <a-scene precontact-experience loading-screen="enabled: false" environment="preset: forest;  groundTexture:walkernoise; groundColor:black; fog:0; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" physics="driver:ammo;" joystick vr-mode-ui="enabled: false">
- <!-- 
-        groundColor: #000000; groundColor2: #000000; -->
+      <a-scene precontact-experience loading-screen="enabled: false" environment="preset: forest;  groundTexture:walkernoise; groundColor:black; fog:0; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" joystick vr-mode-ui="enabled: false">
+
         <a-assets>
-         <audio id="ambience" src="assets/Fire.mp3"></audio>
+          <audio id="ambience" src="assets/Fire.mp3" preload="auto"></audio>
 
           <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
           <img id="artifactInventory" response-type="arraybuffer" src="assets/box.png"></img >
@@ -105,6 +102,9 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
          <a-asset-item id="table" response-type="arraybuffer" src="assets/table/scene.gltf"></a-asset-item>
         </a-assets>
 
+        <a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>  
+
+
      <!-- rightful place -->
      <!--  <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321" blessing>-->
       <a-entity gltf-model= "#table" id="rightfulPlace" position="0 1.235 -5" rotation="0 90 0" scale="0.360 0.410 0.310" blessing> 
@@ -116,10 +116,7 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       <!--Longhouse-->
       <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0"></a-entity>
       <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0"></a-entity>
-      
-
-      <!--<a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>-->
-
+            
    <!-- Firepit Stand Broken  -->
    <a-entity  gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
    <a-entity  gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
@@ -136,7 +133,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
     </a-entity>
   </a-entity>
-  
 
   <!-- FIRE ON LONGHOUSE 3 -->
   <a-entity position="-6.885 -0.422 41.930" scale="6 6 6">
@@ -154,8 +150,8 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
    <a-entity gltf-model="#pineTree" id="tree4" position="29.629 0 0.458" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
    <a-entity gltf-model="#pineTree" id="tree7" position="0 0 -60" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
    <a-entity gltf-model="#pineTree" id="tree8" position="-35 0 0" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
-   <a-entity gltf-model="#pineTree" id="tree9" position="36.003 0 -18.497" rotation="" scale="0.120 0.210 0.120"></a-entity>
-   <a-entity gltf-model="#pineTree" id="tree10" position="50 0 20" rotation="" scale="0.120 0.210 0.120"></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree9" position="36.003 0 -18.497" scale="0.120 0.210 0.120"></a-entity>
+   <a-entity gltf-model="#pineTree" id="tree10" position="50 0 20" scale="0.120 0.210 0.120"></a-entity>
        
    <!-- camera -->
    <a-entity camera id="camera" position="5 2 25" wasd-controls look-controls>
