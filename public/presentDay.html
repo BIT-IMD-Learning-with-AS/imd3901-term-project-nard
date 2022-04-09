@@ -24,9 +24,9 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
       <!-- DO NOT TOUCH -->
 
       <link rel="stylesheet" href="/css/user-gesture.css">
-      <script src="./js/fire.js"></script>
 
       <script>
+
         // Registering a-scene
         AFRAME.registerComponent('precontact-experience', {
           init: function () {
@@ -41,11 +41,6 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
             blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
             player.appendChild(blocker);
 
-            /* Timer*/
-            setTimeout(function () {
-              let fadeBlocker = document.querySelector('#artifact');
-              fadeBlocker.remove();;
-            }, 2000);
           }
         });
 

@@ -12,7 +12,6 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
       <script src="js/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
-      <script src="https://unpkg.com/aframe-animation-component@^5.1.2/dist/aframe-animation-component.min.js"></script>
       <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
       <script src="/objInteraction.js"></script>
@@ -36,11 +35,6 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
             blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
             player.appendChild(blocker);
 
-            /* Timer*/
-            setTimeout(function () {
-              let fadeBlocker = document.querySelector('#artifact');
-              fadeBlocker.remove();;
-            }, 2000);
           }
         });
 
@@ -89,7 +83,7 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
       <a-scene precontact-experience environment="preset: forest; groundTexture:none; groundColor:#5A5918; fog:0; shadow: true" joystick vr-mode-ui="enabled: false">
      
       <a-assets>
-        <audio id="river" src="assets/riverSound.wav" preload="auto"></audio>
+        <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
 
         <a-asset-item id="cornModel" response-type="arraybuffer" src="/assets/corn_corn_corn/scene.gltf"></a-asset-item>
         <a-asset-item id="birchModel" response-type="arraybuffer"  src="/assets/birchTree/scene.gltf"></a-asset-item>
