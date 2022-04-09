@@ -93,6 +93,8 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
  <!-- 
         groundColor: #000000; groundColor2: #000000; -->
         <a-assets>
+          <audio id="ambience" src="assets/" preload="auto"></audio>
+
           <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
           <img  id="artifactInventory" response-type="arraybuffer" src="assets/box.png"></img >
           <a-asset-item id="moccassinModel" response-type="arraybuffer" src="assets/oneMoc/oneMoc.glb"></a-asset-item>
@@ -137,6 +139,9 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       <!--Longhouse-->
       <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
       <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0" scale=""></a-entity>
+      
+
+      <a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>
       <!-- 
       <a-box id="firePlace" position="-2.98665 1 5" scale="2.5 0.1 0.1" rotation="30.0000701530499 -47.761761802105426 -120.0002806121996" color="brown" material="" geometry=""></a-box>
       <a-box id="firePlace-2" position="-1.4765 1 5" scale="2.5 0.1 0.1" rotation="30.0000701530499 -48.814858229555874 -120.0002806121996" color="brown" material="" geometry=""></a-box>
@@ -163,16 +168,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
     </a-entity>
   </a-entity>
   
-
-  <!-- FIRE ON LONGHOUSE 2 -->
-  <a-entity position="-6.875 0.080 24.305" scale="6 6 6">
-    <!-- fire particles -->
-    <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
-    <!-- fire light -->
-    <a-entity position="0 1.5 -4">
-        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
-    </a-entity>
-  </a-entity>
 
   <!-- FIRE ON LONGHOUSE 3 -->
   <a-entity position="-6.885 -0.422 41.930" scale="6 6 6">
@@ -234,43 +229,11 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
  
   <!-- Corn crops -->
  <a-entity gltf-model= "#cornCrop" id="corn1" position="15.887 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="corn2" position="15.887 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="corn3" position="15.887 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="corn4" position="15.887 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="corn5" position="15.887 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
 
- <a-entity gltf-model= "#cornCrop" id="cornE5" position="15.887 0.375 -4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornE6" position="15.887 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornE7" position="15.887 0.375 -7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornE8" position="15.887 0.375 -9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornE9" position="15.887 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornE10" position="15.887 0.375 -10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- 
- <a-entity gltf-model= "#cornCrop" id="cornN5" position="15.887 0.375 4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornN6" position="15.887 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornN7" position="15.887 0.375 7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornN8" position="15.887 0.375 9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornN9" position="15.887 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornN10" position="15.887 0.375 10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-
- <a-entity gltf-model= "#cornCrop" id="corn7" position="18.493 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
  <a-entity gltf-model= "#cornCrop" id="corn8" position="18.493 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="corn9" position="18.493 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="corn10" position="18.493 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="corn11" position="18.493 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
 
- <a-entity gltf-model= "#cornCrop" id="cornE5" position="18.493 0.375 -4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornE6" position="18.493 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornE7" position="18.493 0.375 -7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornE8" position="18.493 0.375 -9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornE9" position="18.493 0.375 -6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
  <a-entity gltf-model= "#cornCrop" id="cornE10" position="18.493 0.375 -10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
  
- <a-entity gltf-model= "#cornCrop" id="cornN5" position="18.493 0.375 4.499" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornN6" position="18.493 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornN7" position="18.493 0.375 7.605" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornN8" position="18.493 0.375 9.068" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- <a-entity gltf-model= "#cornCrop" id="cornN9" position="18.493 0.375 6.052" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
  <a-entity gltf-model= "#cornCrop" id="cornN10" position="18.493 0.375 10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
  
     </a-scene>
