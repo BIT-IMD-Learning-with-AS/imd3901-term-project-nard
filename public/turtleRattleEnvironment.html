@@ -35,7 +35,13 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
             entityEl.setAttribute('rotation', '0 '+(rot.y + 4) + ' 80');
             oldFingerPos = x;
           }    
-        }     
+        }
+
+        function playSoundFunction(id){
+          entity = document.querySelector(id);
+          entity.components.sound.playSound();
+          console.log(entity);
+        }
         
         var oldFingerPos = 200;
 
@@ -212,13 +218,16 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
         </div>
 
       <!-- A-SCENE -->
-      <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
+      
       
       <a-scene explore-experience environment="preset: forest; groundTexture:walkernoise; fog:0; shadow: true" physics joystick vr-mode-ui="enabled: false">
 
         <a-entity light="type: spot; angle: -45" position="0, 30, 51"></a-entity>
 
         <a-assets>
+          <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
+          <audio id="rattle" src="assets/Rattle_01.mp3" preload="auto"></audio>
+
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf" ></a-asset-item>
           <a-asset-item id="totemModelBottom" response-type="arraybuffer" src="assets/Turtle_Rattle_Bottom/Untitled.gltf" ></a-asset-item>
           <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
@@ -229,6 +238,7 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
         <!-- RIVER -->
         <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5"></a-ocean>
+        <a-entity class="ambient-music" sound="src:#river; autoplay:true;"></a-entity>
 
         <!-- artifact -->
         <a-entity gltf-model= "#totemModel" id="artifact" rotation="0 0 0" position="-6 0.2 -12" scale="0.2 0.2 0.2">

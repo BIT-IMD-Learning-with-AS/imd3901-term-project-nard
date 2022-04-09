@@ -87,6 +87,9 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
       <a-scene precontact-experience environment="preset: forest; groundTexture:none; groundColor:#5E4C37; ground:flat; shadow: true" physics="driver:ammo;" joystick vr-mode-ui="enabled: false">
      
       <a-assets>
+        <audio id="ambience" src="assets/1-02 Round Dance_01.mp3" preload="auto"></audio>
+
+        <a-asset-item id="woman" response-type="arraybuffer" src="assets/woman_ModernDay/woman2.gltf"></a-asset-item>
         <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
         <a-asset-item id="grassModel" response-type="arraybuffer" src="assets/Sweet_Grass/sweet_grass.gltf"></a-asset-item>
         <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
@@ -113,11 +116,13 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
 
   <!-- Firepit Stand  -->
   <a-entity boat gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"  material="color:brown"> </a-entity>
-     
-  <a-entity gltf-model= "#bench" id="bench" position="-3.643 0.012 0.054" rotation="0 0 180" scale="-0.011 -0.011 -0.011"> </a-entity>
-  <a-entity gltf-model= "#bench" id="bench" position="-3.643 0.012 3.912" rotation="0 0 180" scale="-0.011 -0.011 -0.011"> </a-entity>
-  <a-entity gltf-model= "#bench" id="bench" position="-0.381 0.012 3.612" rotation="0 90 180" scale="-0.011 -0.011 -0.011"> </a-entity>
-  <a-entity gltf-model= "#bench" id="bench" position="4.353 0.012 3.612" rotation="0 90 180" scale="-0.011 -0.011 -0.011"> </a-entity>
+  <a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>   
+
+  <a-entity boat gltf-model= "#bench" id="bench" position="-3.643 0.012 0.054" rotation="0 0 180" scale="-0.011 -0.011 -0.011"> </a-entity>
+  <a-entity boat gltf-model= "#bench" id="bench" position="-3.643 0.012 3.912" rotation="0 0 180" scale="-0.011 -0.011 -0.011"> </a-entity>
+  <a-entity boat gltf-model= "#bench" id="bench" position="-0.381 0.012 3.612" rotation="0 90 180" scale="-0.011 -0.011 -0.011"> </a-entity>
+  <a-entity boat gltf-model= "#bench" id="bench" position="4.353 0.012 3.612" rotation="0 90 180" scale="-0.011 -0.011 -0.011"> </a-entity>
+  <a-entity gltf-model="#woman" position="-1.25 0 -1.5" rotation="0 40 0" scale="0.003 0.003 0.003"></a-entity>
 
   <!--longhouse-->
   <a-entity gltf-model= "#longhouse" position="-12 0 -5" rotation="0 90 0" scale="1 1 1"> </a-entity>
