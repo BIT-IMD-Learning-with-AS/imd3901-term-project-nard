@@ -89,7 +89,6 @@
     <body>
 
       <!-- A-SCENE -->
-      <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
       
       <a-scene start-experience environment="preset: forest; groundTexture:walkernoise; fog:0; shadow: true">
 
@@ -101,16 +100,18 @@
       </div>
      
       <a-assets>
-          <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
-            <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
-            <a-asset-item id="fish" response-type="arraybuffer" src="assets/the_fish_particle/scene.gltf"></a-asset-item>
-        </a-assets>
-
-
+        <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->         <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
+        <a-asset-item id="fish" response-type="arraybuffer" src="assets/the_fish_particle/scene.gltf"></a-asset-item>
+        <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
+        <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
         <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
         <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
         <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+        <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
+      </a-assets>
 
+
+        
     <!-- Pine Trees-->
     <a-entity gltf-model= "#pineTree" id="pineTree" position="21 -0.201 25.826" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
     <a-entity gltf-model= "#pineTree" id="pineTree2" position="21 -0.201 7.866" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
@@ -158,12 +159,16 @@
 
         <!-- RIVER -->
         <!-- depth = wave length, width = width, density = wave intensity -->
-        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 -30"></a-ocean>
-        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 -20" ></a-ocean>
-        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 -10" ></a-ocean>
-        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 3" ></a-ocean>
-        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 13" ></a-ocean>
-        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 23" ></a-ocean>
+        <a-entity class="ambient-music" sound="src:#river; autoplay:true;"></a-entity>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 -30" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 -20" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 -10" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 3" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 13" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 23" ></a-ocean>
+
+        <!-- river floor -->
+        <a-plane height="100" width="25" position="0 0.2 0" rotation="-90 0 0" material="color:#2C4E55"></a-plane>
 
         <!-- canoe -->
         <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->

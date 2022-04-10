@@ -1,0 +1,376 @@
+{
+    "asset" : {
+        "generator" : "Khronos glTF Blender I/O v1.8.19",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                3,
+                4,
+                5,
+                7,
+                8,
+                11
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "RootNode"
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "Object_2"
+        },
+        {
+            "children" : [
+                1
+            ],
+            "name" : "British Soldier FBX Rigged.fbx",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ]
+        },
+        {
+            "children" : [
+                2
+            ],
+            "name" : "Sketchfab_model",
+            "rotation" : [
+                -0.7071068286895752,
+                0,
+                0,
+                0.7071068286895752
+            ],
+            "translation" : [
+                0,
+                8.113276481628418,
+                0
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "Object_7",
+            "translation" : [
+                0,
+                8.113276481628418,
+                0
+            ]
+        },
+        {
+            "name" : "Object_6",
+            "scale" : [
+                2.5400257110595703,
+                2.5400257110595703,
+                2.5400257110595703
+            ],
+            "translation" : [
+                0,
+                8.113276481628418,
+                0
+            ]
+        },
+        {
+            "name" : "Object_42"
+        },
+        {
+            "children" : [
+                6
+            ],
+            "name" : "CINEMA_4D_Editor",
+            "rotation" : [
+                -0.07541165500879288,
+                0.7169089913368225,
+                -0.07250465452671051,
+                0.6892732977867126
+            ],
+            "translation" : [
+                1.6806379556655884,
+                22.390172958374023,
+                56.14893341064453
+            ]
+        },
+        {
+            "name" : "British_soldier_002",
+            "scale" : [
+                2.5400257110595703,
+                2.5400257110595703,
+                2.5400257110595703
+            ],
+            "translation" : [
+                0,
+                8.113276481628418,
+                0
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Object_2.001",
+            "rotation" : [
+                0.0008776479517109692,
+                -0.013838226906955242,
+                -0.03095860406756401,
+                0.9994245171546936
+            ],
+            "translation" : [
+                -0.13753075897693634,
+                -0.5737706422805786,
+                0.25257155299186707
+            ]
+        },
+        {
+            "children" : [
+                9
+            ],
+            "name" : "export3dcoat.obj.cleaner.materialmerger.gles"
+        },
+        {
+            "children" : [
+                10
+            ],
+            "name" : "Sketchfab_model.001",
+            "rotation" : [
+                -0.7603142857551575,
+                -0.615014374256134,
+                0.12089003622531891,
+                0.17048494517803192
+            ],
+            "translation" : [
+                7.392633438110352,
+                20.614185333251953,
+                6.759499549865723
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "doubleSided" : true,
+            "name" : "material",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.9524317383766174
+            }
+        },
+        {
+            "doubleSided" : true,
+            "name" : "lambert5SG",
+            "normalTexture" : {
+                "index" : 1
+            },
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 2
+                },
+                "metallicRoughnessTexture" : {
+                    "index" : 3
+                },
+                "roughnessFactor" : 0.3162277638912201
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "British_soldier_002_Mat_0",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Object_0",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        },
+        {
+            "sampler" : 0,
+            "source" : 1
+        },
+        {
+            "sampler" : 0,
+            "source" : 2
+        },
+        {
+            "sampler" : 0,
+            "source" : 3
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "Image_0",
+            "uri" : "Image_0.jpg"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Image_1",
+            "uri" : "Image_1.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Image_2",
+            "uri" : "Image_2.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "Image_3",
+            "uri" : "Image_3.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 26289,
+            "max" : [
+                5.497425556182861,
+                16.65566635131836,
+                5.759923934936523
+            ],
+            "min" : [
+                -5.860721588134766,
+                -8.323030471801758,
+                -2.3529388904571533
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 26289,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 26289,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 144066,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 3262,
+            "max" : [
+                -3.1775519847869873,
+                0.5286639928817749,
+                5.799862861633301
+            ],
+            "min" : [
+                -20.812211990356445,
+                -0.1370130032300949,
+                3.1600289344787598
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 3262,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 3262,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 4716,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 315468,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 315468,
+            "byteOffset" : 315468
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 210312,
+            "byteOffset" : 630936
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 288132,
+            "byteOffset" : 841248
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 39144,
+            "byteOffset" : 1129380
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 39144,
+            "byteOffset" : 1168524
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 26096,
+            "byteOffset" : 1207668
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 9432,
+            "byteOffset" : 1233764
+        }
+    ],
+    "samplers" : [
+        {
+            "magFilter" : 9729,
+            "minFilter" : 9987
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1243196,
+            "uri" : "scene.bin"
+        }
+    ]
+}

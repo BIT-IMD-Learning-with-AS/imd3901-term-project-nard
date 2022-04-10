@@ -85,26 +85,24 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       <a-scene precontact-experience loading-screen="enabled: false" environment="preset: forest;  groundTexture:walkernoise; groundColor:black; fog:0; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" joystick vr-mode-ui="enabled: false">
 
         <a-assets>
-          <audio id="ambience" src="assets/Fire.mp3" preload="auto"></audio>
-
+          <!-- <audio id="ambience" src="assets/" preload="auto"></audio> -->
           <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
-          <img id="artifactInventory" response-type="arraybuffer" src="assets/box.png"></img >
+          <img  id="artifactInventory" response-type="arraybuffer" src="assets/box.png"></img >
+          <a-asset-item id="soldier" response-type="arraybuffer" src="assets/british_solider/scene.gltf"></a-asset-item>
           <a-asset-item id="moccassinModel" response-type="arraybuffer" src="assets/oneMoc/oneMoc.glb"></a-asset-item>
           <a-asset-item id="FireStandBroken" response-type="arraybuffer" src="assets/FirePitStandBroken/FirePitStandBroken.gltf"></a-asset-item>
-         <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
-         <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item> 
-         <a-asset-item id="longhouse" response-type="arraybuffer" src="assets/Longhouse_Model/Longhouse.gltf"></a-asset-item>
-         <a-asset-item id="pineModel" response-type="arraybuffer" src="assets/pine/scene.gltf"></a-asset-item>
-         <a-asset-item id="brokenDryingRack" response-type="arraybuffer" src="assets/brokenDryingRack/brokenDryingRack.glb"></a-asset-item>
-         <a-asset-item id="fallenAnimalSkin" response-type="arraybuffer" src="assets/fallenAnimalSkin/fallenAnimalSkin.glb"></a-asset-item>
-         <a-asset-item id="cornModel" response-type="arraybuffer" src="assets/corn_corn_corn/scene.gltf"></a-asset-item>
-         <a-asset-item id="cornCrop" response-type="arraybuffer" src="assets/corn/scene.gltf"></a-asset-item>
-         <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
-         <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
-         <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
-         <a-asset-item id="table" response-type="arraybuffer" src="assets/table/scene.gltf"></a-asset-item>
-         <a-asset-item id="basket" response-type="arraybuffer" src="assets/brown_wicker_basket/scene.gltf"></a-asset-item>
-        </a-assets>
+          <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
+          <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item> 
+          <a-asset-item id="longhouse" response-type="arraybuffer" src="assets/Longhouse_Model/Longhouse.gltf"></a-asset-item>
+          <a-asset-item id="pineModel" response-type="arraybuffer" src="assets/pine/scene.gltf"></a-asset-item>
+          <a-asset-item id="brokenDryingRack" response-type="arraybuffer" src="assets/brokenDryingRack/brokenDryingRack.glb"></a-asset-item>
+          <a-asset-item id="fallenAnimalSkin" response-type="arraybuffer" src="assets/fallenAnimalSkin/fallenAnimalSkin.glb"></a-asset-item>
+          <a-asset-item id="cornModel" response-type="arraybuffer" src="/assets/corn_corn_corn/scene.gltf"></a-asset-item>
+          <a-asset-item id="cornCrop" response-type="arraybuffer" src="assets/corn/scene.gltf"></a-asset-item>
+          <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
+          <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
+          <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+          </a-assets>
 
         <a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>  
 
@@ -118,9 +116,21 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
       </a-entity>
 
       <!--Longhouse-->
-      <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0"></a-entity>
+      <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
       <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0"></a-entity>
-            
+      <a-entity gltf-model="#soldier" id="soldier" position="0.026 0 -12.787" rotation="" scale="0.11 0.11 0.11"> </a-entity>
+      <a-entity gltf-model="#soldier" id="soldier" position="1.6 0 -12" rotation="0 -50 0" scale="0.11 0.11 0.11"> </a-entity>
+
+      <a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>
+      <!-- 
+      <a-box id="firePlace" position="-2.98665 1 5" scale="2.5 0.1 0.1" rotation="30.0000701530499 -47.761761802105426 -120.0002806121996" color="brown" material="" geometry=""></a-box>
+      <a-box id="firePlace-2" position="-1.4765 1 5" scale="2.5 0.1 0.1" rotation="30.0000701530499 -48.814858229555874 -120.0002806121996" color="brown" material="" geometry=""></a-box>
+
+      <a-box id="firePlace-3" position="-1.67595 1 6.10107" scale="2.5 0.1 0.1" rotation="30.0000701530499 130.46191699349333 -120.0002806121996" color="brown" material="" geometry=""></a-box>
+      <a-box id="firePlace" position="-3.02306 1 6.1059" scale="2.5 0.1 0.1" rotation="30.0000701530499 129.5824267779675 -120.0002806121996" color="brown" material="" geometry=""></a-box>
+
+      <a-box id="firePlace" position="-2.36162 1.63557 5.58017" scale="2.5 0.1 0.1" rotation="28.86504076089574 -179.99182655137244 -0.0469825392007275" color="brown" material="" geometry=""></a-box>-->
+
    <!-- Firepit Stand Broken  -->
    <a-entity  gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
    <a-entity  gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
@@ -137,6 +147,9 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
     </a-entity>
   </a-entity>
+
+  
+  
 
   <!-- FIRE ON LONGHOUSE 3 -->
   <a-entity position="-6.885 -0.422 41.930" scale="6 6 6">

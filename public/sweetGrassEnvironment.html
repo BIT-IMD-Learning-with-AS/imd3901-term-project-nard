@@ -211,6 +211,8 @@
         <a-entity light="type: spot; angle: -45" position="0, 30, 51"></a-entity>
 
         <a-assets>
+          <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
+
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/Sweet_Grass/sweet_grass.gltf"></a-asset-item>
           <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
           <a-asset-item id="sage" response-type="arraybuffer" src="assets/sage_low-poly/scene.gltf"></a-asset-item>
@@ -251,7 +253,10 @@
        <a-entity gltf-model= "#sage" position="8 0 -17" scale="0.08 0.07 0.07" value="Sage bush" object-info blessing></a-entity>
 
         <!-- RIVER -->
-        <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5"></a-ocean>
+        <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5">
+          <a-entity class="ambient-music" sound="src:#river; autoplay:true;"></a-entity>
+        </a-ocean>
+        
 
         <!-- artifact -->
         <a-entity gltf-model= "#totemModel" id="artifact" position="-2 0.2 -15" rotation="0 0 90" scale="0.04 0.04 0.04">
