@@ -110,7 +110,8 @@
           <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
           <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
             <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
-        </a-assets>
+            <a-asset-item id="woman" response-type="arraybuffer" src="assets/womanSitting/Untitled.gltf"></a-asset-item>
+      </a-assets>
 
          <!-- Pine Trees-->
          <a-entity gltf-model= "#pineTree" id="pineTree" position="15.980 -0.201 25.826" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
@@ -175,7 +176,9 @@
 
         <!-- canoe -->
         <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->
-        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 3 31.8" rotation="0 90 0" scale="0.160 0.160 0.140"  material="color:brown"> </a-entity>
+        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 3 31.8" rotation="0 90 0" scale="0.160 0.160 0.140"  material="color:brown"> 
+          <a-entity id="canoe" gltf-model="#woman" position="11 -1.5 0" rotation="0 90 0" scale="0.012 0.012 0.012"></a-entity>
+        </a-entity>
         
         <a-entity camera id="player" look-controls position="0 4 30"></a-entity>
 
