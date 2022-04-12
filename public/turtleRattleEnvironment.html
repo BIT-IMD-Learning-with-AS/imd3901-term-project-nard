@@ -2,14 +2,13 @@
 Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30 
 bird: https://sketchfab.com/3d-models/low-poly-bird-animated-82ada91f0ac64ab595fbc3dc994a3590
 deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d755171337e143
+Sage: https://sketchfab.com/3d-models/sage-low-poly-48ff05965aba4c2db93a012bd4e5fd86
 -->
 <!DOCTYPE html>
 <html>
     <head>
       <meta name="description" content="NARD's Beta Prototype!">
       
-      <!-- DO NOT TOUCH 
-      <script src="/js/aframe.min.js"></script>-->
       <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
       <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
@@ -17,12 +16,16 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
       <script src="/objInteraction.js"></script>
-      <!-- DO NOT TOUCH -->
-
       <link rel="stylesheet" href="/css/artifactEvironmentCSS.css">
 
       <script>
-
+        // BACKGROUND SOUND
+        function playSoundFunction(id){
+          entity = document.querySelector(id);
+          entity.components.sound.playSound();
+          console.log(entity);
+        }
+        
         // MOBILE artifact rotation
         function myFunction(event) {
           var x = event.touches[0].clientX;
@@ -38,12 +41,6 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
           }    
         }
 
-        function playSoundFunction(id){
-          entity = document.querySelector(id);
-          entity.components.sound.playSound();
-          console.log(entity);
-        }
-        
         var oldFingerPos = 200;
 
         var artifactClick = false;
@@ -111,6 +108,7 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
           var info = document.getElementById("title");
           info.remove();
 
+          // Artifact collect sound
           var audio = new Audio('assets/audio/returnArtifact_audio.mp3');
           audio.play();
 
@@ -123,13 +121,12 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
         
         // CLICK EVENTS
         const onClick = (event) => {
-          // Finding artifact
+          // Finding and clicking on artifact
           if(event.srcElement.id == "artifact"){
               console.log("ARTIFACT FOUND")
 
               if(artifactClick == false){
-
-                // player walking block
+                // block player mobility
                 var camera = document.getElementById("camera");
                 var indicator = document.getElementById("indicator");
                 indicator.remove();
@@ -141,6 +138,7 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
                 let scene = document.querySelector('a-scene');
 
+                // gettin cam position
                 var posX = camera.getAttribute('position').x;
                 var posZ = camera.getAttribute('position').z;
                 var posY = camera.getAttribute('position').y;
@@ -175,24 +173,24 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
                 myElm.innerHTML +=("This is an <i>A’nó:warako:wa Ohstá:wa</i>, also known as a Turtle Rattle.<br><br>This item is made from a snapping turtle's shell and is often used in ceremonies, along with singing and dancing."); 
                 document.getElementById("title").appendChild(myElm);
                 
-                // ARTIFACT BTN
+                // ARTIFACT BUTTON
                 let collectBtn = document.createElement("button");
                 collectBtn.setAttribute('id', 'item-button');
                 collectBtn.setAttribute('onclick', 'contactExperience();');
                 collectBtn.innerHTML += 'COLLECT';
                 document.getElementById("title").appendChild(collectBtn);
 
-                // mobile movement block
+                // Blocking mobile movement
                 var blocker = document.querySelector('#mobileBlocker');
                 blocker.style.position = 'absolute';
                 var swipeSec = document.querySelector('#artifact-area');
                 swipeSec.style.top = '0px';
 
                 artifactClick = true;
-
             }
           }
 
+          // Akwesasne audio
           if(event.srcElement.id == "soundBtn"){
             var audio = new Audio('assets/audio/turtleRattle_audio.mp3');
             audio.play();
@@ -223,16 +221,14 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
         </div>
 
       <!-- A-SCENE -->
-      
-      
       <a-scene explore-experience environment="preset: forest; groundTexture:walkernoise; fog:0; shadow: true" physics joystick vr-mode-ui="enabled: false">
         
         <a-curvedimage src="assets/Swampy_forest_panorama_new.png" theta-lenght="270" theta-start="110" radius="100" height="100" width="180" position="0 5 0" ></a-curvedimage>
+        
         <a-entity light="type: spot; angle: -45" position="0, 30, 51"></a-entity>
 
         <a-assets>
           <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
-
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf" ></a-asset-item>
           <a-asset-item id="totemModelBottom" response-type="arraybuffer" src="assets/Turtle_Rattle_Bottom/Untitled.gltf" ></a-asset-item>
           <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
@@ -244,6 +240,8 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
 
         <!-- RIVER -->
         <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5"></a-ocean>
+        
+        <!-- bg sound -->
         <a-entity class="ambient-music" sound="src:#river; autoplay:true;"></a-entity>
 
         <!-- artifact -->
@@ -284,12 +282,12 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
        <a-entity gltf-model= "#pineTree" id="pineTree13" position="-41.903 -0.201  6.436" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
        <a-entity gltf-model= "#pineTree" id="pineTree14" position="54.903 -0.201  7.939" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>
 
-
        <a-entity gltf-model= "#sage" position="-10 0 -7" scale="0.06 0.06 0.05" value="Sage bush" object-info blessing></a-entity>
        <a-entity gltf-model= "#sage" position="-7 0 -19" scale="0.1 0.1 0.09" value="Sage bush" object-info blessing></a-entity>
        <a-entity gltf-model= "#sage" position="-9 0 -17" scale="0.08 0.08 0.08" value="Sage bush" object-info blessing></a-entity>
        <a-entity gltf-model= "#sage" position="8 0 -13" scale="0.06 0.06 0.05" value="Sage bush" object-info blessing></a-entity>
 
+       <!-- canoe -->
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
 
         <a-entity gltf-model="#oneBird" position="-35 5.773 -13.687" rotation="0 90 0" scale="0.2 0.2 0.2" animation-mixer="clip: Take 001 " animation="property: position; to: 50 5.773 -13.687; dur: 8000; easing: linear; loop: false"></a-entity>
@@ -299,7 +297,6 @@ deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d75517133
         <a-entity gltf-model="#lowDeer" position="-13 0.299 -15" rotation="0 -130 0" scale="1.2 1.2 1.2" animation-mixer="clip: Armature|Eat "></a-entity>
         <a-entity gltf-model="#lowDeer" position="-8 0.299 -13" rotation="0 -90 0" scale="1.5 1.5 1.5" animation-mixer="clip: Armature|Walk " animation="property: position; to: -50 0.299 -13; dur: 16000; easing: linear; loop: false"></a-entity>
 
-        <!-- DO NOT TOUCH camera-->
         <a-entity camera id="camera" position="0 2 0" wasd-controls look-controls>
           <a-entity cursor id="cameraDot" position="0 0 -1"
                     geometry="primitive: sphere; radius:0.01"
