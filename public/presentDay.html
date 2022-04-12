@@ -81,7 +81,7 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
 
       <!-- A-SCENE -->
       <a-scene precontact-experience loading-screen="enabled: false" environment="preset: forest; groundTexture:none; groundColor:#5E4C37; ground:flat; shadow: true" physics="driver:ammo;" joystick vr-mode-ui="enabled: false">
-     
+        <a-curvedimage src="assets/Swampy_forest_panorama_new.png" theta-lenght="270" theta-start="110" radius="100" height="100" width="180" position="0 5 0" ></a-curvedimage>
       <a-assets>
         <audio id="ambience" src="assets/1-02 Round Dance_01.mp3" preload="auto"></audio>
 
@@ -91,6 +91,10 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
         <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
         <a-asset-item id="bench" response-type="arraybuffer" src="assets/log_bench/bench.glb"></a-asset-item>
         <a-asset-item id="longhouse" response-type="arraybuffer" src="assets/Modern_Longhouse/scene.gltf"></a-asset-item>
+
+        <img id="ECM" src="assets/Posters/ECM.png">
+        <img id="INM" src="assets/Posters/Idle-No-More.png">
+        <img id="MW" src="assets/Posters/Medicine_Wheel.png">
       </a-assets>
    
   <!-- rightful place -->
@@ -121,6 +125,9 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
 
   <!--longhouse-->
   <a-entity gltf-model= "#longhouse" position="-12 0 -5" rotation="0 90 0" scale="1 1 1"> </a-entity>
+    <a-image src="#ECM" position="-16.15 2 -4" rotation="0 90 0"></a-image>
+    <a-image src="#MW" position="-16.15 2.5 -3" rotation="0 90 0" scale="0.5 0.5 5"></a-image>
+    <a-image src="#INM" position="-16.15 2 -2" rotation="0 90 0"></a-image>
 
     <!--building-->
     <a-box position="-25 16.790 -99.092" rotation="0 45 0" scale="10 40 10" color="gray"></a-box>
