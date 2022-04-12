@@ -1,17 +1,11 @@
-<!-- CREATOR CREDITS -->
-<!-- -->
-
 <!DOCTYPE html>
 <html>
     <head>
       <meta name="description" content="NARD's Alpha Prototype!">
       
-      <!-- DO NOT TOUCH -->
       <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
       <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-      <!-- DO NOT TOUCH -->
-
       <link rel="stylesheet" href="/css/user-gesture.css">
 
       <script>
@@ -33,8 +27,6 @@
               let cam = document.querySelector('a-scene').querySelector('#player');
               canoe.setAttribute('animation', "property:position; to: 0 3 -40; dur: 50000; easing: linear;");
               cam.setAttribute('animation', "property:position; to: 0 4 -40; dur: 46800; easing: linear;");
-
-              
 
               setTimeout(function () {
                 // Fade out
@@ -58,6 +50,7 @@
             }
         });
 
+        // NARRATION
         var i = 0;
         var part1 = "You have returned the artifact to it's rightful place and have brought peace upon it, niá:wen";
         var part2 = "Your next stop takes place a hundred years ago, when the settlers arrived";
@@ -89,73 +82,70 @@
     <body>
 
       <!-- A-SCENE -->
-      
       <a-scene start-experience environment="preset: forest; groundTexture:walkernoise; fog:0; shadow: true">
-        <<a-curvedimage src="assets/Swampy_forest_panorama_new.png" theta-lenght="270" theta-start="110" radius="100" height="100" width="180" position="0 5 0" ></a-curvedimage>
+
+        <a-curvedimage src="assets/Swampy_forest_panorama_new.png" theta-lenght="270" theta-start="110" radius="100" height="100" width="180" position="0 5 0" ></a-curvedimage>
+
          <!-- narration -->
-      <div id="narration-info">
-        <p class="noselect" id="narrationPT1" style="font-size:110%;"></p>
-        <p class="noselect" id="narrationPT2" style="font-size:110%; top: 20%;"></p>
-        <p class="noselect" id="narrationPT3" style="font-size:130%; top: 30%;"></p>
-      </div>
+        <div id="narration-info">
+          <p class="noselect" id="narrationPT1" style="font-size:110%;"></p>
+          <p class="noselect" id="narrationPT2" style="font-size:110%; top: 20%;"></p>
+          <p class="noselect" id="narrationPT3" style="font-size:130%; top: 30%;"></p>
+        </div>
      
-      <a-assets>
-        <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->         <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
-        <a-asset-item id="fish" response-type="arraybuffer" src="assets/the_fish_particle/scene.gltf"></a-asset-item>
-        <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
-        <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
-        <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
-        <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
-        <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
-        <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
-      </a-assets>
-
-
+        <a-assets>
+          <a-asset-item id="fish" response-type="arraybuffer" src="assets/the_fish_particle/scene.gltf"></a-asset-item>
+          <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
+          <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+          <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
+          <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+          <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
+        </a-assets>
         
-    <!-- Pine Trees-->
-    <a-entity gltf-model= "#pineTree" id="pineTree" position="21 -0.201 25.826" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
-    <a-entity gltf-model= "#pineTree" id="pineTree2" position="21 -0.201 7.866" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree3" position="21 -0.201 -10.094" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree4" position="21 -0.201 -28.054" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
-    <a-entity gltf-model= "#pineTree" id="pineTree5" position="21 -0.201 -46.014" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
-    <a-entity gltf-model= "#pineTree" id="pineTree6" position="21 -0.201 -63.974" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
-    <a-entity gltf-model= "#pineTree" id="pineTree7" position="21 -0.201 -81.934" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
-    <a-entity gltf-model= "#pineTree" id="pineTree8" position="15 -0.201 -99.894" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
-    
-    <a-entity gltf-model= "#pineTree" id="pineTree9" position="-21 -0.201 -25.826" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>  
-    <a-entity gltf-model= "#pineTree" id="pineTree10" position="-21 -0.201 -7.866" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree11" position="-21 -0.201 10.094" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree12" position="-21 -0.201 -28.054" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
-    <a-entity gltf-model= "#pineTree" id="pineTree13" position="-21 -0.201 -46.014" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
-    <a-entity gltf-model= "#pineTree" id="pineTree14" position="-21 -0.201 -63.974" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
-    <a-entity gltf-model= "#pineTree" id="pineTree15" position="-21 -0.201 -81.934" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
-    <a-entity gltf-model= "#pineTree" id="pineTree16" position="-15 -0.201 -99.894" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        <!-- Pine Trees-->
+        <a-entity gltf-model= "#pineTree" id="pineTree" position="21 -0.201 25.826" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
+        <a-entity gltf-model= "#pineTree" id="pineTree2" position="21 -0.201 7.866" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree3" position="21 -0.201 -10.094" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree4" position="21 -0.201 -28.054" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        <a-entity gltf-model= "#pineTree" id="pineTree5" position="21 -0.201 -46.014" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        <a-entity gltf-model= "#pineTree" id="pineTree6" position="21 -0.201 -63.974" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        <a-entity gltf-model= "#pineTree" id="pineTree7" position="21 -0.201 -81.934" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        <a-entity gltf-model= "#pineTree" id="pineTree8" position="15 -0.201 -99.894" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        
+        <a-entity gltf-model= "#pineTree" id="pineTree9" position="-21 -0.201 -25.826" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>  
+        <a-entity gltf-model= "#pineTree" id="pineTree10" position="-21 -0.201 -7.866" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree11" position="-21 -0.201 10.094" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree12" position="-21 -0.201 -28.054" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        <a-entity gltf-model= "#pineTree" id="pineTree13" position="-21 -0.201 -46.014" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        <a-entity gltf-model= "#pineTree" id="pineTree14" position="-21 -0.201 -63.974" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        <a-entity gltf-model= "#pineTree" id="pineTree15" position="-21 -0.201 -81.934" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
+        <a-entity gltf-model= "#pineTree" id="pineTree16" position="-15 -0.201 -99.894" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity> 
 
-    <a-entity gltf-model= "#pineTree" id="pineTree17" position="15 -0.201 18.372" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
-    <a-entity gltf-model= "#pineTree" id="pineTree18" position="25 -0.201 -1.784" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>  
-    <a-entity gltf-model= "#pineTree" id="pineTree19" position="25 -0.201 -21.94" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree20" position="25 -0.201 -42.096" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>    
-    <a-entity gltf-model= "#pineTree" id="pineTree21" position="25 -0.201 -62.252" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree22" position="25 -0.201 -82.408" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree23" position="25 -0.201 -102.564" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree24" position="15 -0.201 -122.72" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree17" position="15 -0.201 18.372" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
+        <a-entity gltf-model= "#pineTree" id="pineTree18" position="25 -0.201 -1.784" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>  
+        <a-entity gltf-model= "#pineTree" id="pineTree19" position="25 -0.201 -21.94" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree20" position="25 -0.201 -42.096" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>    
+        <a-entity gltf-model= "#pineTree" id="pineTree21" position="25 -0.201 -62.252" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree22" position="25 -0.201 -82.408" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree23" position="25 -0.201 -102.564" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree24" position="15 -0.201 -122.72" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
 
-    <a-entity gltf-model= "#pineTree" id="pineTree17" position="-15 -0.201 18.372" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
-    <a-entity gltf-model= "#pineTree" id="pineTree18" position="-25 -0.201 -1.784" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>  
-    <a-entity gltf-model= "#pineTree" id="pineTree19" position="-25 -0.201 -21.94" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree20" position="-25 -0.201 -42.096" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>    
-    <a-entity gltf-model= "#pineTree" id="pineTree21" position="-25 -0.201 -62.252" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree22" position="-25 -0.201 -82.408" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree23" position="-25 -0.201 -102.564" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree24" position="-15 -0.201 -122.72" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree17" position="-15 -0.201 18.372" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
+        <a-entity gltf-model= "#pineTree" id="pineTree18" position="-25 -0.201 -1.784" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>  
+        <a-entity gltf-model= "#pineTree" id="pineTree19" position="-25 -0.201 -21.94" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree20" position="-25 -0.201 -42.096" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>    
+        <a-entity gltf-model= "#pineTree" id="pineTree21" position="-25 -0.201 -62.252" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree22" position="-25 -0.201 -82.408" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree23" position="-25 -0.201 -102.564" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree24" position="-15 -0.201 -122.72" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
 
-    <a-entity gltf-model= "#pineTree" id="pineTree25" position="7.392 -0.201 34.484" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree26" position="-4.922 -0.201 34.484" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
-    <a-entity gltf-model= "#pineTree" id="pineTree27" position="-0.034 -0.201 -81.934" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree25" position="7.392 -0.201 34.484" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree26" position="-4.922 -0.201 34.484" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
+        <a-entity gltf-model= "#pineTree" id="pineTree27" position="-0.034 -0.201 -81.934" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
 
-    <a-entity gltf-model="#deer" id="deer" position="20.7 0.139 -19" rotation="0 -34.410 0" scale="1 1 1" animation-mixer="clip: Armature|Eat"></a-entity>
-    <a-entity gltf-model="#deer" id="deer" position="-20 0.139 -2" rotation="0 -60 0" scale="1 1 1" animation-mixer="clip: Armature|Eat"></a-entity>
-    <a-entity id="fish" gltf-model= "#fish" position="0 -12.3 -6" scale="6 6 6" animation-mixer="clip: Take 01"> </a-entity>
+        <a-entity gltf-model="#deer" id="deer" position="20.7 0.139 -19" rotation="0 -34.410 0" scale="1 1 1" animation-mixer="clip: Armature|Eat"></a-entity>
+        <a-entity gltf-model="#deer" id="deer" position="-20 0.139 -2" rotation="0 -60 0" scale="1 1 1" animation-mixer="clip: Armature|Eat"></a-entity>
+        <a-entity id="fish" gltf-model= "#fish" position="0 -12.3 -6" scale="6 6 6" animation-mixer="clip: Take 01"> </a-entity>
 
         <!-- RIVER -->
         <!-- depth = wave length, width = width, density = wave intensity -->
@@ -167,16 +157,11 @@
         <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 13" ></a-ocean>
         <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 0.7 23" ></a-ocean>
 
-        <!-- river floor -->
-        <a-plane height="100" width="25" position="0 0.2 0" rotation="-90 0 0" material="color:#2C4E55"></a-plane>
-
         <!-- canoe -->
-        <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 3 24.100" rotation="0 90 0" scale="0.250 0.160 0.140"  material="color:brown"> </a-entity>
         
         <a-entity camera id="player" look-controls position="0 4 20"></a-entity>
 
       </a-scene>
-
   </body>
 </html>

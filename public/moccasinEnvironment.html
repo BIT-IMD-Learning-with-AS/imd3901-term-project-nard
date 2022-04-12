@@ -3,20 +3,15 @@
     <head>
       <meta name="description" content="NARD's Beta Prototype!">
       
-      <!-- DO NOT TOUCH 
-      <script src="/js/aframe.min.js"></script>-->
       <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
       <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
       <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
-      <!-- DO NOT TOUCH -->
-
       <link rel="stylesheet" href="/css/artifactEvironmentCSS.css">
 
-      <script>
-
+      <script>        
         // MOBILE artifact rotation
         function myFunction(event) {
           var x = event.touches[0].clientX;
@@ -35,7 +30,7 @@
         var oldFingerPos = 200;
 
         var artifactClick = false;
-        
+
         // Artifact rotation
         AFRAME.registerComponent('drag-rotate-component',{
             schema : { speed : {default:1}},
@@ -99,6 +94,7 @@
           var info = document.getElementById("title");
           info.remove();
 
+          // collecting artifact sound
           var audio = new Audio('assets/audio/returnArtifact_audio.mp3');
           audio.play();
 
@@ -115,7 +111,7 @@
               console.log("ARTIFACT FOUND")
 
               if(artifactClick == false){
-                
+                // imobilizing player
                 var camera = document.getElementById("camera");
                 var indicator = document.getElementById("indicator");
                 indicator.remove();
@@ -161,7 +157,7 @@
                 myElm.innerHTML +=("This is a baby's <i>Áhta’</i>, also known as a baby's shoe.<br><br>A shoe is usually made from deer, elk, moose or buffalo leather and sewn with sinew. This item is important as it protects their feet from getting injured by sharp objects on the floor and keeps them warm during the winter."); 
                 document.getElementById("title").appendChild(myElm);
                 
-                // ARTIFACT BTN
+                // ARTIFACT BUTTON
                 let collectBtn = document.createElement("button");
                 collectBtn.setAttribute('id', 'item-button');
                 collectBtn.setAttribute('onclick', 'contactExperience();');
@@ -177,6 +173,7 @@
                 artifactClick = true;
             }
           }
+          // Akwesasne artifact pronounciation
           if(event.srcElement.id == "soundBtn"){
             var audio = new Audio('assets/audio/shoe_audio.mp3');
             audio.play();
@@ -216,6 +213,7 @@
           <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
           <a-asset-item id="sage" response-type="arraybuffer" src="assets/sage_low-poly/scene.gltf"></a-asset-item>
           <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+          <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
         </a-assets>
 
         <!-- Pine Trees-->
@@ -249,15 +247,15 @@
        <a-entity gltf-model= "#pineTree" id="pineTree13" position="-41.903 -0.201  6.436" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
        <a-entity gltf-model= "#pineTree" id="pineTree14" position="54.903 -0.201  7.939" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>
 
-
        <a-entity gltf-model= "#sage" position="8 0 -20" scale="0.06 0.06 0.05" value="Sage bush" object-info blessing></a-entity>
        <a-entity gltf-model= "#sage" position="-9 0 -12" scale="0.08 0.08 0.08" value="Sage bush" object-info blessing></a-entity>
        <a-entity gltf-model= "#sage" position="12 0 -7" scale="0.06 0.06 0.05" value="Sage bush" object-info blessing></a-entity>
 
        <a-entity gltf-model="#lowDeer" position="-12 0.299 -9" rotation="0 30 0" scale="" animation-mixer="clip: Armature|Eat "></a-entity>
 
-        <!-- RIVER -->
         <a-entity class="ambient-music" sound="src:#river; autoplay:true;"></a-entity>
+
+        <!-- RIVER -->
         <a-ocean color="#3D8695" depth="100" width="100" density="60" position="0 0.4 48.5"></a-ocean>
 
         <!-- artifact -->
@@ -267,13 +265,8 @@
         </a-entity>
 
         <!-- canoe -->
-        <a-assets>
-          <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
-        </a-assets>
-
        <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
         
-        <!-- DO NOT TOUCH camera-->
         <a-entity camera id="camera" position="0 2 0" wasd-controls look-controls >
           <a-entity cursor id="cameraDot" position="0 0 -1"
                     geometry="primitive: sphere; radius:0.008"

@@ -1,24 +1,25 @@
 <!-- CREATOR CREDITS 
 Fire Pot: https://sketchfab.com/3d-models/egg-shaped-pot-62b597d815be4b708c42663f0d06a3f0
-Fire pit rocks: https://sketchfab.com/3d-models/extinguished-campfire-free-download-b2108ef43be241e9b8ea716b47873bf5
 Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30 
+soldier: https://sketchfab.com/3d-models/british-solider-3d-model-rigged-e590ace38dce42899660c4c31a5076d5
+broken fire stand: 
+broken dryingrack: 
+fallen animalskin:
+baby basket: https://sketchfab.com/3d-models/brown-wicker-basket-570bc55394744fe481863431259da3fe
+corn:
+dirt:
 -->
 <!DOCTYPE html>
 <html>
     <head>
       <meta name="description" content="NARD's Alpha Prototype!">
       
-      <!-- DO NOT TOUCH -->
       <script src="/js/aframe.min.js"></script>
       <script src="js/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://unpkg.com/super-hands@^2.1.0/dist/super-hands.min.js"></script>
       <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
-
       <script src="./js/fire.js"></script>
-
-      <!-- DO NOT TOUCH -->
-
       <link rel="stylesheet" href="/css/user-gesture.css">
 
       <script>
@@ -35,7 +36,6 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
             blocker.setAttribute('id', "fade");
             blocker.setAttribute('animation', 'property: material.opacity; from: 1.0; to: 0.0 dur: 500; dir: alternate;');
             player.appendChild(blocker);
-
           }
         });
 
@@ -44,13 +44,10 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
         // CLICK EVENTS
         const onClick = (event) => {
           // Returning artifact
-          if(event.srcElement.id == "artifactInventory"){
-            console.log("inventory clicked");
-          }
-
           if(event.srcElement.id == "rightfulPlace"){
             console.log("ARTIFACT RETURNED ");
 
+            // returned artifact audio
             var audio = new Audio('assets/audio/returnArtifact_audio.mp3');
             audio.play();
 
@@ -83,7 +80,9 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
 
       <!-- A-SCENE -->
       <a-scene precontact-experience loading-screen="enabled: false" environment="preset: forest;  groundTexture:walkernoise; groundColor:black; fog:0; skyColor: #000000; lightPosition: 0 8 -7; grid: cross; shadow: true" joystick vr-mode-ui="enabled: false">
+        
         <a-curvedimage src="assets/Swampy_forest_panorama_new.png" theta-lenght="270" theta-start="110" radius="100" height="100" width="180" position="0 5 0" ></a-curvedimage>
+        
         <a-assets>
           <audio id="ambience" src="assets/Fire.mp3" preload="auto"></audio>
           <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
@@ -101,104 +100,86 @@ Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30
           <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
           <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
           <a-asset-item id="basket" response-type="arraybuffer" src="assets/brown_wicker_basket/scene.gltf"></a-asset-item>
-          </a-assets>
+        </a-assets>
 
         <a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>  
 
-
      <!-- rightful place -->
-     <!--  <a-box id="rightfulPlace" scale="0.7 0.7 0.7" position="0 0.5 -5" material="color:#654321" blessing>-->
       <a-entity gltf-model= "#basket" id="rightfulPlace" position="-7.022 0.2 5.423" rotation="0 90 0" scale="0.002 0.002 0.002" blessing> 
         <a-entity gltf-model= "#diamond" position="-0.1 290 0" scale="0.6 1 0.6"
         animation="property:position.y; loop: true; dir:alternate; dur:1000; to:250; easing:easeInOutQuad;"></a-animation>
         </a-entity>
       </a-entity>
 
-      <!--Longhouse-->
-      <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
-      <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0"></a-entity>
-      <a-entity gltf-model="#soldier" id="soldier" position="0.026 0 -12.787" rotation="" scale="0.11 0.11 0.11"> </a-entity>
-      <a-entity gltf-model="#soldier" id="soldier" position="1.6 0 -12" rotation="0 -50 0" scale="0.11 0.11 0.11"> </a-entity>
+      <!-- Firepit Stand Broken  -->
+      <a-entity  gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
+      <a-entity  gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
 
-      <a-entity class="ambient-music" sound="src:#ambience; autoplay:true;"></a-entity>
+      <!-- pot tipped over -->
+      <a-entity  gltf-model= "#pot" id="pot" position="0.026 0.186 -0.787" rotation="-69.580 68.325 180" scale="-0.206 -0.206 -0.206"> </a-entity>
 
-   <!-- Firepit Stand Broken  -->
-   <a-entity  gltf-model= "#FireStandBroken" id="FireStandBroken" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
-   <a-entity  gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
+      <!-- FIRE ON LONGHOUSE 1-->
+      <a-entity position="-8 8 15" scale="6 6 6">
+        <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
+        <a-entity position="0 1.5 -4">
+            <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
+        </a-entity>
+      </a-entity>
 
-   <!-- Fire pot tipped over -->
-   <a-entity  gltf-model= "#pot" id="pot" position="0.026 0.186 -0.787" rotation="-69.580 68.325 180" scale="-0.206 -0.206 -0.206"> </a-entity>
+      <!-- FIRE ON LONGHOUSE 2 -->
+      <a-entity position="-6.885 -0.422 41.930" scale="6 6 6">
+        <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
+        <a-entity position="0 1.5 -4">
+            <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
+        </a-entity>
+      </a-entity>
 
-   <!-- FIRE ON LONGHOUSE 1-->
-   <a-entity position="-8 8 15" scale="6 6 6">
-    <!-- fire particles -->
-    <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
-    <!-- fire light -->
-    <a-entity position="0 1.5 -4">
-        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
+      <!-- Pine trees-->
+        <a-entity gltf-model="#pineTree" id="tree1" position="-22.593 0 -27.000" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
+      <a-entity gltf-model="#pineTree" id="tree3" position="17.302 0 -46.699" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
+      <a-entity gltf-model="#pineTree" id="tree4" position="29.629 0 0.458" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
+      <a-entity gltf-model="#pineTree" id="tree7" position="0 0 -60" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
+      <a-entity gltf-model="#pineTree" id="tree8" position="-35 0 0" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
+      <a-entity gltf-model="#pineTree" id="tree9" position="36.003 0 -18.497" scale="0.120 0.210 0.120"></a-entity>
+      <a-entity gltf-model="#pineTree" id="tree10" position="50 0 20" scale="0.120 0.210 0.120"></a-entity>
+        
+    <!-- camera -->
+    <a-entity camera id="camera" position="5 2 25" wasd-controls look-controls>
+      <a-entity cursor id="cameraDot" position="0 0 -1"
+                geometry="primitive: sphere; radius:0.008"
+                material="color:black; shader:flat; opacity:0.5"></a-entity>
+      <a-entity gltf-model= "#moccassinModel" id="holdingArtifact" position="-0.5 -0.25 -0.5" rotation="-80 180 0" scale="0.4 0.4 0.4"></a-entity>
     </a-entity>
-  </a-entity>
 
-  
-  
+    
+    <a-entity gltf-model="#soldier" id="soldier" position="0.026 0 -12.787" rotation="" scale="0.11 0.11 0.11"> </a-entity>
+    <a-entity gltf-model="#soldier" id="soldier" position="1.6 0 -12" rotation="0 -50 0" scale="0.11 0.11 0.11"> </a-entity>
+      <a-entity gltf-model="#deer" id="deer" position="9.824 0.451 0.288" rotation="-0.007 -32.104 91.104" scale="1 1 1"></a-entity>
 
-  <!-- FIRE ON LONGHOUSE 3 -->
-  <a-entity position="-6.885 -0.422 41.930" scale="6 6 6">
-    <!-- fire particles -->
-    <a-entity fire="particles: 800;" position="0.0 -0.2 -4" scale="1.2 1.2 1.2"></a-entity>
-    <!-- fire light -->
-    <a-entity position="0 1.5 -4">
-        <a-entity light="type: point; color: #FFA200; intensity: 1.5; distance: 10.0;"></a-entity>
-    </a-entity>
-  </a-entity>
-
-   <!-- Pine trees-->
-    <a-entity gltf-model="#pineTree" id="tree1" position="-22.593 0 -27.000" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
-   <a-entity gltf-model="#pineTree" id="tree3" position="17.302 0 -46.699" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
-   <a-entity gltf-model="#pineTree" id="tree4" position="29.629 0 0.458" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
-   <a-entity gltf-model="#pineTree" id="tree7" position="0 0 -60" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
-   <a-entity gltf-model="#pineTree" id="tree8" position="-35 0 0" rotation="0 0 0" scale="0.120 0.210 0.120"></a-entity>
-   <a-entity gltf-model="#pineTree" id="tree9" position="36.003 0 -18.497" scale="0.120 0.210 0.120"></a-entity>
-   <a-entity gltf-model="#pineTree" id="tree10" position="50 0 20" scale="0.120 0.210 0.120"></a-entity>
-       
-   <!-- camera -->
-   <a-entity camera id="camera" position="5 2 25" wasd-controls look-controls>
-    <a-entity cursor id="cameraDot" position="0 0 -1"
-              geometry="primitive: sphere; radius:0.008"
-              material="color:black; shader:flat; opacity:0.5"></a-entity>
-    <a-entity gltf-model= "#moccassinModel" id="holdingArtifact" position="-0.5 -0.25 -0.5" rotation="-80 180 0" scale="0.4 0.4 0.4"></a-entity>
-  </a-entity>
-
-    <!--Animation-->
-    <a-entity gltf-model="#deer" id="deer" position="9.824 0.451 0.288" rotation="-0.007 -32.104 91.104" scale="1 1 1"></a-entity>
-
-    <!-- DRYING RACK -->
-    <a-entity  gltf-model= "#brokenDryingRack" id="brokenDryingRack" position="-3 0.238 12" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
-    <a-entity  gltf-model= "#fallenAnimalSkin" id="fallenAnimalSkin" position="-3 0.238 12" rotation="0 -56.778 0" scale="0.500 0.500 0.340" > </a-entity>
+      <!-- DRYING RACK -->
+      <a-entity  gltf-model= "#brokenDryingRack" id="brokenDryingRack" position="-3 0.238 12" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
+      <a-entity  gltf-model= "#fallenAnimalSkin" id="fallenAnimalSkin" position="-3 0.238 12" rotation="0 -56.778 0" scale="0.500 0.500 0.340" > </a-entity>
   
       <!--Longhouse-->
       <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
       <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0" scale=""></a-entity>
+      <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
+      <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0"></a-entity>
 
-  <!-- Corn crops -->
- <!-- Corn crops dirt -->
- <a-entity  gltf-model= "#dirt" id="dirt1" position="17.049 0.324 -9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
- <a-entity  gltf-model= "#dirt" id="dirt2" position="17.049 0.324 -5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-
- <a-entity gltf-model= "#dirt" id="dirt3" position="17.049 0.324 -1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
- <a-entity gltf-model= "#dirt" id="dirt4" position="17.049 0.324 1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
- <a-entity gltf-model= "#dirt" id="dirt5" position="17.049 0.324 5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
- <a-entity gltf-model= "#dirt" id="dirt6" position="17.049 0.324 9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
- 
-  <!-- Corn crops -->
- <a-entity gltf-model= "#cornCrop" id="corn1" position="15.887 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-
- <a-entity gltf-model= "#cornCrop" id="corn8" position="18.493 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-
- <a-entity gltf-model= "#cornCrop" id="cornE10" position="18.493 0.375 -10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- 
- <a-entity gltf-model= "#cornCrop" id="cornN10" position="18.493 0.375 10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
- 
+      <!-- Corn crops dirt -->
+      <a-entity  gltf-model= "#dirt" id="dirt1" position="17.049 0.324 -9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity  gltf-model= "#dirt" id="dirt2" position="17.049 0.324 -5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity gltf-model= "#dirt" id="dirt3" position="17.049 0.324 -1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity gltf-model= "#dirt" id="dirt4" position="17.049 0.324 1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity gltf-model= "#dirt" id="dirt5" position="17.049 0.324 5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      <a-entity gltf-model= "#dirt" id="dirt6" position="17.049 0.324 9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
+      
+        <!-- Corn crops -->
+      <a-entity gltf-model= "#cornCrop" id="corn1" position="15.887 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="corn8" position="18.493 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornE10" position="18.493 0.375 -10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      <a-entity gltf-model= "#cornCrop" id="cornN10" position="18.493 0.375 10.484" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
+      
     </a-scene>
   </body>
 </html>

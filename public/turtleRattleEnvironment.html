@@ -190,7 +190,7 @@ Sage: https://sketchfab.com/3d-models/sage-low-poly-48ff05965aba4c2db93a012bd4e5
             }
           }
 
-          // Akwesasne audio
+          // Akwesasne pronounciation
           if(event.srcElement.id == "soundBtn"){
             var audio = new Audio('assets/audio/turtleRattle_audio.mp3');
             audio.play();
@@ -204,9 +204,9 @@ Sage: https://sketchfab.com/3d-models/sage-low-poly-48ff05965aba4c2db93a012bd4e5
           init: function () {},
           tick: function () {
             this.el.object3D.lookAt(this.data.object3D.position)
-            
           }
         });
+
       </script>
 
     </head>
@@ -282,10 +282,10 @@ Sage: https://sketchfab.com/3d-models/sage-low-poly-48ff05965aba4c2db93a012bd4e5
        <a-entity gltf-model= "#pineTree" id="pineTree13" position="-41.903 -0.201  6.436" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
        <a-entity gltf-model= "#pineTree" id="pineTree14" position="54.903 -0.201  7.939" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>
 
-       <a-entity gltf-model= "#sage" position="-10 0 -7" scale="0.06 0.06 0.05" value="Sage bush" object-info blessing></a-entity>
-       <a-entity gltf-model= "#sage" position="-7 0 -19" scale="0.1 0.1 0.09" value="Sage bush" object-info blessing></a-entity>
-       <a-entity gltf-model= "#sage" position="-9 0 -17" scale="0.08 0.08 0.08" value="Sage bush" object-info blessing></a-entity>
-       <a-entity gltf-model= "#sage" position="8 0 -13" scale="0.06 0.06 0.05" value="Sage bush" object-info blessing></a-entity>
+       <a-entity gltf-model= "#sage" position="-10 0 -7" scale="0.06 0.06 0.05"></a-entity>
+       <a-entity gltf-model= "#sage" position="-7 0 -19" scale="0.1 0.1 0.09"></a-entity>
+       <a-entity gltf-model= "#sage" position="-9 0 -17" scale="0.08 0.08 0.08"></a-entity>
+       <a-entity gltf-model= "#sage" position="8 0 -13" scale="0.06 0.06 0.05"></a-entity>
 
        <!-- canoe -->
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
