@@ -3,16 +3,12 @@
     <head>
       <meta name="description" content="NARD's Beta Prototype!">
       
-      <!-- DO NOT TOUCH 
-      <script src="/js/aframe.min.js"></script>-->
       <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
       <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>
-      <!-- DO NOT TOUCH -->
-
+      <script src="https://cdn.rawgit.com/mrturck/aframe-joystick/master/joystick.min.js"></script>\
       <link rel="stylesheet" href="/css/artifactEvironmentCSS.css">
 
       <script>
@@ -212,10 +208,10 @@
 
         <a-assets>
           <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
-
           <a-asset-item id="totemModel" response-type="arraybuffer" src="assets/Sweet_Grass/sweet_grass.gltf"></a-asset-item>
           <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
           <a-asset-item id="sage" response-type="arraybuffer" src="assets/sage_low-poly/scene.gltf"></a-asset-item>
+          <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
         </a-assets>
 
         <!-- Pine Trees-->
@@ -257,7 +253,6 @@
           <a-entity class="ambient-music" sound="src:#river; autoplay:true;"></a-entity>
         </a-ocean>
         
-
         <!-- artifact -->
         <a-entity gltf-model= "#totemModel" id="artifact" position="-2 0.2 -15" rotation="0 0 90" scale="0.04 0.04 0.04">
           <!-- indicator -->
@@ -265,13 +260,8 @@
         </a-entity>
 
         <!-- canoe -->
-        <a-assets>
-            <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
-        </a-assets>
-
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 0.909 1.822" rotation="0 90 0" scale="0.250 0.160 0.140"  > </a-entity>
         
-        <!-- DO NOT TOUCH camera-->
         <a-entity camera id="camera" position="0 2 0" wasd-controls look-controls >
           <a-entity cursor id="cameraDot" position="0 0 -1"
                     geometry="primitive: sphere; radius:0.008"
