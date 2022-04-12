@@ -1,17 +1,15 @@
 <!-- CREATOR CREDITS -->
-<!-- -->
+<!-- woman: 
+-->
 
 <!DOCTYPE html>
 <html>
     <head>
       <meta name="description" content="NARD's Alpha Prototype!">
       
-      <!-- DO NOT TOUCH -->
       <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
       <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-      <!-- DO NOT TOUCH -->
-
       <link rel="stylesheet" href="/css/user-gesture.css">
 
       <script>
@@ -104,14 +102,14 @@
 
       <!-- A-SCENE -->
       <a-scene start-experience environment="preset: forest; groundTexture:walkernoise; fog:0; shadow: true">
+        
         <a-curvedimage src="assets/Swampy_forest_panorama_new.png" theta-lenght="270" theta-start="110" radius="100" height="100" width="180" position="0 5 0" ></a-curvedimage>
-      <a-assets>
-          <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
+      
+        <a-assets>
             <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
             <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
             <a-asset-item id="woman" response-type="arraybuffer" src="assets/womanSitting/Untitled.gltf"></a-asset-item>
         </a-assets>
-
 
         <!-- Pine Trees-->
         <a-entity gltf-model= "#pineTree" id="pineTree" position="21 -0.201 25.826" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
@@ -154,18 +152,16 @@
         <a-entity gltf-model= "#pineTree" id="pineTree26" position="-4.922 -0.201 34.484" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
         <a-entity gltf-model= "#pineTree" id="pineTree27" position="-0.034 -0.201 -81.934" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>    
 
-    <!-- RIVER -->
-    <!-- depth = wave length, width = width, density = wave intensity -->
-    <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 -30"></a-ocean>
-    <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 -20" ></a-ocean>
-    <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 -10" ></a-ocean>
-    <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 3" ></a-ocean>
-    <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 13" ></a-ocean>
-    <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 23" ></a-ocean>
-
+        <!-- RIVER -->
+        <!-- depth = wave length, width = width, density = wave intensity -->
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 -30"></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 -20" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 -10" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 3" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 13" ></a-ocean>
+        <a-ocean color="#3D8695" depth="15" width="25" density="10" position="0 1.5 23" ></a-ocean>
 
         <!-- canoe -->
-        <!--DO NOT CHANGE it's tagname (boat) or id (canoe) -->
         <a-entity boat gltf-model= "#canoeModel" id="canoe" position="0 3 31.8" rotation="0 90 0" scale="0.160 0.160 0.140"  material="color:brown">
           <a-entity id="canoe" gltf-model="#woman" position="11 -1.5 0" rotation="0 90 0" scale="0.012 0.012 0.012"></a-entity>
         </a-entity>

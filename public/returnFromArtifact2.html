@@ -1,17 +1,15 @@
-<!-- CREATOR CREDITS -->
-<!-- -->
+<!-- CREATOR CREDITS 
+
+-->
 
 <!DOCTYPE html>
 <html>
     <head>
       <meta name="description" content="NARD's Alpha Prototype!">
       
-      <!-- DO NOT TOUCH -->
       <script src="https://aframe.io/releases/1.1.0/aframe.min.js"></script>
       <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
       <script src="https://unpkg.com/aframe-environment-component@1.1.0/dist/aframe-environment-component.min.js"></script>
-      <!-- DO NOT TOUCH -->
-
       <link rel="stylesheet" href="/css/user-gesture.css">
 
       <script>
@@ -84,28 +82,27 @@
 
     </head>
     <body>
-
-      
       <a-scene start-experience environment="preset: forest;  groundTexture:walkernoise; fog:0; shadow: true">
+        
         <a-curvedimage src="assets/Swampy_forest_panorama_new.png" theta-lenght="270" theta-start="110" radius="100" height="100" width="180" position="0 5 0" ></a-curvedimage>
-          <!-- narration -->
-      <div id="narration-info">
-        <p class="noselect" id="narrationPT1" style="font-size:110%;"></p>
-        <p class="noselect" id="narrationPT2" style="font-size:110%; top: 20%;"></p>
-        <p class="noselect" id="narrationPT3" style="font-size:130%; top: 30%;"></p>
-      </div>
-     
-      <a-assets>
-          <!--<a-asset-item id="bgMusic"  preload="auto" response-type="arraybuffer" src="assets/The Plight of the Samurai - Traditional Japanese Music.mp3"></a-asset-item>-->
-          <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
-          <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
-          <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
-          <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
-          <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
-          <a-asset-item id="fish" response-type="arraybuffer" src="assets/the_fish_particle/scene.gltf"></a-asset-item>
-          <a-asset-item id="can" response-type="arraybuffer" src="assets/litter_can/scene.gltf"></a-asset-item>
-          <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
-      </a-assets>
+        
+        <!-- narration -->
+        <div id="narration-info">
+          <p class="noselect" id="narrationPT1" style="font-size:110%;"></p>
+          <p class="noselect" id="narrationPT2" style="font-size:110%; top: 20%;"></p>
+          <p class="noselect" id="narrationPT3" style="font-size:130%; top: 30%;"></p>
+        </div>
+      
+        <a-assets>
+            <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
+            <a-asset-item id="canoeModel" response-type="arraybuffer" src="assets/canoe/canoe.glb"></a-asset-item>
+            <a-asset-item id="lowDeer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+            <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
+            <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+            <a-asset-item id="fish" response-type="arraybuffer" src="assets/the_fish_particle/scene.gltf"></a-asset-item>
+            <a-asset-item id="can" response-type="arraybuffer" src="assets/litter_can/scene.gltf"></a-asset-item>
+            <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
+        </a-assets>
         
             <!-- Pine Trees-->
             <a-entity gltf-model= "#pineTree" id="pineTree" position="15.980 -0.201 25.826" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>        
@@ -148,7 +145,7 @@
             <a-entity gltf-model= "#pineTree" id="pineTree26" position="-4.922 -0.201 34.484" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
             <a-entity gltf-model= "#pineTree" id="pineTree27" position="-0.034 -0.201 -81.934" rotation="0 90 0" scale="0.120 0.120 0.120" ></a-entity>   
             
-            <a-entity gltf-model="#deer" id="deer" position="-17.996 0.139 -15.361" rotation="0 -34.410 0" scale="1 1 1" animation-mixer="clip: Armature|Eat"></a-entity>
+            <a-entity gltf-model="#can" id="can" position="-17.996 0.139 -15.361" rotation="0 -34.410 0" scale="1 1 1" animation-mixer="clip: Armature|Eat"></a-entity>
 
             <a-entity class="ambient-music" sound="src:#river; autoplay:true;"></a-entity>
 
