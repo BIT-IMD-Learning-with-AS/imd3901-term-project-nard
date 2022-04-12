@@ -1,13 +1,22 @@
 <!-- CREATOR CREDITS
 birds: https://sketchfab.com/3d-models/birds-3a9bb97be78944f9bffc23fb25c2154e
 table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4d27f366c
+Fire pit: https://sketchfab.com/3d-models/extinguished-campfire-free-download-b2108ef43be241e9b8ea716b47873bf5
+long house: 
+pot: https://sketchfab.com/3d-models/egg-shaped-pot-62b597d815be4b708c42663f0d06a3f0
+baskets: https://sketchfab.com/3d-models/wicker-basket-pack-0783e48c8c71463582f4e0a4535aef9a
+women: 
+corn:
+dirt: 
+wood: https://sketchfab.com/3d-models/buches-3dd0c42cec914a31bdb5f7b38eaa0711
+bench:
+diamond:
 -->
 <!DOCTYPE html>
 <html>
     <head>
-      <meta name="description" content="NARD's Alpha Prototype!">
+      <meta name="description" content="NARD's Final Prototype!">
       
-      <!-- DO NOT TOUCH -->
       <script src="/js/aframe.min.js"></script>
       <script src="js/aframe-environment-component.min.js"></script>
       <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
@@ -16,8 +25,6 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
       <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
       <script src="/objInteraction.js"></script>
       <script src="./js/fire.js"></script>
-      <!-- DO NOT TOUCH -->
-
       <link rel="stylesheet" href="/css/user-gesture.css">
 
       <script>
@@ -44,6 +51,7 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
           if(event.srcElement.id == "rightfulPlace"){
             console.log("ARTIFACT RETURNED ");
 
+            // Returning artifact sound
             var audio = new Audio('assets/audio/returnArtifact_audio.mp3');
             audio.play();
 
@@ -64,7 +72,7 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
         } 
         window.addEventListener('click', onClick);
 
-        // Return Indicator looks at camera
+        // Return Indicator
         AFRAME.registerComponent('look-at', {
           schema: { type: 'selector' },
           init: function () {},
@@ -85,35 +93,31 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
       <!-- A-SCENE -->
       <a-scene precontact-experience loading-screen="enabled: false" environment="preset: forest; groundTexture:none; groundColor:#5A5918; fog:0; shadow: true" joystick vr-mode-ui="enabled: false">
         <a-curvedimage src="assets/Swampy_forest_panorama_new.png" theta-lenght="270" theta-start="110" radius="100" height="100" width="180" position="0 5 0" ></a-curvedimage>
-      <a-assets>
-        <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
-
-        
-        <a-asset-item id="birchModel" response-type="arraybuffer"  src="/assets/birchTree/scene.gltf"></a-asset-item>
-        
-        <a-image src="/assets/glow.png"></a-image>
-        
-        <a-asset-item id="FirePitStand" response-type="arraybuffer" src="assets/FirePitStand/FirePitStand.glb"></a-asset-item>
-        <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
-        <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
-        <a-asset-item id="rattleModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf"></a-asset-item>
-        <a-asset-item id="pineModel" response-type="arraybuffer" src="assets/pine/scene.gltf"></a-asset-item>
-        <a-asset-item id="longhouse" response-type="arraybuffer" src="assets/Longhouse_Model/Longhouse.gltf"></a-asset-item>
-        <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item>
-        <a-asset-item id="dryingRack" response-type="arraybuffer" src="assets/dryingRack/dryingRack.glb"></a-asset-item>
-        <a-asset-item id="animalSkin" response-type="arraybuffer" src="assets/animalSkin/animalSkin.glb"></a-asset-item>
-        <a-asset-item id="woman" response-type="arraybuffer" src="assets/womanStanding/Untitled.gltf"></a-asset-item>
-        <a-asset-item id="woman2" response-type="arraybuffer" src="assets/womanSitting/Untitled.gltf"></a-asset-item>
-        <a-asset-item id="cornCrop" response-type="arraybuffer" src="assets/corn/scene.gltf"></a-asset-item>
-        <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
-        <a-asset-item id="table" response-type="arraybuffer" src="assets/table/scene.gltf"></a-asset-item>
-        <a-asset-item id="basket" response-type="arraybuffer" src="assets/wicker_basket_pack/scene.gltf"></a-asset-item>
-        <a-asset-item id="bird" response-type="arraybuffer" src="assets/birds/scene.gltf"></a-asset-item>
-        <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
-        <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
-        <a-asset-item id="wood" response-type="arraybuffer" src="assets/wood/scene.gltf"></a-asset-item>
-        <a-asset-item id="bench" response-type="arraybuffer" src="assets/log_bench/bench.glb"></a-asset-item>
-      </a-assets>
+        <a-assets>
+          <audio id="river" src="assets/riverSound2.mp3" preload="auto"></audio>
+          <a-asset-item id="birchModel" response-type="arraybuffer"  src="/assets/birchTree/scene.gltf"></a-asset-item>
+          <a-image src="/assets/glow.png"></a-image>
+          <a-asset-item id="FirePitStand" response-type="arraybuffer" src="assets/FirePitStand/FirePitStand.glb"></a-asset-item>
+          <a-asset-item id="PitRocks" response-type="arraybuffer" src="assets/PitRocks/scene.gltf"></a-asset-item>
+          <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
+          <a-asset-item id="rattleModel" response-type="arraybuffer" src="assets/turtle_rattle/Untitled.gltf"></a-asset-item>
+          <a-asset-item id="pineModel" response-type="arraybuffer" src="assets/pine/scene.gltf"></a-asset-item>
+          <a-asset-item id="longhouse" response-type="arraybuffer" src="assets/Longhouse_Model/Longhouse.gltf"></a-asset-item>
+          <a-asset-item id="pot" response-type="arraybuffer" src="assets/pot/Pot.glb"></a-asset-item>
+          <a-asset-item id="dryingRack" response-type="arraybuffer" src="assets/dryingRack/dryingRack.glb"></a-asset-item>
+          <a-asset-item id="animalSkin" response-type="arraybuffer" src="assets/animalSkin/animalSkin.glb"></a-asset-item>
+          <a-asset-item id="woman" response-type="arraybuffer" src="assets/womanStanding/Untitled.gltf"></a-asset-item>
+          <a-asset-item id="woman2" response-type="arraybuffer" src="assets/womanSitting/Untitled.gltf"></a-asset-item>
+          <a-asset-item id="cornCrop" response-type="arraybuffer" src="assets/corn/scene.gltf"></a-asset-item>
+          <a-asset-item id="dirt" response-type="arraybuffer" src="assets/dirt/scene.gltf"></a-asset-item>
+          <a-asset-item id="table" response-type="arraybuffer" src="assets/table/scene.gltf"></a-asset-item>
+          <a-asset-item id="basket" response-type="arraybuffer" src="assets/wicker_basket_pack/scene.gltf"></a-asset-item>
+          <a-asset-item id="bird" response-type="arraybuffer" src="assets/birds/scene.gltf"></a-asset-item>
+          <a-asset-item id="deer" response-type="arraybuffer" src="assets/low_poly_deer/scene.gltf"></a-asset-item>
+          <a-asset-item id="pineTree" response-type="arraybuffer" src="assets/pine_tree/scene.gltf"></a-asset-item>
+          <a-asset-item id="wood" response-type="arraybuffer" src="assets/wood/scene.gltf"></a-asset-item>
+          <a-asset-item id="bench" response-type="arraybuffer" src="assets/log_bench/bench.glb"></a-asset-item>
+        </a-assets>
 
       <!-- FIRE -->
       <a-entity position="0 0 4">
@@ -164,16 +168,15 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
     <a-entity gltf-model="#woman2" position="1.11313 0.3 17.88857" rotation="0 45 0" scale="0.003 0.003 0.003"></a-entity>
     <a-entity gltf-model="#woman" position="0 0 -2" rotation="0 0 0" scale="0.003 0.003 0.003"></a-entity>
  
-    <a-entity boat gltf-model= "#bench" id="bench" position="-3.643 0.012 0.054" rotation="0 0 180" scale="-0.011 -0.02 -0.011"> </a-entity>
-
     <!-- LongHouse -->
     <a-entity gltf-model="#longhouse" position="-10 0.064 -5" scale="2 2 2"rotation="0 90 0" scale=""></a-entity>
     <a-entity gltf-model="#longhouse" position="-11.410 0.309 18.222" scale="1.5 1.5 2"rotation="0 -180 0" scale=""></a-entity>   
 
+        <!-- Firepit Stand  -->
     <a-entity  gltf-model= "#FirePitStand" id="FireStand" position="0 0 0" rotation="0 -180 0" scale="0.330 0.300 0.340"  material="color:brown"> </a-entity>
-    <!-- Firepit Stand  -->
     <a-entity gltf-model= "#PitRocks" id="PitRocks" position="0.473 0.324 0.162" rotation="0 -180 0" scale="-0.003 -0.003 -0.003"> </a-entity>
     <a-entity gltf-model= "#pot" id="pot" position="-0.035 0.155 0.162" rotation="0 -72.573 -179.76" scale="-0.206 -0.206 -0.206"> </a-entity>
+    <a-entity boat gltf-model= "#bench" id="bench" position="-3.643 0.012 0.054" rotation="0 0 180" scale="-0.011 -0.02 -0.011"> </a-entity>
 
       <!--Wood-->
       <a-entity gltf-model= "#wood" id="wood" position="-4.605 -0.019 1.978" rotation="0 -27.332 180" scale="0.378 -0.203 0.270"> </a-entity>
@@ -184,9 +187,7 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
      <!-- ANIMAL SKINDRYING RACK -->
      <a-entity gltf-model= "#animalSkin" id="animalSkin" position="7.010 0.238 -13.814" rotation="0 -56.778 0" scale="0.330 0.300 0.340" > </a-entity>
       
-       
-     <!-- NEW CORN -->
-
+     <!-- CORN -->
       <a-entity gltf-model="#dirt" id="dirt1" position="6.2237 0.324 20.11133" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
       <a-entity gltf-model="#dirt" id="dirt2" position="9.84376 0.324 20.11133" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
 
@@ -199,32 +200,6 @@ table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4
       <a-entity gltf-model="#cornCrop" id="corn1" position="5.30507 0.15867 19.470" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
       <a-entity gltf-model="#cornCrop" id="corn6" position="7.5 0.15867 19.470" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
       <a-entity gltf-model="#cornCrop" id="corn7" position="7.5 0.15867 19.470" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-       <!-- Corn crops dirt -->
-      
-      
-      <!-- <a-entity  gltf-model= "#dirt" id="dirt2" position="17.049 0.324 -5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-      <a-entity gltf-model= "#dirt" id="dirt3" position="17.049 0.324 -1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-      <a-entity gltf-model= "#dirt" id="dirt4" position="17.049 0.324 1.828" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-      <a-entity gltf-model= "#dirt" id="dirt5" position="17.049 0.324 5.484" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-      <a-entity gltf-model= "#dirt" id="dirt6" position="17.049 0.324 9.14" rotation="0 -180 0" scale="-2.024 -2.024 -2.024"> </a-entity>
-      
-       -->
-
-
-       <!-- Corn crops -->
-      <!-- <a-entity gltf-model= "#cornCrop" id="corn1" position="15.887 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity gltf-model= "#cornCrop" id="corn2" position="15.887 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity gltf-model= "#cornCrop" id="corn3" position="15.887 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity gltf-model= "#cornCrop" id="corn4" position="15.887 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity gltf-model= "#cornCrop" id="corn5" position="15.887 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-
-      <a-entity gltf-model= "#cornCrop" id="corn7" position="18.493 0.375 -2.946" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity gltf-model= "#cornCrop" id="corn8" position="18.493 0.375 3.411" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity gltf-model= "#cornCrop" id="corn9" position="18.493 0.375 1.870" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity gltf-model= "#cornCrop" id="corn10" position="18.493 0.375 0.186" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-      <a-entity gltf-model= "#cornCrop" id="corn11" position="18.493 0.375 -1.393" rotation="0 0 180" scale="-1.194 -1.194 -1.194"> </a-entity>
-
-       -->
 
     </a-scene>
   </body>
