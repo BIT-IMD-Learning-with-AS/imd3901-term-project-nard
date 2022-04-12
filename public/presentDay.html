@@ -84,6 +84,7 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
         <a-curvedimage src="assets/Swampy_forest_panorama_new.png" theta-lenght="270" theta-start="110" radius="100" height="20" width="180" position="0 5 0" ></a-curvedimage>
       <a-assets>
         <audio id="ambience" src="assets/1-02 Round Dance_01.mp3" preload="auto"></audio>
+        <audio id="forest" src="assets/Forest.mp3" preload="auto"></audio>
 
         <a-asset-item id="woman" response-type="arraybuffer" src="assets/woman_ModernDay/woman2.gltf"></a-asset-item>
         <a-asset-item id="diamond" response-type="arraybuffer" src="assets/block_shape_diamond/scene.gltf"></a-asset-item>
@@ -143,6 +144,8 @@ Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef170
                 material="color:black; shader:flat; opacity:0.5"></a-entity>
       <a-entity gltf-model= "#grassModel" id="holdingArtifact" position="-0.2 -0.3 -0.1" rotation="-30 0 0" scale="0.01 0.01 0.01"></a-entity>
     </a-entity>
+
+    <a-entity class="ambient-music" sound="src:#forest; autoplay:true;"></a-entity>   
 
   
     </a-scene>
