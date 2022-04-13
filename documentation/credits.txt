@@ -5,3 +5,33 @@ Fire Pot: https://sketchfab.com/3d-models/egg-shaped-pot-62b597d815be4b708c42663
 Fire pit rocks: https://sketchfab.com/3d-models/extinguished-campfire-free-download-b2108ef43be241e9b8ea716b47873bf5
 Canoe: https://sketchfab.com/3d-models/canoe-0169c280e38e4f15ac1eb36b6c9acc30 
 Bench: https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef1705
+birds: https://sketchfab.com/3d-models/birds-3a9bb97be78944f9bffc23fb25c2154e
+Bear: https://sketchfab.com/3d-models/bear-walk-animation-bb4cbf36165e47a2a1331be6a968c4f6
+Fish: https://sketchfab.com/3d-models/the-fish-particle-eb214794846949a5a0b1af75fd649aa2
+Pine Tree: https://sketchfab.com/3d-models/pine-tree-e52769d653cd4e52a4acff3041961e65
+River Sound: https://www.youtube.com/watch?v=krwuvvykTGY
+Swampy Forest img: https://upload.wikimedia.org/wikipedia/commons/7/76/Swampy_forest_panorama.jpg
+Mobile: https://github.com/mrturck/aframe-joystick
+bird: https://sketchfab.com/3d-models/low-poly-bird-animated-82ada91f0ac64ab595fbc3dc994a3590
+deers: https://sketchfab.com/3d-models/low-poly-deer-b1282c04dffd4a44a8d755171337e143
+Sage: https://sketchfab.com/3d-models/sage-low-poly-48ff05965aba4c2db93a012bd4e5fd86
+table: https://sketchfab.com/3d-models/old-wooden-table-e53a5ef2faf84edcaddf49d4d27f366c
+Firepit rocks: https://sketchfab.com/3d-models/extinguished-campfire-free-download-b2108ef43be241e9b8ea716b47873bf5
+pot: https://sketchfab.com/3d-models/egg-shaped-pot-62b597d815be4b708c42663f0d06a3f0
+baskets: https://sketchfab.com/3d-models/wicker-basket-pack-0783e48c8c71463582f4e0a4535aef9a
+women: https://sketchfab.com/3d-models/nymph-low-poly-27b5a9c5c1f24851a28feeaec34ee7f8
+corn: https://sketchfab.com/3d-models/corn-corn-corn-10187bc37c9e42ef8770b28452ee7cd3
+dirt: https://sketchfab.com/3d-models/realistic-dirt-3d-model-ba6a64c923a5426494bd349ab4bd7a42
+wood: https://sketchfab.com/3d-models/buches-3dd0c42cec914a31bdb5f7b38eaa0711
+bench:https://sketchfab.com/3d-models/log-bench-55fea7c2f116426a9c7332fcf5ef1705
+diamond: https://sketchfab.com/3d-models/block-shape-diamond-998a836ab30044178bfe0907c553f096
+Fire animation (markusneuy) - https://github.com/markusneuy/campfire_vr 
+Forest sound: https://www.youtube.com/watch?v=FwVTkB-BIvM
+soldier: https://sketchfab.com/3d-models/british-solider-3d-model-rigged-e590ace38dce42899660c4c31a5076d5
+baby basket: https://sketchfab.com/3d-models/brown-wicker-basket-570bc55394744fe481863431259da3fe
+Sound: https://www.youtube.com/watch?v=GdwhlKKw0Lc
+can: https://sketchfab.com/3d-models/litter-can-42552e4ab8c241319e9ec91dbb0d6de3
+Poster1: https://unifor88.ca/wp-content/uploads/2019/05/21370920_823946377787898_2223504223587412568_n.png
+Poster2: https://thenarwhal.ca/wp-content/uploads/2018/04/Idle-No-More.png
+Modern longhouse: https://sketchfab.com/3d-models/pavilion-1-1803be2738a9486fbfca195734f7d533
+Music: https://drive.google.com/drive/folders/1w5wbp5NaIy2_i36Pvl4rd4tyeCpfVDIx
