@@ -9,7 +9,13 @@ This readme will be an introduction for your project. Please note how to use [Ma
 This project will be a VR experience programmed using HTML/CSS and the A Frame framework from Node.js.
 
 ## How to Run This Project ##
-No instructions yet
+1. Download the zip file of our Github Repo.
+2. Drag the entire unzipped file into Visual Studio
+3. Open the terminal
+4. Type 'npm init' and press enter for all lines that appear
+5. Once done, type 'npm install express'
+6. Once done, type 'node .\app.js'
+7. Open http://localhost:8080/ in Chrome and enjoy the experience!
 
 ## Team Members and Roles ##
 - _Natalia_
