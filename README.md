@@ -14,15 +14,11 @@ No instructions yet
 ## Team Members and Roles ##
 - _Natalia_
   - Programmer
-  - Link to portfolio
 - _Andrew_
   - Programmer
-  - Link to portfolio
 - _Riya_
   - Modeller 
-  - Link to portfolio
 - _Damla_
   - Modeller 
-  - Link to portfolio
 
 
