@@ -19,12 +19,15 @@ This project will be a VR experience programmed using HTML/CSS and the A Frame f
 
 ## Team Members and Roles ##
 - _Natalia_
-  - Programmer
+  - Main Programmer
 - _Andrew_
+  - Project Manager
   - Programmer
 - _Riya_
-  - Modeller 
+  - Modeller
+  - Environment designer
 - _Damla_
-  - Modeller 
+  - Modeller
+  - Environment designer
 
 
