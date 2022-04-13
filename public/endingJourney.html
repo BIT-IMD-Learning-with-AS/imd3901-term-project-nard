@@ -32,17 +32,17 @@
 
               // Timer before fade out
               setTimeout(function () {
-                canoe.setAttribute('animation', "property:position; to: 0 3 -40; dur: 90000; easing: linear;");
+                canoe.setAttribute('animation', "property:position; to: 0 3 -40; dur: 80000; easing: linear;");
                 cam.removeAttribute("animation");
-                let txt = document.querySelector('#narration-info');
-                txt.style.opacity= 0;
-                let cred = document.querySelector('#credits');
-                cred.style.animationPlayState="running";
-              }, 20500);
+              }, 20100);
 
               // Timer before fade out
               setTimeout(function () {
                 // Fade out
+                let txt = document.querySelector('#narration-info');
+                txt.style.opacity= 0;
+                let cred = document.querySelector('#credits');
+                cred.style.animationPlayState="running";
                 var camera = document.getElementById("player");
                 let blocker = document.createElement('a-sphere');
                 blocker.setAttribute('radius', '0.05');

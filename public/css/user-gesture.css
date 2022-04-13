@@ -166,7 +166,7 @@
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-  animation: myfirst 150s 1;
+  animation: myfirst 70s 1;
   animation-direction: linear;
   animation-play-state:paused;
   }
