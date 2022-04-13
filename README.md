@@ -6,7 +6,7 @@ We have chosen "Canoe Journeys" for the story we will be making.
 This readme will be an introduction for your project. Please note how to use [Markdown formatting](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax), and some basic principles around [using Github](https://education.github.com/git-cheat-sheet-education.pdf). Please checkout the test asssignment "Git & Github Fundamentals" for more information.
 
 ## About This Project ##
-This project will be a VR experience programmed using HTML/CSS and the A Frame framework from Node.js.
+This project will be a VR storytelling experience, programmed using HTML/CSS/Javascript and the A-Frame framework from Node.js. We are bringing an Akwesasne story to life, which was created by students from Pathways to Indigenous Empowerment Program. This project is a collaboration between Algonquin College and Iohahi:io Akwesasne Education and Training Institute.
 
 ## How to Run This Project ##
 1. Download the zip file of our Github Repo.
