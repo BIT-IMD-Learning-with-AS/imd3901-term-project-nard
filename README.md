@@ -9,7 +9,7 @@ This readme will be an introduction for your project. Please note how to use [Ma
 This project will be a VR storytelling experience, programmed using HTML/CSS/Javascript and the A-Frame framework from Node.js. We are bringing an Akwesasne story to life, which was created by students from Pathways to Indigenous Empowerment Program. This project is a collaboration between Algonquin College and Iohahi:io Akwesasne Education and Training Institute.
 
 ## How to Run This Project ##
-1. Download the zip file of our Github Repo.
+1. Download our Github Repo. zip file
 2. Drag the entire unzipped file into Visual Studio
 3. Open the terminal
 4. Type 'npm init' and press enter for all lines that appear
